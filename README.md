@@ -7,4 +7,4 @@ Questo repo contiene il codice del corso di telerilevamento geo-ecologico in R p
 [Vedi corso](https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2025/523159)
 
 ## Il docente 
-[Duccio Rocchin](https://www.unibo.it/sitoweb/duccio.rocchini)
+[Duccio Rocchini](https://www.unibo.it/sitoweb/duccio.rocchini)
