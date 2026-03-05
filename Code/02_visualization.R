@@ -11,8 +11,8 @@ im. #ogni funzione di imageRy inizia con im.
 im.list()
 # Sentinel 2-bands
 # https://gisgeography.com/sentinel-2-bands-combinations/
-im.import("sentinel.dolomites.b3.tif") #per importare e mostrare dei dati
-b2 <- im.import("sentinel.dolomites.b3.tif") #eseguo assegnazione
+im.import("sentinel.dolomites.b2.tif") #per importare e mostrare dei dati
+b2 <- im.import("sentinel.dolomites.b2.tif") #eseguo assegnazione
 
 colorRampPalette(c("darkslategray4", "darkseagreen4", "green4"))(100) #i vettori vanno sempre concatenati con la funzione c() #100 è il numero di sfumature
 cl <- colorRampPalette(c("darkslategray4", "darkorchid3", "green4"))(100)
@@ -43,3 +43,49 @@ plot (b2, col=cl)
 im.multiframe(1,2)
 plot(b2, col=inferno(100))
 plot (b2, col=cl)
+
+#importing band 3
+b3 <- im.import("sentinel.dolomites.b3.tif")
+
+library(viridis)
+
+excercise: change the ramp palette according
+plot(b3, col=plasma(100))
+
+#importing band 4
+b4 <- im.import(b3 <- im.import("sentinel.dolomites.b3.tif"))
+
+#importing band 8
+b8 <- im.import("sentinel.dolomites.b8.tif")
+
+#esercizio multiframe con le 4 bande
+b2 <- im.import("sentinel.dolomites.b2.tif")
+clb <- colorRampPalette(c("dark blue", "blue", "light blue"))(100)
+
+b3 <- im.import("sentinel.dolomites.b3.tif")
+clg <- colorRampPalette(c("dark green", "green", "light green"))(100)
+
+b4 <- im.import("sentinel.dolomites.b4.tif")
+clr <- colorRampPalette(c("#8B1A1A", "green ", "light green"))(100)
+
+b8 <- im.import("sentinel.dolomites.b8.tif")
+cln <- colorRampPalette(c("goldenrod3", "goldenrod2", "goldenrod"))(100)
+
+im.multiframe(2,2)
+plot(b2, col=clb)
+plot(b3, col=clg)
+plot(b4, col=clr)
+plot(b8, col=cln)
+
+#stack prende tutte immagini e le mette insieme
+sentinel <- c(b2, b3, b4, b8)
+plot (sentinel)
+
+#per cambiare colore
+plot (sentinel, col=inferno(100))
+
+plot (sentinel$sentinel.dolomites.b8) #$ in R serve per collegare vari pezzi tutti insieme
+
+#layer1=b2, layer2=b3, layer3=b4, layer4=b8
+plot(sentinel[[4]])
+plot(sentinel[[2]])
