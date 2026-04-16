@@ -46,9 +46,11 @@ plot(ice[[2]])
 
 Questo l'output del plottaggio:
 
-<img width="480" height="480" alt="prime_due_band" src="https://github.com/user-attachments/assets/88e14ce4-b8a4-462e-9a65-54507ad2724f" />
+<img width="1280" height="709" alt="output_esempio_esame" src="https://github.com/user-attachments/assets/e5fe8ebd-9182-4f83-93de-1ebf6806a2cd" />
 
-> Nota:l'immagine è già stata analizzata da Earth Observatory
+*Immagine inserita sempre per trascinamento*
+
+> Nota: l'immagine è già stata analizzata da Earth Observatory
 
 Se vogliamo inserire un elenco puntato è sufficiente usare il +:
 + punto dell'elenco
