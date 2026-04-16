@@ -1,11 +1,11 @@
 library(terra) #package to manage spatial data
-library(imageRy) # package for RS didactis
+library(imageRy) #package for remote sensing didactis
 
-setwd(desktop)
+setwd() #impostare working directorty in base a dove è stata salvata immagine
 getwd()
 list.files()
 
-ice <- rast ("ISS074-E-417243.jpg")
+ice <- rast("ISS074-E-417243.jpg") #scrivere cosa fa funzione rast
 
 im.multiframe(1,2)
 plot(ice[[1]])
@@ -17,7 +17,7 @@ plot(ice[[1]])
 plot(ice[[2]])
 dev.off()
 
-# istogrammi
+#istogrammi
 png("ist.png")
 im.multiframe(3,1)
 hist(values(ice[[1]]), main="Istogramma Red", col="red")
