@@ -40,7 +40,7 @@ ice <- rast("ISS074-E-417243.jpg")
 Le singole bande sono state plottate usando un multiframe:
 ``` r
 im.multiframe(2,1)
-plot(ice[[1]])
+plot(ice[[1]]) 
 plot(ice[[2]])
 ```
 
