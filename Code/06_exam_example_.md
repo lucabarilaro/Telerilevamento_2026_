@@ -1,10 +1,12 @@
-# Ice spread: questo è il titolo della presentazione da fare all'esame 🧊
+# Ice spread: questo è il titolo della presentazione da fare all'esame 
 
-<img width="275" height="183" alt="download" src="https://github.com/user-attachments/assets/2faf1aeb-6d5c-4113-947c-f1f5425a5d30" />
+<img width="1280" height="960" alt="JCXUFYUOUHQ3OILJNXS3W5GJVE" src="https://github.com/user-attachments/assets/4d45d77e-b261-4e21-84bd-3d118e040de0" />
+
+*Nota bene: l'immagine è stata riportata semplicemente trascinandola del desktop*
 
 In questa riga scrivo l'intro alle mie analisi.
 
-## Immagine satellitare da internet: dati di input 📡
+## Immagine satellitare da internet: dati di input 
 
 L'immagine è stata scaricata da Earth Observatory:
 https://science.nasa.gov/earth/earth-observatory/contours-of-the-james-bay-lowlands/
@@ -12,16 +14,18 @@ https://science.nasa.gov/earth/earth-observatory/contours-of-the-james-bay-lowla
 L'immagine è stata scaricata da [Earth Observatory](
 https://science.nasa.gov/earth/earth-observatory/contours-of-the-james-bay-lowlands/)
 
+*Nota bene: con il secondo metodo, mettendo le quadre, associo il link direttamente al nome. Stilisticamente più carino*
+
 Pacchetti usati in R:
 
 ``` r
-library(terra) # package to manage spatial data
-library(imageRy) # package for RS didactics
+library(terra) #package to manage spatial data
+library(imageRy) #package for RS didactics
 ```
 
 Importazione dei dati tramite `setwd()`:
 ``` r
-setwd("~/Desktop/")
+setwd()
 getwd()
 list.files()
 ```
@@ -31,9 +35,9 @@ Dati importati via `rast()`:
 ice <- rast("ISS074-E-417243.jpg")
 ```
 
-## Plottaggio delle singole bande 🖼️
+## Plottaggio delle singole bande 
 
-Le singole bande sono state plottate usando un ultiframe:
+Le singole bande sono state plottate usando un multiframe:
 ``` r
 im.multiframe(2,1)
 plot(ice[[1]])
@@ -51,7 +55,7 @@ Se vogliamo inserire un elenco puntato è sufficiente usare il +:
 + punto dell'elenco
 + punto dell'elenco
 
-Istogframmi per la mia immagine:
+Istogrammi per la mia immagine:
 ``` r
 im.multiframe(3,1)
 hist(values(ice[[1]]), main="Istogramma Red", col="red")
