@@ -12,8 +12,8 @@ plot(ice[[1]])
 plot(ice[[2]])
 
 png("prime_due_band.png") #funzione per salvare .png nella mia cartella pc
-im.multiframe(2,1)
-plot(ice[[1]])
+im.multiframe(2,1) 
+plot(ice[[1]]) #la doppia parentesi quadra indica un subset
 plot(ice[[2]])
 dev.off()
 
