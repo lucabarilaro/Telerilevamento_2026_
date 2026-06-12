@@ -32,9 +32,17 @@ Il  progetto ha l'obiettivo di dimostrare l'impatto degradativo che le specie al
 - Evidenziare l'efficacia e la necessità di interventi di *wildlife management* come strumento fondamentale per la biologia della conservazione, la quale insegna che le specie aliene invasive rappresentano una delle maggiori minacce per la diversità biologica;
 - Dimostrare come le attività di pascolo e calpestio effettuate dal muflone abbiano alterato la biomassa della macchia mediterranea in determinate aree dell'Isola, compromettendo il naturale rinnovamento forestale.
 
+In questo progetto viene analizzata l'efficacia dell'intervento di eradicazione del muflone valutando lo stato della vegetazione attraverso immagini satellitari Sentinel-2 prelevate in tre momenti temporali:
 
+- pre-eradicazione;
+- eradicazione;
+- post-eradicazione.
 
+Gli indici vegetazionali impiegati per le analisi sono:
 
+- NDVI (*Normalized Difference Vegetation Index*), per misurare lo stato di salute della vegetazione;
+- DVI (*Difference Vegetation Index*), per misurare la quantità assoluta di vegetazione;
+- Rao's Q, per misurare la complessità e la biodiversità dell'intero ecosistema.
 
 
 
