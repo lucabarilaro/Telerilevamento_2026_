@@ -27,6 +27,6 @@ I dati rilevati sui mufloni dell’Isola del Giglio hanno riscontrato una popola
 
 ## 2. Obiettivo del progetto in R 🎯
 
-
+L'obiettivo del progetto è osservare le differenze nel tempo 
 
 
