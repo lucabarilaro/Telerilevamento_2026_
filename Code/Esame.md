@@ -54,6 +54,11 @@ Le immagini satellitari provengono da [**Google Earth Engine**](https://eartheng
 > [!NOTE]
 > Il codice JavaScript utilizzato è quello fornito durante il corso ed è disponibile nel file Codice.js
 
+### Importazione e visualizzazione immagini
+Una volta ottenute le immagini satellitari, vengono caricate su R impostando la working directory di riferimento:
+
+
+
 
 
 
