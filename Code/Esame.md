@@ -56,7 +56,7 @@ Le immagini satellitari provengono da [**Google Earth Engine**](https://eartheng
 
 ### Importazione e visualizzazione immagini
 Una volta ottenute le immagini satellitari, vengono caricate in R. 
-Per prima cosa, chiamare i pacchetti necessari:
+Per prima cosa, chiamo i pacchetti necessari:
 
 ````r
 library(terra)      # Per lavorare con raster e immagini satellitari
@@ -67,7 +67,7 @@ library(reshape2)   # Riorganizzazioni dei dati tabellari
 **AGGIUNGERE**
 ````
 
-In seguito, impostare la working directory:
+In seguito, imposto la working directory:
 
 ````r
 setwd("C:/Users/lucab/Desktop/progetto_giglio/data")
@@ -81,6 +81,11 @@ plot(pre_2016)                   # visualizzato il primo .tif
 ````
 
 <img width="664" height="664" alt="pre_2016" src="https://github.com/user-attachments/assets/d100be43-5d3b-4a6b-b956-0542d05d99e1" />
+> Immagine satellitare nelle 4 bande riguardante il periodo antecedente all'intervento di eradicazione
+
+
+
+
 
 
 
