@@ -55,7 +55,32 @@ Le immagini satellitari provengono da [**Google Earth Engine**](https://eartheng
 > Il codice JavaScript utilizzato è quello fornito durante il corso ed è disponibile nel file Codice.js
 
 ### Importazione e visualizzazione immagini
-Una volta ottenute le immagini satellitari, vengono caricate su R impostando la working directory di riferimento:
+Una volta ottenute le immagini satellitari, vengono caricate in R. 
+Per prima cosa, chiamare i pacchetti necessari:
+
+````r
+library(terra)      # Per lavorare con raster e immagini satellitari
+library(imageRy)    # Funzioni di visualizzazione rapide
+library(viridis)    # Palette di colori
+library(ggplot2)    # Pacchetto per la creazione di grafici
+library(reshape2)   # Riorganizzazioni dei dati tabellari
+**AGGIUNGERE**
+````
+
+In seguito, impostare la working directory:
+
+````r
+setwd("C:/Users/lucab/Desktop/progetto_giglio/data")
+````
+
+Ora è possibile importare i raster Sentinel-2 acquisiti:
+
+````r
+pre_2016 = rast("pre_2016.tif")  # importato e nominato il primo .tif
+plot(pre_2016)                   # visualizzato il primo .tif 
+````
+
+<img width="664" height="664" alt="pre_2016" src="https://github.com/user-attachments/assets/d100be43-5d3b-4a6b-b956-0542d05d99e1" />
 
 
 
