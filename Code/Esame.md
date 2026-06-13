@@ -80,12 +80,18 @@ pre_2016 = rast("pre_2016.tif")  # importato e nominato il primo .tif
 plot(pre_2016)                   # visualizzato il primo .tif 
 ````
 
-<img width="664" height="664" alt="pre_2016" src="https://github.com/user-attachments/assets/d100be43-5d3b-4a6b-b956-0542d05d99e1" />
+<img width="1280" height="709" alt="pre_2016" src="https://github.com/user-attachments/assets/4a84e702-1dec-442b-99f5-ee7b68b5fbde" />
 
 > Immagine satellitare nelle 4 bande riguardante il periodo antecedente all'intervento di eradicazione
 
+````r
+eradicazione_2022 = rast("eradicazione_2022.tif")  # importato e nominato il secondo .tif
+plot(eradicazione_2022)                            # visualizzato il secondo .tif
+````
 
+<img width="1280" height="709" alt="eradicazione_2022" src="https://github.com/user-attachments/assets/47cf786b-eead-498e-82c1-dcee01a90ae5" />
 
+> Immagine satellitare nelle 4 bande a un anno dall'inizio dell'intervento di eradicazione 
 
 
 
