@@ -89,9 +89,19 @@ eradicazione_2022 = rast("eradicazione_2022.tif")  # importato e nominato il sec
 plot(eradicazione_2022)                            # visualizzato il secondo .tif
 ````
 
-<img width="1280" height="709" alt="eradicazione_2022" src="https://github.com/user-attachments/assets/47cf786b-eead-498e-82c1-dcee01a90ae5" />
+<img width="1280" height="709" alt="eradicazione_2022" src="https://github.com/user-attachments/assets/711c3ca4-b85f-4d74-9eeb-b945e0f53130" />
 
-> Immagine satellitare nelle 4 bande a un anno dall'inizio dell'intervento di eradicazione 
+> Immagine satellitare nelle 4 bande a un anno dall'inizio dell'intervento di eradicazione
+
+````r
+post_2026 = rast("post_2026.tif")  # importato e nominato il terzo .tif
+plot(post_2026)                    # visualizzato il terzo .tif
+````
+
+<img width="1280" height="709" alt="post_2026" src="https://github.com/user-attachments/assets/353ef06e-6843-4cbe-8d14-e7b18f9e3c4f" />
+
+> Immagine satellitare nelle 4 bande a due anni dalla fine dell'intervento di eradicazione
+
 
 
 
