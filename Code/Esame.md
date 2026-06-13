@@ -21,7 +21,7 @@ I dati rilevati sui mufloni dell’Isola del Giglio hanno riscontrato una popola
 
 <img width="1600" height="1131" alt="Isola_Giglio_Mufloni" src="https://github.com/user-attachments/assets/ced4c933-6cfd-4f4a-aed6-b19c98b6e720" />
 
-> Isola del Giglio. Nel riquadro arancione è indicata l'area di intervento, con presenza di siti caratterizzati da maggior densità della specie. Mappa di Lorenzo La Russa.
+> Isola del Giglio. Nel riquadro arancione è indicata l'area di intervento. Mappa di Lorenzo La Russa
 
 
 
@@ -81,6 +81,7 @@ plot(pre_2016)                   # visualizzato il primo .tif
 ````
 
 <img width="664" height="664" alt="pre_2016" src="https://github.com/user-attachments/assets/d100be43-5d3b-4a6b-b956-0542d05d99e1" />
+
 > Immagine satellitare nelle 4 bande riguardante il periodo antecedente all'intervento di eradicazione
 
 
