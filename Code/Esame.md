@@ -116,8 +116,25 @@ dev.off() # chiudo il pannello di visualizzazione delle immagini
 
 > Confronto tra le immagini in RGB delle diverse fasi analizzate
 
+### 3.4. Visualizzazione NIR in Blue
 
-### 3.4. Visualizzazione 4 bande separate per le 3 immagini (RGB + NIR)
+````r
+im.multiframe(1, 3) # preparo pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
+# r = 3 (Red), g = 2 (Green), b = 4 (NIR) # imposto NIR nel canale blu
+plotRGB(pre_2016, r = 3, g = 2, b = 4, stretch = "lin", main = "Pre-eradicazione (2016)")  # utilizzo funzione pacchetto terra
+plotRGB(eradicazione_2022, r = 3, g = 2, b = 4, stretch = "lin", main = "Eradicazione (2022)")      
+plotRGB(post_2026, r = 3, g = 2, b = 4, stretch = "lin", main = "Post-eradicazione (2026)")
+dev.off() # chiudo il pannello di visualizzazione delle immagini
+````
+<p align="center">
+<img width="664" height="664" alt="nir_in_blue" src="https://github.com/user-attachments/assets/ab66c37f-35c4-4ac9-b08e-b73185327ae0" />
+
+> Confronto eseguito con il NIR nel canale del blu nei diversi anni presi in analisi
+
+> [!NOTE]
+> Sostituendo il **NIR** al posto della banda del blu (r=3, g=2, b=4), si evidenziano in **blu** le zone di **vegetazione fitta** (alta riflettanza del NIR) e in giallo/rosso tutto ciò che non è vegetazione, come suolo nudo e roccia esposta. In particolare, il colore **rosso** indica suolo esposto in cui, probabilmente, la **vegetazione** è stata **consumata** da elevata attività di **calpestio e pascolamento** effettuata dai mufloni.
+
+### 3.5. Visualizzazione 4 bande separate per le 3 immagini (RGB + NIR)
 
 ````r
 im.multiframe(3, 4) # visualizzo pannello grafico con 3 righe (anni) e 4 colonne (bande)
