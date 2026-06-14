@@ -48,13 +48,13 @@ Gli indici vegetazionali impiegati per le analisi sono:
 
 ## 3. Metodologia 🛰️
 
-### Acquisizione immagini
+### 3.1. Acquisizione immagini
 
 Le immagini satellitari provengono da [**Google Earth Engine**](https://earthengine.google.com/), attraverso cui è stata selezionata l'area di intervento per le fasi e le relative date precedentemente indicate.
 > [!NOTE]
 > Il codice JavaScript utilizzato è quello fornito durante il corso ed è disponibile nel file Codice.js
 
-### Importazione e visualizzazione immagini
+### 3.2. Importazione e visualizzazione immagini
 Una volta ottenute le immagini satellitari, vengono caricate in R. 
 Per prima cosa, chiamo i pacchetti necessari:
 
@@ -102,6 +102,19 @@ plot(post_2026)                    # visualizzato il terzo .tif
 
 > Immagine satellitare nelle 4 bande a due anni dalla fine dell'intervento di eradicazione
 
+
+### 3.3. Visualizzazione immagini in RGB 
+
+````r
+im.multiframe(1, 3)  # preparo pannello grafico con 1 riga e 3 colonne usando  la funzione di imageRy
+im.plotRGB(pre_2016, r = 3, g = 2, b = 1, title = "Pre-eradicazione")  # visualizzo immagini in RGB con funzione di ImageRy
+im.plotRGB(eradicazione_2022, r = 3, g = 2, b = 1, title = "Eradicazione") 
+im.plotRGB(post_2026, r = 3, g = 2, b = 1, title = "Post-eradicazione")
+dev.off() # chiudo il pannello di visualizzazione delle immagini
+````
+<img width="1280" height="709" alt="rgb" src="https://github.com/user-attachments/assets/449524b3-738e-482d-9730-c45927637798" />
+
+> Confronto tra le immagini in RGB delle diverse fasi analizzate
 
 
 
