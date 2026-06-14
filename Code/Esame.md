@@ -106,7 +106,7 @@ plot(post_2026)                    # visualizzato il terzo .tif
 ### 3.3. Visualizzazione immagini in RGB 
 
 ````r
-im.multiframe(1, 3)  # preparo pannello grafico con 1 riga e 3 colonne usando  la funzione di imageRy
+im.multiframe(1, 3)  # preparo pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
 im.plotRGB(pre_2016, r = 3, g = 2, b = 1, title = "Pre-eradicazione")  # visualizzo immagini in RGB con funzione di ImageRy
 im.plotRGB(eradicazione_2022, r = 3, g = 2, b = 1, title = "Eradicazione") 
 im.plotRGB(post_2026, r = 3, g = 2, b = 1, title = "Post-eradicazione")
@@ -117,8 +117,27 @@ dev.off() # chiudo il pannello di visualizzazione delle immagini
 > Confronto tra le immagini in RGB delle diverse fasi analizzate
 
 
+### 3.4. Visualizzazione 4 bande separate per le 3 immagini (RGB + NIR)
 
+````r
+im.multiframe(3, 4) # visualizzo pannello grafico con 3 righe (anni) e 4 colonne (bande)
+plot(pre_2016[[1]], col = viridis(100), main = "2016 - Blue")
+plot(pre_2016[[2]], col = viridis(100), main = "2016 - Green")
+plot(pre_2016[[3]], col = viridis(100), main = "2016 - Red")
+plot(pre_2016[[4]], col = viridis(100), main = "2016 - NIR")
 
+plot(eradicazione_2022[[1]], col = viridis(100), main = "2022 - Blue")
+plot(eradicazione_2022[[2]], col = viridis(100), main = "2022 - Green")
+plot(eradicazione_2022[[3]], col = viridis(100), main = "2022 - Red")
+plot(eradicazione_2022[[4]], col = viridis(100), main = "2022 - NIR")
+
+plot(post_2026[[1]], col = viridis(100), main = "2026 - Blue")
+plot(post_2026[[2]], col = viridis(100), main = "2026 - Green")
+plot(post_2026[[3]], col = viridis(100), main = "2026 - Red")
+plot(post_2026[[4]], col = viridis(100), main = "2026 - NIR")
+dev.off() # chiudo il pannello di visualizzazione delle immagini
+````
+<img width="1280" height="709" alt="rgb_nir" src="https://github.com/user-attachments/assets/3d88111e-91ea-4c4b-8edc-3ddfae47c495" />
 
 
 
