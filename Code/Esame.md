@@ -162,4 +162,33 @@ dev.off() # chiudo il pannello di visualizzazione delle immagini
 > Le bande RGB (B4, B3, B2) mostrano lo spettro visibile, dove i pigmenti fogliari assorbono gran parte della luce. Al contrario, la banda NIR (B8) evidenzia lo stato di salute e la densità della vegetazione strutturale, poiché il mesofillo  delle foglie sane riflette fortemente questa lunghezza d'onda.
 
 
+## 4. Calcolo degli indici vegetazionali 🌳
+
+Gli indici vegetazionali impiegati per le analisi sono:
+
+- DVI (Difference Vegetation Index), per misurare la quantità assoluta di vegetazione;
+- NDVI (Normalized Difference Vegetation Index), per misurare lo stato di salute della vegetazione;
+- Rao's Q, per misurare la complessità e la biodiversità dell'intero ecosistema.
+
+
+### 4.1. Analisi DVI 
+
+Il DVI è uno dei più semplici indici spettrali utilizzati per valutare la presenza e la vitalità della vegetazione. Si calcola sottraendo la riflettanza nel rosso (Red, B4) da quella nel vicino infrarosso (NIR, B8):
+
+$$
+DVI = NIR - RED
+$$
+
+Le piante sane riflettono molto nel NIR e poco nel rosso; quindi, valori alti di DVI indicano vegetazione vigorosa, mentre valori vicini allo zero o negativi indicano suolo nudo o roccia. Sebbene fornisca un'indicazione diretta della biomassa verde, il DVI è un indice non normalizzato. Questo lo rende utile per analisi comparative rapide quando le condizioni di acquisizione sono simili, ma risente degli effetti topografici e delle ombre, motivo per cui spesso gli si preferisce l'NDVI.
+
+````r
+im.multiframe(2, 2)  # preparo pannello grafico con 2 righe e 2 colonne usando la funzione di imageRy
+plot(dvi_2016, col = viridis(100), main = "DVI 2016")  # METTERE COMMENTI
+plot(dvi_2022, col = viridis(100), main = "DVI 2022")
+plot(dvi_2026, col = viridis(100), main = "DVI 2026")
+````
+<img width="1280" height="709" alt="dvi" src="https://github.com/user-attachments/assets/a2e21c06-8563-4f51-924c-95c280fe8f02" />
+
+
+
 
