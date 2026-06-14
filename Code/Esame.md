@@ -21,7 +21,7 @@ I dati rilevati sui mufloni dell’Isola del Giglio hanno riscontrato una popola
 
 <img width="1600" height="1131" alt="Isola_Giglio_Mufloni" src="https://github.com/user-attachments/assets/ced4c933-6cfd-4f4a-aed6-b19c98b6e720" />
 
-> Isola del Giglio. Nel riquadro arancione è indicata l'area di intervento. Mappa di Lorenzo La Russa
+> Isola del Giglio. Nel riquadro arancione è indicata l'area di intervento. Mappa del Dott. Lorenzo La Russa
 
 
 
@@ -171,7 +171,7 @@ Gli indici vegetazionali impiegati per le analisi sono:
 - Rao's Q, per misurare la complessità e la biodiversità dell'intero ecosistema.
 
 
-### 4.1. Analisi DVI 
+### 4.1. Analisi DVI (Difference Vegetation Index)
 
 Il DVI è uno dei più semplici indici spettrali utilizzati per valutare la presenza e la vitalità della vegetazione. Si calcola sottraendo la riflettanza nel rosso (Red, B4) da quella nel vicino infrarosso (NIR, B8):
 
@@ -195,7 +195,27 @@ plot(dvi_2026, col = viridis(100), main = "DVI 2026")   # visualizzo DVI dopo l'
 
 > DVI dei tre periodi presi in analisi
 
-Calcolo la differenza tra il DVI del 2016 e quello del 2022, e il DVI del 2016 e quello del 2026. 
+Calcolo la differenza tra il DVI del 2016 e quello del 2022 al fine di vedere l'impatto tra il periodo di raggiungimento della capacità portante della specie (già sottoposta dal 2009 a interventi di controllo) e il primo anno di intervento di eradicazione; inoltre, calcolo la differenza tra il DVI del 2016 e quello del 2026, anno corrente.
+
+````r
+dvi_diff_fase1  <- dvi_2022 - dvi_2016
+dvi_diff_totale <- dvi_2026 - dvi_2016
+
+im.multiframe(1, 2)
+plot(dvi_diff_fase1, col = magma(100), range = c(-0.20, 0.30), main = "ΔDVI (2022 - 2016)")
+plot(dvi_diff_totale, col = magma(100), range = c(-0.20, 0.30), main = "ΔDVI (2026 - 2016)")
+````
+<img width="1280" height="709" alt="delta_dvi" src="https://github.com/user-attachments/assets/4509df5e-8253-4d16-911d-f0db6e03f19b" />
+
+> Confronto dei ΔDVI
+
+> [!NOTE]
+> In particolare, il confronto mette in evidente risalto una differenza nel Promontorio del Franco, area N-O dell'Isola a elevata densità della specie (*La Russa L., com. pers.*). Si passa da valori negativi, indicanti una diminuzione del valore di DVI e, quindi, una perdita di vegetazione, a valori positivi (rosso-arancio), indicanti una progressiva ricolonizzazione della vegetazione su suolo precedentemente degradato.
+
+
+### Analisi NDVI (Normalized Difference Vegetation Index)
+
+
 
 
 
