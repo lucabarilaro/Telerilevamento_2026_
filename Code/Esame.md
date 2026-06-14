@@ -213,9 +213,41 @@ plot(dvi_diff_totale, col = magma(100), range = c(-0.20, 0.30), main = "ΔDVI (2
 > In particolare, il confronto mette in evidente risalto una differenza nel Promontorio del Franco, area N-O dell'Isola a elevata densità della specie (*La Russa L., com. pers.*). Si passa da valori negativi, indicanti una diminuzione del valore di DVI e, quindi, una perdita di vegetazione, a valori positivi (rosso-arancio), indicanti una progressiva ricolonizzazione della vegetazione su suolo precedentemente degradato.
 
 
-### Analisi NDVI (Normalized Difference Vegetation Index)
+### 4.2. Analisi NDVI (Normalized Difference Vegetation Index)
 
+L'NDVI è uno degli indici di vegetazione più diffusi in telerilevamento grazie alla sua capacità di normalizzare le differenze tra immagini acquisite in tempi o condizioni diverse, riducendo gli effetti di disturbo causati dalle ombre e dalla topografia del terreno. Si calcola come il rapporto tra la differenza e la somma delle riflettanze nel vicino infrarosso (NIR) e nel rosso (Red):
 
+$$NDVI = \frac{NIR - Red}{NIR + Red}$$
+
+I valori ottenuti variano strettamente tra $-1$ e $+1$: valori vicini a $+1$ indicano vegetazione densa, strutturata e sana, mentre valori prossimi a $0$ o negativi indicano la totale assenza di fotosintesi, identificando suolo nudo, rocce o acqua. L'NDVI è particolarmente utile per monitorare variazioni nella copertura vegetale nel tempo e valutare stress idrici, dinamiche ecologiche o impatti antropici e faunistici, come nel caso del sovrapascolamento.
+
+````r
+ndvi_2016 <- im.ndvi(pre_2016, 4, 3)  
+ndvi_2022 <- im.ndvi(eradicazione_2022, 4, 3)  
+ndvi_2026 <- im.ndvi(post_2026, 4, 3)  
+
+im.multiframe(1, 3)
+plot(ndvi_2016, col = viridis(100), main = "NDVI 2016")  
+plot(ndvi_2022, col = viridis(100), main = "NDVI 2022")
+plot(ndvi_2026, col = viridis(100), main = "NDVI 2026")
+````
+<img width="1280" height="709" alt="ndvi" src="https://github.com/user-attachments/assets/673fb7e0-7d92-4b04-8c10-23590dad23bd" />
+
+> NDVI dei tre periodi presi in analisi
+
+Procedo con il calcolo della differenza tra l'NDVI del 2016 e quello del 2022 e il calcolo della differenza tra l'NDVI del 2016 e quello del 2026, anno corrente.
+
+````r
+ndvi_diff_fase1  <- ndvi_2022 - ndvi_2016
+ndvi_diff_totale <- ndvi_2026 - ndvi_2016
+
+im.multiframe(1, 2) # configuro il pannello grafico con 1 riga e 2 colonne
+plot(ndvi_diff_fase1, col = magma(100), range = c(-0.6, 0.6), main = "ΔNDVI (2022 - 2016)")
+plot(ndvi_diff_totale, col = magma(100), range = c(-0.6, 0.6), main = "ΔNDVI (2026 - 2016)")
+````
+<img width="1280" height="709" alt="delta_ndvi_new" src="https://github.com/user-attachments/assets/c6a07380-ecd5-40df-9a7d-735809a49927" />
+
+>  Confronto dei ΔNDVI
 
 
 
