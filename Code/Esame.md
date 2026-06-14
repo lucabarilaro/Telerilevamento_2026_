@@ -249,6 +249,8 @@ plot(ndvi_diff_totale, col = magma(100), range = c(-0.6, 0.6), main = "ΔNDVI (2
 
 >  Confronto dei ΔNDVI
 
+> [!NOTE]
+> Di nuovo, il confronto mette in evidenza una differenza ben marcata nell'area del Promontorio del Franco. Inoltre, a differenza del confronto dei ΔDVI, si notano differenze più diffuse e continue su tutto il versante, passando da valori prossimi allo zero a diffusi valori positivi (arancione-giallo), i quali testimoniano un effettivo incremento strutturale della biomassa fogliare su un suolo precedentemente degradato. 
 
 
 
