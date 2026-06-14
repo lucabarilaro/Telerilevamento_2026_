@@ -251,7 +251,7 @@ plot(ndvi_diff_totale, col = magma(100), range = c(-0.6, 0.6), main = "ΔNDVI (2
 
 > [!NOTE]
 > Di nuovo, il confronto mette in evidenza una differenza ben marcata nell'area del Promontorio del Franco (N-O). Inoltre, si notano differenze più diffuse e continue su tutto il versante, passando da valori prossimi allo 0 a diffusi valori positivi (arancione-giallo), i quali testimoniano un effettivo incremento strutturale della biomassa fogliare su un suolo precedentemente degradato. 
-Purtroppo, è da segnalare un'anomalia geometrica nel settore meridionale dell'Isola. Tale discontinuità netta è un artefatto radiometrico che potrebbe essere dovuto alla giunzione di diverse strisce di acquisizione (*swath*) del sensore Sentinel-2 o a variazioni atmosferiche repentine tra i passaggi orbitali.
+Purtroppo, è da segnalare un'anomalia geometrica sempre più marcata nel settore meridionale dell'Isola. Tale discontinuità netta è un artefatto radiometrico che potrebbe essere dovuto alla giunzione di diverse strisce di acquisizione (*swath*) del sensore Sentinel-2 o a variazioni atmosferiche repentine tra i passaggi orbitali.
 
 
 
