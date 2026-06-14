@@ -182,16 +182,20 @@ $$
 Le piante sane riflettono molto nel NIR e poco nel rosso; quindi, valori alti di DVI indicano vegetazione vigorosa, mentre valori vicini allo zero o negativi indicano suolo nudo o roccia. Sebbene fornisca un'indicazione diretta della biomassa verde, il DVI è un indice non normalizzato. Questo lo rende utile per analisi comparative rapide quando le condizioni di acquisizione sono simili, ma risente degli effetti topografici e delle ombre, motivo per cui spesso gli si preferisce l'NDVI.
 
 ````r
-dvi_2016 <- im.dvi(pre_2016, 4, 3)   # COMMENTARE. XCHE 4,3?
-dvi_2022 <- im.dvi(eradicazione_2022, 4, 3)  
+dvi_2016 <- im.dvi(pre_2016, 4, 3)   # utilizzo funzione im.dvi() del pacchetto imageRy 
+dvi_2022 <- im.dvi(eradicazione_2022, 4, 3)  # 4 è la banda NIR, 3 è la banda Red
 dvi_2026 <- im.dvi(post_2026, 4, 3)  
 
-im.multiframe(2, 2)  # preparo pannello grafico con 2 righe e 2 colonne usando la funzione di imageRy
-plot(dvi_2016, col = viridis(100), main = "DVI 2016")  # METTERE COMMENTI
-plot(dvi_2022, col = viridis(100), main = "DVI 2022")
-plot(dvi_2026, col = viridis(100), main = "DVI 2026")
+im.multiframe(1, 3)  # preparo pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
+plot(dvi_2016, col = viridis(100), main = "DVI 2016")   # visualizzo DVI prima dell'eradicazione
+plot(dvi_2022, col = viridis(100), main = "DVI 2022")   # visualizzo DVI durante il primo anno di eradicazione
+plot(dvi_2026, col = viridis(100), main = "DVI 2026")   # visualizzo DVI dopo l'eradicazione
 ````
-<img width="1280" height="709" alt="dvi" src="https://github.com/user-attachments/assets/89cd19a3-94f4-4f13-af00-4ec5abbcf70b" />
+<img width="1280" height="709" alt="dvi_new" src="https://github.com/user-attachments/assets/8bb4a1c5-8d19-49f4-97bc-137d66a0acc3" />
+
+> DVI dei tre periodi presi in analisi
+
+Calcolo la differenza tra il DVI del 2016 e quello del 2022, e il DVI del 2016 e quello del 2026. 
 
 
 
