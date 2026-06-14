@@ -137,7 +137,7 @@ plot(post_2026[[3]], col = viridis(100), main = "2026 - Red")
 plot(post_2026[[4]], col = viridis(100), main = "2026 - NIR")
 dev.off() # chiudo il pannello di visualizzazione delle immagini
 ````
-<img width="1280" height="709" alt="rgb_nir" src="https://github.com/user-attachments/assets/3d88111e-91ea-4c4b-8edc-3ddfae47c495" />
+<img width="1280" height="709" alt="rgb_nir" src="https://github.com/user-attachments/assets/9d4ce8bf-a504-4421-9711-0326be702a5d" />
 
 > Confronto tra le 4 bande (colonne) nei diversi anni (righe) presi in analisi
 
