@@ -182,12 +182,17 @@ $$
 Le piante sane riflettono molto nel NIR e poco nel rosso; quindi, valori alti di DVI indicano vegetazione vigorosa, mentre valori vicini allo zero o negativi indicano suolo nudo o roccia. Sebbene fornisca un'indicazione diretta della biomassa verde, il DVI è un indice non normalizzato. Questo lo rende utile per analisi comparative rapide quando le condizioni di acquisizione sono simili, ma risente degli effetti topografici e delle ombre, motivo per cui spesso gli si preferisce l'NDVI.
 
 ````r
+dvi_2016 <- im.dvi(pre_2016, 4, 3)   # COMMENTARE. XCHE 4,3?
+dvi_2022 <- im.dvi(eradicazione_2022, 4, 3)  
+dvi_2026 <- im.dvi(post_2026, 4, 3)  
+
 im.multiframe(2, 2)  # preparo pannello grafico con 2 righe e 2 colonne usando la funzione di imageRy
 plot(dvi_2016, col = viridis(100), main = "DVI 2016")  # METTERE COMMENTI
 plot(dvi_2022, col = viridis(100), main = "DVI 2022")
 plot(dvi_2026, col = viridis(100), main = "DVI 2026")
 ````
-<img width="1280" height="709" alt="dvi" src="https://github.com/user-attachments/assets/a2e21c06-8563-4f51-924c-95c280fe8f02" />
+<img width="1280" height="709" alt="dvi" src="https://github.com/user-attachments/assets/89cd19a3-94f4-4f13-af00-4ec5abbcf70b" />
+
 
 
 
