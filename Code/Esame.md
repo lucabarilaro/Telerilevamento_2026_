@@ -139,7 +139,10 @@ dev.off() # chiudo il pannello di visualizzazione delle immagini
 ````
 <img width="1280" height="709" alt="rgb_nir" src="https://github.com/user-attachments/assets/3d88111e-91ea-4c4b-8edc-3ddfae47c495" />
 
+> Confronto tra le 4 bande (colonne) nei diversi anni (righe) presi in analisi
 
+> [!TIP]
+> Le bande RGB (B4, B3, B2) mostrano lo spettro visibile, dove i pigmenti fogliari assorbono gran parte della luce. Al contrario, la banda NIR (B8) evidenzia lo stato di salute e la densità della vegetazione strutturale, poiché il mesofillo  delle foglie sane riflette fortemente questa lunghezza d'onda.
 
 
 
