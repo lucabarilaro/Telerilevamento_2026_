@@ -121,20 +121,20 @@ dev.off() # chiudo il pannello di visualizzazione delle immagini
 
 ````r
 im.multiframe(3, 4) # visualizzo pannello grafico con 3 righe (anni) e 4 colonne (bande)
-plot(pre_2016[[1]], col = viridis(100), main = "2016 - Blue")
-plot(pre_2016[[2]], col = viridis(100), main = "2016 - Green")
-plot(pre_2016[[3]], col = viridis(100), main = "2016 - Red")
-plot(pre_2016[[4]], col = viridis(100), main = "2016 - NIR")
+plot(pre_2016[[1]], col = viridis(100), range = c(0, 0.5), main = "2016 - Blue")
+plot(pre_2016[[2]], col = viridis(100), range = c(0, 0.5), main = "2016 - Green")
+plot(pre_2016[[3]], col = viridis(100), range = c(0, 0.5), main = "2016 - Red")
+plot(pre_2016[[4]], col = viridis(100), range = c(0, 0.6), main = "2016 - NIR")
 
-plot(eradicazione_2022[[1]], col = viridis(100), main = "2022 - Blue")
-plot(eradicazione_2022[[2]], col = viridis(100), main = "2022 - Green")
-plot(eradicazione_2022[[3]], col = viridis(100), main = "2022 - Red")
-plot(eradicazione_2022[[4]], col = viridis(100), main = "2022 - NIR")
+plot(eradicazione_2022[[1]], col = viridis(100), range = c(0, 0.5), main = "2022 - Blue")
+plot(eradicazione_2022[[2]], col = viridis(100), range = c(0, 0.5), main = "2022 - Green")
+plot(eradicazione_2022[[3]], col = viridis(100), range = c(0, 0.5), main = "2022 - Red")
+plot(eradicazione_2022[[4]], col = viridis(100), range = c(0, 0.6), main = "2022 - NIR")
 
-plot(post_2026[[1]], col = viridis(100), main = "2026 - Blue")
-plot(post_2026[[2]], col = viridis(100), main = "2026 - Green")
-plot(post_2026[[3]], col = viridis(100), main = "2026 - Red")
-plot(post_2026[[4]], col = viridis(100), main = "2026 - NIR")
+plot(post_2026[[1]], col = viridis(100), range = c(0, 0.5), main = "2026 - Blue")
+plot(post_2026[[2]], col = viridis(100), range = c(0, 0.5), main = "2026 - Green")
+plot(post_2026[[3]], col = viridis(100), range = c(0, 0.5), main = "2026 - Red")
+plot(post_2026[[4]], col = viridis(100), range = c(0, 0.6), main = "2026 - NIR")
 dev.off() # chiudo il pannello di visualizzazione delle immagini
 ````
 <img width="1280" height="709" alt="rgb_nir" src="https://github.com/user-attachments/assets/9d4ce8bf-a504-4421-9711-0326be702a5d" />
