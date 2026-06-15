@@ -304,7 +304,7 @@ dev.off()
 
 #### Classificazione per classi di vegetazione
 
-Scelgo il range di valori adatto alla classificazione facendo riferimento agli istogrammi della distribuzione  dell'NDVI.
+Scelgo il range di valori adatto alla classificazione facendo riferimento agli istogrammi della distribuzione dell'NDVI.
 
 ````r
 # configuro il pannello grafico con 1 riga e 3 colonne
@@ -367,3 +367,9 @@ plot(ndvi_2026_cl, col = c("darkblue", "gold", "darkgreen"), main = "NDVI class.
 
 <img width="1280" height="709" alt="franco_class_veg" src="https://github.com/user-attachments/assets/0aa8ea06-8724-40f2-917a-574c6d1d0501" />
 
+> Classificazione per classi di vegetazione negli NDVI dei tre anni presi in analisi
+
+> [!NOTE]
+> 
+>  AGGIUNGERE COMMENTO
+  
