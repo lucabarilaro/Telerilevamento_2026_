@@ -253,5 +253,21 @@ plot(ndvi_diff_totale, col = magma(100), range = c(-0.6, 0.6), main = "ΔNDVI (2
 > Di nuovo, il confronto mette in evidenza una differenza ben marcata nell'area del Promontorio del Franco (N-O). Inoltre, si notano differenze più diffuse e continue su tutto il versante, passando da valori prossimi allo 0 a diffusi valori positivi (arancione-giallo), i quali testimoniano un effettivo incremento strutturale della biomassa fogliare su un suolo precedentemente degradato. 
 Purtroppo, è da segnalare un'anomalia geometrica sempre più marcata nel settore meridionale dell'Isola. Tale discontinuità netta è un artefatto radiometrico che potrebbe essere dovuto alla giunzione di diverse strisce di acquisizione (*swath*) del sensore Sentinel-2 o a variazioni atmosferiche repentine tra i passaggi orbitali.
 
+### 4.2.1. Visualizzazione dei dati 
 
+#### Ridgeline Plot
 
+Il Ridgeline Plot consente di confrontare visivamente la distribuzione dell’indice NDVI tra il 2016, il 2022 e il 2026, evidenziando eventuali variazioni nella densità e nello stato della vegetazione nel tempo.
+
+````r
+eradicazione_ridg <- c(ndvi_2016, ndvi_2022, ndvi_2026)  
+# nomino punti sull'asse verticale
+names(eradicazione_ridg) <- c("NDVI 2016 (Pre-eradicazione)", "NDVI 2022 (Eradicazione)", "NDVI 2026 (Post-eradicazione)")
+im.ridgeline(eradicazione_ridg, scale = 1.5, palette = "viridis") # creo grafico ridgeline con funzione di imageRy
+````
+<img width="1280" height="709" alt="ridgeline_plot" src="https://github.com/user-attachments/assets/1b9ee0f4-473b-4f82-9a02-33a6f941638a" />
+
+> Ridgeline Plot per confrontare la distribuzione dell'NDVI nei tre anni presi in analisi
+
+> [!NOTE]
+> Il Ridgeline Plot offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la distribuzione riflette la netta separazione tra il background marino (picco stabile sullo 0.0) e la biomassa insulare (picco > 0.5). Nel corso del decennio 2016-2026 si osserva un chiaro slittamento progressivo del picco della vegetazione verso destra nella fase post-eradicazione. Questo shift della densità di frequenza verso valori più alti dell'indice documenta matematicamente l'incremento globale di vigore vegetativo nell'area analizzata.
