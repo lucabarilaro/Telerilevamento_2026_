@@ -203,7 +203,7 @@ dev.off()
 > DVI dei tre periodi presi in analisi
 
 
-Calcolo la differenza tra il DVI del 2018 e quello del 2022 e la differenza tra il DVI del 2018 e quello del 2026, anno corrente.
+Calcolo la differenza tra il DVI del 2018 e quello del 2022 e la differenza tra il DVI del 2018 e quello del 2026.
 
 ````r
 dvi_diff_fase1  <- dvi_2022 - dvi_2018
@@ -217,3 +217,66 @@ dev.off()
 <img width="1280" height="709" alt="delta_dvi_franco_new" src="https://github.com/user-attachments/assets/94840aba-bd87-4c2a-a345-652fbef2f0be" />
 
 > Confronto dei ΔDVI
+
+> [!NOTE]
+> Il confronto mette in evidente risalto una differenza nel Promontorio del Franco, area N-O dell'Isola a elevata densità della specie (*La Russa L., com. pers.*). Si passa da valori negativi, indicanti una diminuzione del valore di DVI e, quindi, una perdita di vegetazione, a valori positivi (rosso-arancio), indicanti una progressiva ricolonizzazione della vegetazione su suolo precedentemente degradato.
+
+
+### 4.2. Analisi NDVI (Normalized Difference Vegetation Index)
+
+L'NDVI è uno degli indici di vegetazione più diffusi in telerilevamento grazie alla sua capacità di normalizzare le differenze tra immagini acquisite in tempi o condizioni diverse, riducendo gli effetti di disturbo causati dalle ombre e dalla topografia del terreno. Si calcola come il rapporto tra la differenza e la somma delle riflettanze nel vicino infrarosso (NIR) e nel rosso (Red):
+
+$$NDVI = \frac{NIR - Red}{NIR + Red}$$
+
+I valori ottenuti variano strettamente tra $-1$ e $+1$: valori vicini a $+1$ indicano vegetazione densa, strutturata e sana, mentre valori prossimi a $0$ o negativi indicano la totale assenza di fotosintesi, identificando suolo nudo, rocce o acqua. L'NDVI è particolarmente utile per monitorare variazioni nella copertura vegetale nel tempo e valutare stress idrici, dinamiche ecologiche o impatti antropici e faunistici, come nel caso del sovrapascolamento.
+
+````r
+ndvi_2018 <- im.ndvi(franco_2018, 4, 3)  
+ndvi_2022 <- im.ndvi(franco_2022, 4, 3)  
+ndvi_2026 <- im.ndvi(franco_2026, 4, 3)  
+
+im.multiframe(1, 3)
+plot(ndvi_2018, col = viridis(100), main = "NDVI 2018")  
+plot(ndvi_2022, col = viridis(100), main = "NDVI 2022")
+plot(ndvi_2026, col = viridis(100), main = "NDVI 2026")
+dev.off()
+````
+
+<img width="1280" height="709" alt="franco_ndvi" src="https://github.com/user-attachments/assets/084060e1-96bb-475b-b95f-221b50db4149" />
+
+> NDVI dei tre periodi presi in analisi
+
+Procedo con il calcolo della differenza tra l'NDVI del 2018 e quello del 2022 e il calcolo della differenza tra l'NDVI del 2018 e quello del 2026.
+
+````r
+ndvi_diff_fase1  <- ndvi_2022 - ndvi_2018
+ndvi_diff_totale <- ndvi_2026 - ndvi_2018
+
+im.multiframe(1, 2) # configuro il pannello grafico con 1 riga e 2 colonne
+plot(ndvi_diff_fase1, col = magma(100), range = c(-0.6, 0.6), main = "ΔNDVI (2022 - 2018)")
+plot(ndvi_diff_totale, col = magma(100), range = c(-0.6, 0.6), main = "ΔNDVI (2026 - 2018)")
+dev.off()
+````
+
+<img width="1280" height="709" alt="delta_ndvi_franco" src="https://github.com/user-attachments/assets/5a9934e6-5c45-42b3-ab8c-22b4659eea1b" />
+
+>  Confronto dei ΔNDVI
+
+> [!NOTE]
+> Di nuovo, il confronto mette in evidenza una differenza ben marcata nell'area del Promontorio del Franco (N-O). In particolare, si notano differenze diffuse e continue, passando da valori prossimi allo 0 a diffusi valori positivi (arancione-giallo), i quali testimoniano un effettivo incremento strutturale della biomassa fogliare su un suolo precedentemente degradato.
+
+
+### 4.2.1. Visualizzazione dei dati 
+
+#### Ridgeline Plot
+
+Il Ridgeline Plot consente di confrontare visivamente la distribuzione dell’indice NDVI tra il 2018, il 2022 e il 2026, evidenziando eventuali variazioni nella densità e nello stato della vegetazione nel tempo.
+
+````r
+franco_ridg <- c(ndvi_2018, ndvi_2022, ndvi_2026)  
+# nomino punti sull'asse verticale
+names(franco_ridg) <- c("NDVI 2018 (Pre-eradicazione)", "NDVI 2022 (Eradicazione)", "NDVI 2026 (Post-eradicazione)")
+im.ridgeline(eradicazione_ridg, scale = 1.2, palette = "viridis") # creo grafico ridgeline con funzione di imageRy
+````
+<img width="1280" height="709" alt="ridgeline_franco" src="https://github.com/user-attachments/assets/b3ab676c-b185-44ba-a026-aaf5b51b793c" />
+
