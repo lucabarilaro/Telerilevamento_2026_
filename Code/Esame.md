@@ -269,5 +269,5 @@ im.ridgeline(eradicazione_ridg, scale = 1.5, palette = "viridis") # creo grafico
 
 > Ridgeline Plot per confrontare la distribuzione dell'NDVI nei tre anni presi in analisi
 
-> [!NOTE]
+> [!IMPORTANT]
 > Il Ridgeline Plot offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la distribuzione riflette la netta separazione tra il background marino (picco stabile sullo 0.0) e la biomassa insulare (picco > 0.5). Nel corso del decennio 2016-2026 si osserva un chiaro slittamento progressivo del picco della vegetazione verso destra nella fase post-eradicazione. Questo shift della densità di frequenza verso valori più alti dell'indice documenta matematicamente l'incremento globale di vigore vegetativo nell'area analizzata.
