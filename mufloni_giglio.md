@@ -302,3 +302,67 @@ dev.off()
 > La distribuzione del ΔNDVI 2022–2018 risulta centrata attorno allo zero, indicando un cambiamento vegetazionale complessivamente limitato rispetto alla condizione pre-intervento. Al contrario, la distribuzione del ΔNDVI 2026–2018 mostra uno spostamento verso valori positivi, suggerendo un incremento generalizzato dell'attività vegetativa rispetto alle condizioni iniziali antecedenti all'intervento. Questo andamento suggerisce un possibile processo di recupero della vegetazione nel periodo successivo all'intervento di eradicazione, con un aumento dei valori NDVI rispetto alla situazione di riferimento del 2018.
 
 
+#### Classificazione per classi di vegetazione
+
+Scelgo il range di valori adatto alla classificazione facendo riferimento agli istogrammi della distribuzione  dell'NDVI.
+
+````r
+# configuro il pannello grafico con 1 riga e 3 colonne
+im.multiframe(1, 3)
+
+# istogramma NDVI 2018 
+hist(ndvi_2018, 
+     xlim = c(-0.6, 0.9), 
+     ylim = c(0, 12000), 
+     main = "Distribuzione NDVI 2018", 
+     col = "lightgray", 
+     xlab = "Valori NDVI")
+
+# istogramma NDVI 2022
+hist(ndvi_2022, 
+     xlim = c(-0.6, 0.9), 
+     ylim = c(0, 12000), 
+     main = "Distribuzione NDVI 2022", 
+     col = "lightgray", 
+     xlab = "Valori NDVI")
+
+# istogramma NDVI 2026
+hist(ndvi_2026, 
+     xlim = c(-0.6, 0.9), 
+     ylim = c(0, 12000), 
+     main = "Distribuzione NDVI 2026", 
+     col = "lightgray", 
+     xlab = "Valori NDVI")
+````
+<details>
+<summary>Istogrammi (cliccare qui)</summary> 
+  
+<img width="1280" height="709" alt="franco_ndvi_hist" src="https://github.com/user-attachments/assets/853ccb08-04b5-42a2-9a82-a6d089a70f3b" />
+
+
+Procedo con la classificazione per classi di vegetazione basata sugli istogrammi precedentemente ottenuti.
+
+````r
+class_matrix <- matrix(c(
+  -Inf,  0.25, 1,   # se NDVI < 0.2: classe 1 (mare / roccia / suolo spoglio)
+  0.25,  0.65, 2,   # se 0.2 <= NDVI < 0.4: classe 2 (vegetazione rada / gariga / zone degradate)
+  0.65,  Inf, 3     # se NDVI >= 0.4: classe 3 (vegetazione fitta / macchia in recupero)
+), ncol = 3, byrow = TRUE)
+
+class_matrix  # stampa la matrice per controllo grafico
+
+# classificazione dei singoli anni con la funzione classify del pacchetto terra
+ndvi_2018_cl <- classify(ndvi_2018, class_matrix)  
+ndvi_2022_cl <- classify(ndvi_2022, class_matrix)  
+ndvi_2026_cl <- classify(ndvi_2026, class_matrix)  
+
+
+im.multiframe(1, 3)  # creo un multiframe con 1 riga e 3 colonne per vedere l'evoluzione
+# visualizzazione delle mappe classificate
+plot(ndvi_2018_cl, col = c("darkblue", "gold", "darkgreen"), main = "NDVI class. 2018", colNA = "black")  
+plot(ndvi_2022_cl, col = c("darkblue", "gold", "darkgreen"), main = "NDVI class. 2022", colNA = "black")   
+plot(ndvi_2026_cl, col = c("darkblue", "gold", "darkgreen"), main = "NDVI class. 2026", colNA = "black")
+````
+
+<img width="1280" height="709" alt="franco_class_veg" src="https://github.com/user-attachments/assets/0aa8ea06-8724-40f2-917a-574c6d1d0501" />
+
