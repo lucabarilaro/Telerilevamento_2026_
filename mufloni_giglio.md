@@ -298,4 +298,7 @@ dev.off()
 
 > Ridgeline Plot per confrontare la distribuzione dei ΔNDVI
 
+> [!IMPORTANT]
+> La distribuzione del ΔNDVI 2022–2018 risulta centrata attorno allo zero, indicando un cambiamento vegetazionale complessivamente limitato rispetto alla condizione pre-intervento. Al contrario, la distribuzione del ΔNDVI 2026–2018 mostra uno spostamento verso valori positivi, suggerendo un incremento generalizzato dell'attività vegetativa rispetto alle condizioni iniziali antecedenti all'intervento. Questo andamento suggerisce un possibile processo di recupero della vegetazione nel periodo successivo all'intervento di eradicazione, con un aumento dei valori NDVI rispetto alla situazione di riferimento del 2018.
+
 
