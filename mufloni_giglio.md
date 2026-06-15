@@ -270,13 +270,32 @@ dev.off()
 
 #### Ridgeline Plot
 
-Il Ridgeline Plot consente di confrontare visivamente la distribuzione dell’indice NDVI tra il 2018, il 2022 e il 2026, evidenziando eventuali variazioni nella densità e nello stato della vegetazione nel tempo.
+Il Ridgeline Plot dei singoli NDVI consente di confrontare visivamente la distribuzione dell’indice NDVI tra il 2018, il 2022 e il 2026, evidenziando eventuali variazioni nel tempo dei valori assoluti di vegetazione.
 
 ````r
 franco_ridg <- c(ndvi_2018, ndvi_2022, ndvi_2026)  
 # nomino punti sull'asse verticale
 names(franco_ridg) <- c("NDVI 2018 (Pre-eradicazione)", "NDVI 2022 (Eradicazione)", "NDVI 2026 (Post-eradicazione)")
-im.ridgeline(eradicazione_ridg, scale = 1.2, palette = "viridis") # creo grafico ridgeline con funzione di imageRy
+im.ridgeline(eradicazione_ridg, scale = 1.2, palette = "viridis")  # creo grafico ridgeline con funzione di imageRy
+dev.off()
 ````
 <img width="1280" height="709" alt="ridgeline_franco" src="https://github.com/user-attachments/assets/b3ab676c-b185-44ba-a026-aaf5b51b793c" />
+
+> Ridgeline Plot per confrontare la distribuzione dell'NDVI nei tre anni presi in analisi
+
+> [!IMPORTANT]
+> Il Ridgeline Plot dei singoli NDVI offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la distribuzione riflette la netta separazione tra le aree fotosinteticamente non attive (background marino, scogliere, etc.), con picco stabile poco inferiore allo 0, e la biomassa insulare (picco > = 0.6). Tra il 2018 (pre-eradicazione) e il 2022 (primo anno di eradicazione) le due curve sono quasi sovrapposte, indicando che nelle prime fasi di intervento la vegetazione non mostrava ancora una risposta visibile. Nella curva NDVI del 2026 il picco della vegetazione si sposta nettamente verso destra (> 0.75), divenendo sensibilmente più alto. Questo shift della densità di frequenza verso valori più alti dell'indice documenta matematicamente l'incremento globale di vigore vegetativo nell'area analizzata.
+
+Inoltre, sempre tramite Ridgeline Plot, procedo con un confronto tra ΔNDVI 2022-2018 e  ΔNDVI 2026-2018 al fine di osservare eventuali cambiamenti rispetto alla situazione iniziale durante l'eradicazione (ΔNDVI 2022-2018) e dopo (ΔNDVI 2026-2018). Pertanto, in tal modo, è possibile evidenziare l'effetto dell'intervento di eradicazione. 
+
+````r
+delta_ridg <- c(ndvi_diff_fase1, ndvi_diff_totale) 
+names(delta_ridg) <- c( "ΔNDVI 2022-2018","ΔNDVI 2026-2018") # nomino punti sull'asse verticale
+im.ridgeline(delta_ridg,scale = 1.2,palette = "magma")  # creo grafico ridgeline con funzione di imageRy
+dev.off()
+````
+<img width="1280" height="709" alt="delta_ridgeline_franco" src="https://github.com/user-attachments/assets/6b84d2a7-5eb2-43d4-b243-802a565a74b8" />
+
+> Ridgeline Plot per confrontare la distribuzione dei ΔNDVI
+
 
