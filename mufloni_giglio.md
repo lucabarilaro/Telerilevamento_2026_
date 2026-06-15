@@ -41,7 +41,6 @@ Gli indici vegetazionali impiegati per le analisi sono:
 
 - **NDVI** (*Normalized Difference Vegetation Index*), per misurare lo stato di salute della vegetazione;
 - **DVI** (*Difference Vegetation Index*), per misurare la quantità assoluta di vegetazione;
-- **Rao's Q**, per misurare la complessità e la biodiversità dell'intero ecosistema.
 
 
 
@@ -50,6 +49,7 @@ Gli indici vegetazionali impiegati per le analisi sono:
 ### 3.1. Acquisizione immagini
 
 Le immagini satellitari provengono da [**Google Earth Engine**](https://earthengine.google.com/), attraverso cui è stata selezionata l'area di intervento per le fasi e le relative date precedentemente indicate.
+
 
 ### 3.2. Importazione e visualizzazione immagini
 Una volta ottenute le immagini satellitari, vengono caricate in R. 
@@ -78,8 +78,7 @@ plot(franco_2018)                      # visualizzato il primo .tif
 dev.off()                              # chiudo il pannello di visualizzazione delle immagini
 ````
 
-<p align="center">
-<img width="664" height="664" alt="franco_2018" src="https://github.com/user-attachments/assets/0545e671-79e8-4542-a960-5b30ee468bc3" />
+<img width="1280" height="709" alt="franco_2018" src="https://github.com/user-attachments/assets/0af14f6c-c695-43a3-b989-5670a12ec37c" />
 
 > Immagine satellitare nelle 4 bande riguardante il periodo antecedente all'intervento di eradicazione
 
@@ -173,7 +172,6 @@ Gli indici vegetazionali impiegati per le analisi sono:
 
 - DVI (Difference Vegetation Index), per misurare la quantità assoluta di vegetazione;
 - NDVI (Normalized Difference Vegetation Index), per misurare lo stato di salute della vegetazione;
-- Rao's Q, per misurare la complessità e la biodiversità dell'intero ecosistema.
 
 
 ### 4.1. Analisi DVI (Difference Vegetation Index)
