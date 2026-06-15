@@ -339,6 +339,7 @@ hist(ndvi_2026,
   
 <img width="1280" height="709" alt="franco_ndvi_hist" src="https://github.com/user-attachments/assets/853ccb08-04b5-42a2-9a82-a6d089a70f3b" />
 
+</details>
 
 Procedo con la classificazione per classi di vegetazione basata sugli istogrammi precedentemente ottenuti.
 
