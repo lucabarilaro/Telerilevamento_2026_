@@ -339,7 +339,7 @@ hist(ndvi_2026,
 
 </details>
 
-Procedo con la classificazione per classi di vegetazione basata sugli istogrammi precedentemente ottenuti.
+Procedo con la classificazione per classi NDVI di copertura del suolo basata sugli istogrammi precedentemente ottenuti.
 
 ````r
 class_matrix <- matrix(c(
@@ -451,4 +451,23 @@ p1 + p2 + p3 # affianco i tre grafici in un'unica riga
 <img width="1280" height="709" alt="franco_tab_classi" src="https://github.com/user-attachments/assets/7d3442c1-af9f-4375-a9b6-34c0705667c1" />
 
 > Diagramma a barre delle classi NDVI di copertura del suolo
+
+
+## 6. Analisi multitemporale 📈
+
+L'analisi multitemporale è stata applicata per valutare l'evoluzione della risposta vegetazionale prima, durante e dopo l'intervento di eradicazione del muflone dall'Isola del Giglio. Il confronto del ΔNDVI consente di quantificare la variazione del vigore vegetativo rispetto alla condizione iniziale (risposta vegetativa quantitativa), mentre l'analisi delle differenze nella banda del vicino infrarosso (NIR), ovvero la variazione della riflettanza legata alla struttura vegetale, fornisce un'ulteriore indicazione della variazione della struttura e della biomassa vegetale. L'integrazione delle informazioni spettrali e spaziali consente quindi di individuare non solo l'entità del cambiamento, ma anche la sua distribuzione all'interno dell'area di studio.
+
+````r
+nir_diff_22 <- franco_2022[[4]] - franco_2018[[4]]  # calcolo differenza NIR durante l'intervento
+ndvi_diff_22 <- ndvi_2022 - ndvi_2018  # calcolo differenza NDVI durante l'intervento
+nir_diff_26 <- franco_2026[[4]] - franco_2018[[4]]  # calcolo differenza NIR dopo l'intervento
+ndvi_diff_26 <- ndvi_2026 - ndvi_2018  # calcolo differenza NDVI dopo l'intervento
+
+im.multiframe(2, 2)  # preparo pannello grafico con 2 righe e 2 colonne
+plot(nir_diff_22,col = magma(100), range = c(-0.15, 0.15), main = "NIR (2022 - 2018)")
+plot(ndvi_diff_22,col = magma(100), range = c(-0.6, 0.6), main = "NDVI (2022 - 2018)")
+plot(nir_diff_26,col = magma(100), range = c(-0.15, 0.15), main = "NIR (2026 - 2018)")
+plot(ndvi_diff_26, col = magma(100), range = c(-0.6, 0.6), main = "NDVI (2026 - 2018)")
+````
+<img width="1280" height="709" alt="franco_analisi_multitemporale" src="https://github.com/user-attachments/assets/652bf44c-98c2-445e-9b37-957f23d61ec2" />
 
