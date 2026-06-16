@@ -471,3 +471,7 @@ plot(ndvi_diff_26, col = magma(100), range = c(-0.6, 0.6), main = "NDVI (2026 - 
 ````
 <img width="1280" height="709" alt="franco_analisi_multitemporale" src="https://github.com/user-attachments/assets/652bf44c-98c2-445e-9b37-957f23d61ec2" />
 
+> Confronto NIR e NDVI nel periodo 2022-2018 e 2026-2018 del muflone dall'Isola
+
+> [!NOTE]
+> Nel periodo 2022-2018, il NIR mostra una situazione abbastanza vicina allo 0 nella maggior parte dell'area, con alcune zone più scure e alcune aree più positive. Non emerge una trasformazione generalizzata della struttura vegetale. L'NDVI mostra che nel periodo durante l'intervento non si osserva ancora un segnale netto di recupero vegetazionale su tutta l'area. Questo è coerente con una dinamica ecologica reale: la rimozione della specie target non implica un aumento immediato dell'NDVI. Nel periodo 2026-2018, il NIR evidenzia un aumento più evidente di aree positive rispetto al confronto 2022–2018 e, quindi, maggiore riflettanza nel vicino infrarosso, un possibile aumento della struttura fogliare e maggiore biomassa o copertura vegetale. L'NDVI mostra una risposta più omogenea verso valori positivi, con una quota maggiore di area che presenta un incremento del vigore vegetativo. Pertanto, i risultati suggeriscono un possibile processo di recupero successivo all'intervento di eradicazione.
