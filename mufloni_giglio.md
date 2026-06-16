@@ -60,7 +60,7 @@ library(terra)      # Per lavorare con raster e immagini satellitari
 library(imageRy)    # Funzioni di visualizzazione rapide
 library(viridis)    # Palette di colori
 library(ggplot2)    # Pacchetto per la creazione di grafici
-library(reshape2)   # Riorganizzazioni dei dati tabellari
+library(patchwork)   # 
 **AGGIUNGERE**
 ````
 
@@ -264,9 +264,9 @@ dev.off()
 > Di nuovo, il confronto mette in evidenza una differenza ben marcata nell'area del Promontorio del Franco (N-O). In particolare, si notano differenze diffuse e continue, passando da valori prossimi allo 0 a diffusi valori positivi (arancione-giallo), i quali testimoniano un effettivo incremento strutturale della biomassa fogliare su un suolo precedentemente degradato.
 
 
-### 4.2.1. Visualizzazione dei dati 
+## 5. Visualizzazione dei dati 
 
-#### Ridgeline Plot
+### 5.1. Ridgeline Plot
 
 Il Ridgeline Plot dei singoli NDVI consente di confrontare visivamente la distribuzione dell’indice NDVI tra il 2018, il 2022 e il 2026, evidenziando eventuali variazioni nel tempo dei valori assoluti di vegetazione.
 
@@ -300,7 +300,7 @@ dev.off()
 > La distribuzione del ΔNDVI 2022–2018 risulta centrata attorno allo zero, indicando un cambiamento vegetazionale complessivamente limitato rispetto alla condizione pre-intervento. Al contrario, la distribuzione del ΔNDVI 2026–2018 mostra uno spostamento verso valori positivi, suggerendo un incremento generalizzato dell'attività vegetativa rispetto alle condizioni iniziali antecedenti all'intervento. Questo andamento suggerisce un possibile processo di recupero della vegetazione nel periodo successivo all'intervento di eradicazione, con un aumento dei valori NDVI rispetto alla situazione di riferimento del 2018.
 
 
-#### Classificazione per classi di copertura del suolo
+### 5.2. Classificazione per classi NDVI di copertura del suolo
 
 Scelgo il range di valori adatto alla classificazione facendo riferimento agli istogrammi della distribuzione dell'NDVI.
 
@@ -371,7 +371,8 @@ plot(ndvi_2026_cl, col = c("darkblue", "gold", "darkgreen"), main = "NDVI class.
 > 
 >  AGGIUNGERE COMMENTO
 
-#### Calcolo delle frequenze delle classi di copertura del suolo 
+
+### 5.3. Calcolo delle frequenze delle classi NDVI di copertura del suolo 
 
 Dalla classificazione precedentemente effettuata ricavo le frequenze delle diverse classi, riportandole infine in una tabella.
 
@@ -387,7 +388,7 @@ perc_2026 <- freq_2026$count * 100 / ncell(ndvi_2026_cl)
 
 # creo dataframe
 tabella_franco <- data.frame(
-  Classi = c("1: mare / roccia nuda", "2: macchia rada / degradata", "3: macchia densa / sana"),
+  Classi = c("1: mare / roccia", "2: macchia rada", "3: macchia sana"),
   a2018 = round(perc_2018, 2),
   a2022 = round(perc_2022, 2),
   a2026 = round(perc_2026, 2)
@@ -398,8 +399,55 @@ print(tabella_franco) # visualizzo tabella
 
 <div align="center">
 
-| classi | a2018 | a2022 | a2026
+| Classi | 2018 | 2022 | 2026
 |--- |--- |--- |--- |
-|   1: mare / roccia nuda | 41.74% | 41.94%  | 41.34% |  
-|   2: macchia rada / degradata | 26.04% | 33.55% | 15.67% | 
-|   3: macchia densa / sana | 32.22% | 24.51% | 42.98% | 
+|   **1**: mare / roccia | 41.74% | 41.94%  | 41.34% |  
+|   **2**: macchia rada | 26.04% | 33.55% | 15.67% | 
+|   **3**: macchia sana | 32.22% | 24.51% | 42.98% | 
+
+</div>
+     
+#### Visualizzazione 
+
+````r
+# creo grafico percentuali NDVI 2018
+p1 <- ggplot(tabella_franco, aes(x = Classi, y = a2018, fill = Classi)) +    
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = c("darkblue", "gold", "darkgreen")) +
+  ylim(0, 100) +
+  labs(title = "Classi NDVI 2018", y = "% Copertura", x = NULL) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+  legend.position = "none"  # nascondo la legenda per non duplicarla 3 volte
+  )
+
+# creo grafico percentuali NDVI 2022
+p2 <- ggplot(tabella_franco, aes(x = Classi, y = a2022, fill = Classi)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = c("darkblue", "gold", "darkgreen")) +
+  ylim(0, 100) +
+  labs(title = "Classi NDVI 2022", y = NULL, x = NULL) +  # tolgo asse y per ridondanza
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    legend.position = "none"  # nascondo la legenda per non duplicarla 3 volte
+  )
+
+# creo grafico percentuali NDVI 2026
+p3 <- ggplot(tabella_franco, aes(x = Classi, y = a2026, fill = Classi)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = c("darkblue", "gold", "darkgreen")) +
+  ylim(0, 100) +
+  labs(title = "Classi NDVI 2026", y = NULL, x = NULL) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    legend.position = "right"
+  )
+
+p1 + p2 + p3 # affianco i tre grafici in un'unica riga
+````
+
+<img width="1280" height="709" alt="franco_tab_classi" src="https://github.com/user-attachments/assets/68db7736-e7d4-4aea-895c-c3c27cc6bda6" />
+
