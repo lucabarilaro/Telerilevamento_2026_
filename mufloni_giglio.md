@@ -374,7 +374,7 @@ plot(ndvi_2026_cl, col = c("darkblue", "gold", "darkgreen"), main = "NDVI class.
 
 ### 5.3. Calcolo delle frequenze delle classi NDVI di copertura del suolo 
 
-Dalla classificazione precedentemente effettuata ricavo le frequenze delle diverse classi, riportandole infine in una tabella.
+Dalla classificazione precedentemente effettuata ricavo le frequenze delle diverse classi, riportandole in una tabella e, infine, visualizzandole in un diagramma a barre.
 
 ````r
 freq_2018 <- freq(ndvi_2018_cl)
@@ -388,7 +388,7 @@ perc_2026 <- freq_2026$count * 100 / ncell(ndvi_2026_cl)
 
 # creo dataframe
 tabella_franco <- data.frame(
-  Classi = c("1: mare / roccia", "2: macchia rada", "3: macchia sana"),
+  Classi = c("1: mare / roccia", "2: macchia rada", "3: macchia densa"),
   a2018 = round(perc_2018, 2),
   a2022 = round(perc_2022, 2),
   a2026 = round(perc_2026, 2)
@@ -403,7 +403,7 @@ print(tabella_franco) # visualizzo tabella
 |--- |--- |--- |--- |
 |   **1**: mare / roccia | 41.74% | 41.94%  | 41.34% |  
 |   **2**: macchia rada | 26.04% | 33.55% | 15.67% | 
-|   **3**: macchia sana | 32.22% | 24.51% | 42.98% | 
+|   **3**: macchia densa | 32.22% | 24.51% | 42.98% | 
 
 </div>
      
@@ -448,6 +448,7 @@ p3 <- ggplot(tabella_franco, aes(x = Classi, y = a2026, fill = Classi)) +
 
 p1 + p2 + p3 # affianco i tre grafici in un'unica riga
 ````
+<img width="1280" height="709" alt="franco_tab_classi" src="https://github.com/user-attachments/assets/7d3442c1-af9f-4375-a9b6-34c0705667c1" />
 
-<img width="1280" height="709" alt="franco_tab_classi" src="https://github.com/user-attachments/assets/68db7736-e7d4-4aea-895c-c3c27cc6bda6" />
+> Diagramma a barre delle classi NDVI di copertura del suolo
 
