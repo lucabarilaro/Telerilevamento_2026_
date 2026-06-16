@@ -365,11 +365,7 @@ plot(ndvi_2026_cl, col = c("darkblue", "gold", "darkgreen"), main = "NDVI class.
 
 <img width="1280" height="709" alt="franco_class_veg" src="https://github.com/user-attachments/assets/0aa8ea06-8724-40f2-917a-574c6d1d0501" />
 
-> Classificazione per classi di vegetazione negli NDVI dei tre anni presi in analisi
-
-> [!NOTE]
-> 
->  AGGIUNGERE COMMENTO
+> Classificazione per classi NDVI di copertura del suolo nei tre anni presi in analisi
 
 
 ### 5.3. Calcolo delle frequenze delle classi NDVI di copertura del suolo 
