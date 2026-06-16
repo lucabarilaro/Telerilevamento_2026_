@@ -274,7 +274,7 @@ Il Ridgeline Plot dei singoli NDVI consente di confrontare visivamente la distri
 franco_ridg <- c(ndvi_2018, ndvi_2022, ndvi_2026)  
 # nomino punti sull'asse verticale
 names(franco_ridg) <- c("NDVI 2018 (Pre-eradicazione)", "NDVI 2022 (Eradicazione)", "NDVI 2026 (Post-eradicazione)")
-im.ridgeline(eradicazione_ridg, scale = 1.2, palette = "viridis")  # creo grafico ridgeline con funzione di imageRy
+im.ridgeline(franco_ridg, scale = 1.2, palette = "viridis")  # creo grafico ridgeline con funzione di imageRy
 dev.off()
 ````
 <img width="1280" height="709" alt="ridgeline_franco" src="https://github.com/user-attachments/assets/b3ab676c-b185-44ba-a026-aaf5b51b793c" />
@@ -300,7 +300,7 @@ dev.off()
 > La distribuzione del ΔNDVI 2022–2018 risulta centrata attorno allo zero, indicando un cambiamento vegetazionale complessivamente limitato rispetto alla condizione pre-intervento. Al contrario, la distribuzione del ΔNDVI 2026–2018 mostra uno spostamento verso valori positivi, suggerendo un incremento generalizzato dell'attività vegetativa rispetto alle condizioni iniziali antecedenti all'intervento. Questo andamento suggerisce un possibile processo di recupero della vegetazione nel periodo successivo all'intervento di eradicazione, con un aumento dei valori NDVI rispetto alla situazione di riferimento del 2018.
 
 
-#### Classificazione per classi di vegetazione
+#### Classificazione per classi di copertura del suolo
 
 Scelgo il range di valori adatto alla classificazione facendo riferimento agli istogrammi della distribuzione dell'NDVI.
 
@@ -370,4 +370,36 @@ plot(ndvi_2026_cl, col = c("darkblue", "gold", "darkgreen"), main = "NDVI class.
 > [!NOTE]
 > 
 >  AGGIUNGERE COMMENTO
-  
+
+#### Calcolo delle frequenze delle classi di copertura del suolo 
+
+Dalla classificazione precedentemente effettuata ricavo le frequenze delle diverse classi, riportandole infine in una tabella.
+
+````r
+freq_2018 <- freq(ndvi_2018_cl)
+freq_2022 <- freq(ndvi_2022_cl)
+freq_2026 <- freq(ndvi_2026_cl)
+
+# calcolo percentuali moltiplicando il conteggio dei pixel per 100 diviso il totale dei pixel
+perc_2018 <- freq_2018$count * 100 / ncell(ndvi_2018_cl)
+perc_2022 <- freq_2022$count * 100 / ncell(ndvi_2022_cl)
+perc_2026 <- freq_2026$count * 100 / ncell(ndvi_2026_cl)
+
+# creo dataframe
+tabella_franco <- data.frame(
+  Classi = c("1: mare / roccia nuda", "2: macchia rada / degradata", "3: macchia densa / sana"),
+  a2018 = round(perc_2018, 2),
+  a2022 = round(perc_2022, 2),
+  a2026 = round(perc_2026, 2)
+)
+
+print(tabella_franco) # visualizzo tabella
+````
+
+<div align="center">
+
+| classi | a2018 | a2022 | a2026
+|--- |--- |--- |--- |
+|   1: mare / roccia nuda | 41.74% | 41.94%  | 41.34% |  
+|   2: macchia rada / degradata | 26.04% | 33.55% | 15.67% | 
+|   3: macchia densa / sana | 32.22% | 24.51% | 42.98% | 
