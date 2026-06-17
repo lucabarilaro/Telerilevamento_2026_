@@ -285,7 +285,7 @@ dev.off()
 > Ridgeline Plot per confrontare la distribuzione dell'NDVI nei tre anni presi in analisi
 
 > [!IMPORTANT]
-> Il Ridgeline Plot dei singoli NDVI offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la distribuzione riflette la netta separazione tra le aree fotosinteticamente non attive (background marino, suolo roccioso, etc.), con picco stabile poco inferiore allo 0, e la biomassa insulare. Tra il 2020 (pre-eradicazione) e il 2023 le due curve sono quasi sovrapposte, indicando che nelle prime fasi di intervento la vegetazione non mostrava ancora una risposta visibile. Nella curva NDVI del 2026 il picco della vegetazione si sposta visibilmente verso destra (> 0.75), divenendo più alto. Questo shift della densità di frequenza verso valori più alti dell'indice documenta l'incremento globale di vigore vegetativo nell'area analizzata.
+> Il Ridgeline Plot dei singoli NDVI offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la distribuzione riflette la netta separazione tra le aree fotosinteticamente non attive (background marino, suolo roccioso, etc.), con picco stabile poco inferiore allo 0, e la biomassa insulare. Tra il 2020 (pre-eradicazione) e il 2023 le due curve sono quasi sovrapposte, indicando che, a due anni dall'inizio dell'intervento di eradicazione, la vegetazione non mostrava ancora una risposta visibile. Nella curva NDVI del 2026 il picco della vegetazione si sposta visibilmente verso destra (> 0.75), divenendo più alto. Questo shift della densità di frequenza verso valori più alti dell'indice suggerisce l'incremento globale di vigore vegetativo nell'area analizzata.
 
 Inoltre, sempre tramite Ridgeline Plot, procedo con un confronto tra ΔNDVI 2023-2020, ΔNDVI 2026-2023 e ΔNDVI 2026-2020 al fine di osservare eventuali cambiamenti rispetto alla prima fase di eradicazione, alla seconda fase e alla differenza totale tra un anno prima dell'inizio e due anni dopo la fine del progetto di eradicazione. Pertanto, in tal modo, è possibile documentare l'effetto dell'intervento di eradicazione. 
 
@@ -295,8 +295,8 @@ ndvi_diff_fase2 <- ndvi_2026 - ndvi_2023
 ndvi_diff_totale <- ndvi_2026 - ndvi_2020
 
 delta_ridg <- c(ndvi_diff_fase1, ndvi_diff_fase2, ndvi_diff_totale)
-names(delta_ridg) <- c( "ΔNDVI 2023-2020","ΔNDVI 2026-2023", "ΔNDVI 2026-2020" )
-im.ridgeline(delta_ridg,scale = 1.2,palette = "magma")
+names(delta_ridg) <- c("ΔNDVI 2023-2020", "ΔNDVI 2026-2023", "ΔNDVI 2026-2020")
+im.ridgeline(delta_ridg, scale = 1.2, palette = "magma")
 dev.off()
 ````
 
@@ -469,20 +469,27 @@ dev.off()
 L'analisi multitemporale è stata applicata per valutare l'evoluzione della risposta vegetazionale prima, durante e dopo l'intervento di eradicazione del muflone dall'Isola del Giglio. Il confronto del ΔNDVI consente di quantificare la variazione del vigore vegetativo rispetto alla condizione iniziale (risposta vegetativa quantitativa), mentre l'analisi delle differenze nella banda del vicino infrarosso (NIR), ovvero la variazione della riflettanza legata alla struttura vegetale, fornisce un'ulteriore indicazione della variazione della struttura e della biomassa vegetale. L'integrazione delle informazioni spettrali e spaziali consente quindi di individuare non solo l'entità del cambiamento, ma anche la sua distribuzione all'interno dell'area di studio.
 
 ````r
-nir_diff_22 <- franco_2022[[4]] - franco_2018[[4]]  # calcolo differenza NIR durante l'intervento
-ndvi_diff_22 <- ndvi_2022 - ndvi_2018  # calcolo differenza NDVI durante l'intervento
-nir_diff_26 <- franco_2026[[4]] - franco_2018[[4]]  # calcolo differenza NIR dopo l'intervento
-ndvi_diff_26 <- ndvi_2026 - ndvi_2018  # calcolo differenza NDVI dopo l'intervento
+nir_dif_fase1 <- franco_2023[[4]] - franco_2020[[4]]  # calcolo differenza NIR durante eradicazione
+nir_dif_fase2 <- franco_2026[[4]] - franco_2023[[4]]  # calcolo differenza NIR dopo eradicazione
+nir_dif_totale <- franco_2026[[4]] - franco_2020[[4]]  # calcolo differenza NIR tra inizio e fine eradicazione
+ndvi_dif_fase1 <- ndvi_2023 - ndvi_2020  # calcolo differenza NDVI durante eradicazione
+ndvi_dif_fase2 <- ndvi_2026 - ndvi_2023  # calcolo differenza NDVI dopo eradicazione
+ndvi_dif_totale <- ndvi_2026 - ndvi_2020  # calcolo differenza NDVI tra inizio e fine eradicazione
 
-im.multiframe(2, 2)  # preparo pannello grafico con 2 righe e 2 colonne
-plot(nir_diff_22,col = magma(100), range = c(-0.15, 0.15), main = "NIR (2022 - 2018)")
-plot(ndvi_diff_22,col = magma(100), range = c(-0.6, 0.6), main = "NDVI (2022 - 2018)")
-plot(nir_diff_26,col = magma(100), range = c(-0.15, 0.15), main = "NIR (2026 - 2018)")
-plot(ndvi_diff_26, col = magma(100), range = c(-0.6, 0.6), main = "NDVI (2026 - 2018)")
+
+im.multiframe(2, 3)  # preparo pannello grafico con 2 righe e 3 colonne
+plot(nir_dif_fase1, col = magma(100), range = c(-0.25, 0.25), main = "NIR (2023 - 2020)")
+plot(nir_dif_fase2, col = magma(100), range = c(-0.25, 0.25), main = "NIR (2026 - 2023)")
+plot(nir_dif_totale, col = magma(100), range = c(-0.25, 0.25), main = "NIR (2026 - 2020)")
+plot(ndvi_dif_fase1, col = magma(100), range = c(-0.6, 0.6), main = "NDVI (2023 - 2020)")
+plot(ndvi_dif_fase2, col = magma(100), range = c(-0.6, 0.6), main = "NDVI (2026 - 2023)")
+plot(ndvi_dif_totale, col = magma(100), range = c(-0.6, 0.6), main = "NDVI (2026 - 2020)")
+dev.off()
 ````
-<img width="1280" height="709" alt="franco_analisi_multitemporale" src="https://github.com/user-attachments/assets/652bf44c-98c2-445e-9b37-957f23d61ec2" />
 
-> Confronto NIR e NDVI nel periodo 2022-2018 e 2026-2018 del muflone dall'Isola
+<img width="1280" height="709" alt="franco_multitemp" src="https://github.com/user-attachments/assets/11f7c921-36aa-4466-b1f2-294e939c5cbd" />
+
+> Confronto NIR e NDVI nei periodi presi in analisi
 
 > [!NOTE]
-> Nel periodo 2022-2018, il NIR mostra una situazione abbastanza vicina allo 0 nella maggior parte dell'area, con alcune zone più scure e alcune aree più positive. Non emerge una trasformazione generalizzata della struttura vegetale. L'NDVI mostra che nel periodo durante l'intervento non si osserva ancora un segnale netto di recupero vegetazionale su tutta l'area. Questo è coerente con una dinamica ecologica reale: la rimozione della specie target non implica un aumento immediato dell'NDVI. Nel periodo 2026-2018, il NIR evidenzia un aumento più evidente di aree positive rispetto al confronto 2022–2018 e, quindi, maggiore riflettanza nel vicino infrarosso, un possibile aumento della struttura fogliare e maggiore biomassa o copertura vegetale. L'NDVI mostra una risposta più omogenea verso valori positivi, con una quota maggiore di area che presenta un incremento del vigore vegetativo. Pertanto, i risultati suggeriscono un possibile processo di recupero successivo all'intervento di eradicazione.
+> **MODIFICARE** Nel periodo 2022-2018, il NIR mostra una situazione abbastanza vicina allo 0 nella maggior parte dell'area, con alcune zone più scure e alcune aree più positive. Non emerge una trasformazione generalizzata della struttura vegetale. L'NDVI mostra che nel periodo durante l'intervento non si osserva ancora un segnale netto di recupero vegetazionale su tutta l'area. Questo è coerente con una dinamica ecologica reale: la rimozione della specie target non implica un aumento immediato dell'NDVI. Nel periodo 2026-2018, il NIR evidenzia un aumento più evidente di aree positive rispetto al confronto 2022–2018 e, quindi, maggiore riflettanza nel vicino infrarosso, un possibile aumento della struttura fogliare e maggiore biomassa o copertura vegetale. L'NDVI mostra una risposta più omogenea verso valori positivi, con una quota maggiore di area che presenta un incremento del vigore vegetativo. Pertanto, i risultati suggeriscono un possibile processo di recupero successivo all'intervento di eradicazione.
