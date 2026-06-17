@@ -26,7 +26,7 @@ I dati rilevati sui mufloni dell’Isola del Giglio hanno riscontrato una popola
 Il presente lavoro ha l'obiettivo di valutare l'impatto degradativo che le specie aliene invasive – nello specifico ungulati introdotti nel contesto insulare – esercitano sulle comunità vegetali autoctone, utilizzando il telerilevamento come strumento di verifica oggettiva. In particolare, il progetto mira a:
 
 - evidenziare l'efficacia e la necessità di interventi di *wildlife management* come strumento fondamentale per la biologia della conservazione, la quale insegna che le specie aliene invasive rappresentano una delle maggiori minacce per la diversità biologica;
-- osservare all'interno dell'area di studio quale fosse lo stato della vegetazione prima dell'intervento di eradicazione e valutare se le attività di pascolo e calpestio effettuate dal muflone possano aver peggiorato lo stato della vegetazione. Pertanto, occorre valutare se il piano di rimozione della specie possa aver contribuito, durante e dopo le operazioni, a un miglioramento della biomassa della macchia mediterranea nel sito di presenza.
+- osservare all'interno dell'area di studio quale fosse lo stato della vegetazione prima dell'intervento di eradicazione e valutare se il piano di rimozione della specie possa aver contribuito, durante e dopo le operazioni, a un miglioramento della biomassa della macchia mediterranea nel sito di presenza.
 
 Pertanto, l'analisi parte dall'ipotesi basata sull'efficacia dell'intervento di eradicazione del muflone valutando lo stato della vegetazione attraverso immagini satellitari Sentinel-2 prelevate in tre momenti temporali:
 
