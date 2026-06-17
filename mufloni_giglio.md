@@ -286,7 +286,7 @@ dev.off()
 > Ridgeline Plot per confrontare la distribuzione dell'NDVI nei tre anni presi in analisi
 
 > [!IMPORTANT]
-> Il Ridgeline Plot dei singoli NDVI offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la distribuzione riflette la netta separazione tra le aree fotosinteticamente non attive (background marino, suolo roccioso, etc.), con picco stabile poco inferiore allo 0, e la biomassa insulare. Tra il 2020 e il 2023 le due curve sono quasi sovrapposte, indicando che, a due anni dall'inizio dell'intervento di eradicazione, la vegetazione non mostrava ancora una risposta visibile. Nella curva NDVI del 2026 il picco della vegetazione si sposta verso destra (> 0.75), divenendo più alto. Questo shift della densità di frequenza verso valori più alti dell'indice suggerisce l'incremento globale di vigore vegetativo nell'area analizzata.
+> Il Ridgeline Plot dei singoli NDVI offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la **distribuzione bimodale** riflette la netta separazione tra le aree fotosinteticamente non attive (background marino, suolo roccioso, etc.), con picco stabile poco inferiore allo 0, e la biomassa insulare. Tra il 2020 e il 2023 le due curve sono quasi sovrapposte, indicando che, a due anni dall'inizio dell'intervento di eradicazione, la vegetazione non mostrava ancora una risposta visibile. Nella curva NDVI del 2026 il picco della vegetazione si sposta verso destra (> 0.75), divenendo più alto e stretto. Questo shift della densità di frequenza verso valori più alti dell'indice suggerisce l'incremento globale di vigore vegetativo nell'area analizzata.
 
 Inoltre, sempre tramite Ridgeline Plot, procedo con un confronto tra ΔNDVI 2023-2020, ΔNDVI 2026-2023 e ΔNDVI 2026-2020 al fine di osservare eventuali cambiamenti rispetto alla prima fase di eradicazione, alla seconda fase e alla differenza totale tra un anno prima dell'inizio e due anni dopo la fine del progetto LIFE.
 
@@ -306,7 +306,7 @@ dev.off()
 > Ridgeline Plot per confrontare la distribuzione dei ΔNDVI
 
 > [!IMPORTANT]
-> La distribuzione del ΔNDVI 2023–2020 risulta pressochè centrata attorno allo zero, indicando un cambiamento vegetazionale complessivamente limitato. La distribuzione del ΔNDVI 2026–2023 mostra un progressivo spostamento verso valori positivi, suggerendo un incremento generalizzato dell'attività vegetativa rispetto alle condizioni iniziali antecedenti all'intervento. Infine, ΔNDVI 2026–2023...**TERMINARE**. Questo andamento suggerisce un possibile processo di recupero della vegetazione nel periodo successivo all'intervento di eradicazione, con un aumento dei valori NDVI rispetto alla situazione di riferimento del 2018.
+> La distribuzione del ΔNDVI 2023–2020 risulta pressochè centrata attorno allo zero, indicando un cambiamento vegetazionale complessivamente limitato durante le prime fasi di eradicazione della specie. La distribuzione del ΔNDVI 2026–2023 mostra un progressivo spostamento verso valori positivi, suggerendo un incremento generalizzato dell'attività vegetativa rispetto alle condizioni iniziali antecedenti. Infine, la curva ΔNDVI 2026–2020, la quale esprime il bilancio complessivo dell'intervento, consolida questo trend mostrando una distribuzione verso valori positivi. Tale grafico suggerisce come il recupero della macchia mediterranea sia aumentato in modo netto solo dopo il completamento dell'eradicazione.
 
 
 ### 5.2. Classificazione per classi NDVI di copertura del suolo
