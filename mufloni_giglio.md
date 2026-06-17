@@ -12,7 +12,7 @@
 
 ## 1. Introduzione e area di studio 🗺️
 
-Il progetto ***LIFE LETSGO GIGLIO "Less alien species in the Tuscan Archipelago: new actions to protect Giglio Island habitats"***  (LIFE18 NAT/IT/000828) ha previsto delle attività di prelievo finalizzate all'eradicazione del **muflone** (*Ovis aries*) presso l'Isola del Giglio. Il muflone, **specie aliena invasiva** introdotta nell'isola toscana per scopi venatori negli anni '60-'70 del secolo scorso, ha determinato un **sovrasfruttamento degli ecosistemi** di macchia mediterranea, portando a un **degrado della vegetazione**. Complessivamente, in 3 anni di progetto (Febbraio 2021- Marzo 2024) sono stati rimossi 130 mufloni.
+Il progetto ***LIFE LETSGO GIGLIO "Less alien species in the Tuscan Archipelago: new actions to protect Giglio Island habitats"***  (LIFE18 NAT/IT/000828) ha previsto delle attività di prelievo finalizzate all'eradicazione del **muflone** (*Ovis aries*) presso l'Isola del Giglio. Il muflone, **specie aliena invasiva** introdotta nell'isola toscana per scopi venatori negli anni '60-'70 del secolo scorso, ha determinato un **sovrasfruttamento degli ecosistemi** di macchia mediterranea, portando a un **degrado della vegetazione**. Complessivamente, in 3 anni di progetto (Febbraio 2021- Marzo 2024) sono stati rimossi 120 mufloni (ulteriori 10 individui sono stati abbattuti nel 2020 in attività di controllo della specie). 
 
 I dati rilevati sui mufloni dell’Isola del Giglio hanno riscontrato una popolazione al **limite della capacità portante**, probabilmente a causa della **scarsità di risorse trofiche** disponibili. Inoltre, è necessario considerare l’**elevata densità** di bovidi riscontrata in alcune zone dell’isola, vista la tendenza alla filopatria e al comportamento spaziale della specie (*Nicoloso S. et al., 2024*). In particolare, quasi tutti gli individui prelevati sono stati registrati nella zona del **Promontorio del Franco**, corrispondente all'area dove erano stati introdotti per la prima volta (*La Russa L., com. pers*). Pertanto, l'analisi spaziale si concentrerà sulla suddetta area. 
 
@@ -23,12 +23,12 @@ I dati rilevati sui mufloni dell’Isola del Giglio hanno riscontrato una popola
 
 ## 2. Obiettivo del progetto in R 🎯
 
-Il presente lavoro ha l'obiettivo di dimostrare l'impatto degradativo che le specie aliene invasive – nello specifico ungulati introdotti nel contesto insulare – esercitano sulle comunità vegetali autoctone, utilizzando il telerilevamento satellitare come strumento di verifica oggettiva. In particolare, il progetto mira a:
+Il presente lavoro ha l'obiettivo di valutare l'impatto degradativo che le specie aliene invasive – nello specifico ungulati introdotti nel contesto insulare – esercitano sulle comunità vegetali autoctone, utilizzando il telerilevamento come strumento di verifica oggettiva. In particolare, il progetto mira a:
 
-- Evidenziare l'efficacia e la necessità di interventi di *wildlife management* come strumento fondamentale per la biologia della conservazione, la quale insegna che le specie aliene invasive rappresentano una delle maggiori minacce per la diversità biologica;
-- Dimostrare come le attività di pascolo e calpestio effettuate dal muflone abbiano alterato la biomassa della macchia mediterranea in determinate aree dell'Isola, compromettendo il naturale rinnovamento della vegetazione.
+- evidenziare l'efficacia e la necessità di interventi di *wildlife management* come strumento fondamentale per la biologia della conservazione, la quale insegna che le specie aliene invasive rappresentano una delle maggiori minacce per la diversità biologica;
+- osservare all'interno dell'area di studio quale fosse lo stato della vegetazione prima dell'intervento di eradicazione e valutare se le attività di pascolo e calpestio effettuate dal muflone possano aver peggiorato lo stato della vegetazione. Pertanto, occorre valutare se il piano di rimozione della specie possa aver contribuito, durante e dopo le operazioni, a un miglioramento della biomassa della macchia mediterranea nel sito di presenza.
 
-L'analisi si concentra sull'efficacia dell'intervento di eradicazione del muflone valutando lo stato della vegetazione attraverso immagini satellitari Sentinel-2 prelevate in tre momenti temporali:
+Pertanto, l'analisi parte dall'ipotesi basata sull'efficacia dell'intervento di eradicazione del muflone valutando lo stato della vegetazione attraverso immagini satellitari Sentinel-2 prelevate in tre momenti temporali:
 
 - **pre-controllo**, aprile/giugno-2020;
 - **eradicazione**, aprile/giugno-2023;
