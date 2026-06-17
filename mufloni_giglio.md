@@ -35,7 +35,7 @@ L'analisi si concentra sull'efficacia dell'intervento di eradicazione del muflon
 - **post-eradicazione**, aprile/giugno-2026.
 
 > [!NOTE]
-> La scelta della date è basata su un intervallo di tempo standardizzato di 3 anni tra un periodo e l'altro. Nel dettaglio, il **2020** rappresenta l'anno prima dell'inizio delle attività di eradicazione, mentre il **2023** è l'anno in cui termina la maggior parte delle attività di abbattimento e traslocazione di mufloni dall'Isola (da maggio 2021 a marzo 2023 sono stati abbattuti 38 mufloni e traslocati 52; *Nicoloso S. et al., 2024*). Infine, il **2026**, anno corrente, rappresenta il riferimento per valutare, a due anni dalla fine ufficiale delle operazioni di eradicazione del progetto LIFE, l'eventuale ripresa della vegetazione di macchia mediterranea dell'Isola, con particolare focus sul Promontorio del Franco. 
+> La scelta della date è basata su un intervallo di tempo standardizzato di 3 anni tra un periodo e l'altro. Nel dettaglio, il **2020** rappresenta l'anno prima dell'inizio delle attività di eradicazione, mentre il **2023** è l'anno in cui termina la maggior parte delle attività di abbattimento e traslocazione di mufloni dall'Isola (da maggio 2021 a marzo 2023 sono stati abbattuti 38 mufloni e traslocati 52; *Nicoloso S. et al., 2024*). Infine, il **2026**, anno corrente, rappresenta il riferimento per valutare, a due anni dalla conclusione ufficiale delle operazioni di eradicazione, l'eventuale ripresa della vegetazione di macchia mediterranea dell'Isola, con particolare focus sul Promontorio del Franco. 
 
 
 Gli indici vegetazionali impiegati per le analisi sono:
@@ -218,7 +218,7 @@ dev.off()
 > Confronto dei ΔDVI
 
 > [!NOTE]
-> Il confronto mette in risalto una differenza nel Promontorio del Franco, area N-O dell'Isola a elevata densità della specie (*La Russa L., com. pers.*). Gradualmente, si passa da valori più bassi di DVI, indicanti, in termini assoluti, una più bassa quantità di vegetazione, a valori più alti, indicanti una progressiva ricolonizzazione della vegetazione.
+> Il confronto mette in risalto una differenza nel Promontorio del Franco, area N-O dell'Isola a elevata densità della specie (*La Russa L., com. pers.*). Gradualmente, si passa da valori più bassi di DVI, indicanti, in termini assoluti, una più bassa quantità di vegetazione, a valori più alti, i quali suggeriscono un progressivo aumento della vegetazione.
 
 
 ### 4.2. Analisi NDVI (Normalized Difference Vegetation Index)
@@ -264,7 +264,7 @@ dev.off()
 >  Confronto dei ΔNDVI
 
 > [!NOTE]
-> Il confronto mostra differenze graduali e continue, passando da valori prossimi allo 0 a diffusi valori positivi (arancione-giallo), i quali suggeriscono un effettivo incremento strutturale della biomassa fogliare.
+> Il confronto mostra differenze graduali e continue, passando da valori prossimi allo 0 a valori più elevati, i quali suggeriscono un incremento strutturale della biomassa fogliare.
 
 
 ## 5. Visualizzazione dei dati 
@@ -285,9 +285,9 @@ dev.off()
 > Ridgeline Plot per confrontare la distribuzione dell'NDVI nei tre anni presi in analisi
 
 > [!IMPORTANT]
-> Il Ridgeline Plot dei singoli NDVI offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la distribuzione riflette la netta separazione tra le aree fotosinteticamente non attive (background marino, suolo roccioso, etc.), con picco stabile poco inferiore allo 0, e la biomassa insulare. Tra il 2020 (pre-eradicazione) e il 2023 le due curve sono quasi sovrapposte, indicando che, a due anni dall'inizio dell'intervento di eradicazione, la vegetazione non mostrava ancora una risposta visibile. Nella curva NDVI del 2026 il picco della vegetazione si sposta visibilmente verso destra (> 0.75), divenendo più alto. Questo shift della densità di frequenza verso valori più alti dell'indice suggerisce l'incremento globale di vigore vegetativo nell'area analizzata.
+> Il Ridgeline Plot dei singoli NDVI offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la distribuzione riflette la netta separazione tra le aree fotosinteticamente non attive (background marino, suolo roccioso, etc.), con picco stabile poco inferiore allo 0, e la biomassa insulare. Tra il 2020 e il 2023 le due curve sono quasi sovrapposte, indicando che, a due anni dall'inizio dell'intervento di eradicazione, la vegetazione non mostrava ancora una risposta visibile. Nella curva NDVI del 2026 il picco della vegetazione si sposta verso destra (> 0.75), divenendo più alto. Questo shift della densità di frequenza verso valori più alti dell'indice suggerisce l'incremento globale di vigore vegetativo nell'area analizzata.
 
-Inoltre, sempre tramite Ridgeline Plot, procedo con un confronto tra ΔNDVI 2023-2020, ΔNDVI 2026-2023 e ΔNDVI 2026-2020 al fine di osservare eventuali cambiamenti rispetto alla prima fase di eradicazione, alla seconda fase e alla differenza totale tra un anno prima dell'inizio e due anni dopo la fine del progetto.
+Inoltre, sempre tramite Ridgeline Plot, procedo con un confronto tra ΔNDVI 2023-2020, ΔNDVI 2026-2023 e ΔNDVI 2026-2020 al fine di osservare eventuali cambiamenti rispetto alla prima fase di eradicazione, alla seconda fase e alla differenza totale tra un anno prima dell'inizio e due anni dopo la fine del progetto LIFE.
 
 ````r
 ndvi_diff_fase1 <- ndvi_2023 - ndvi_2020
