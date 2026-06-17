@@ -12,31 +12,32 @@
 
 ## 1. Introduzione e area di studio 🗺️
 
-Il progetto ***LIFE LETSGO GIGLIO "Less alien species in the Tuscan Archipelago: new actions to protect Giglio Island habitats"***  (LIFE18 NAT/IT/000828) ha previsto delle attività di prelievo finalizzate all'eradicazione del **muflone** (*Ovis aries*) presso l'Isola del Giglio. Il muflone, **specie aliena invasiva** introdotta nell'isola toscana per scopi venatori negli anni '60-'70 del secolo scorso, ha determinato un **sovrasfruttamento degli ecosistemi** di macchia mediterranea, portando a un **degrado della vegetazione**. Complessivamente, in 3 anni di progetto (Febbraio 2021- Marzo 2024), sono stati rimossi 120 mufloni (ulteriori 10 individui sono stati abbattuti nel 2020 in attività di controllo della specie). 
+Il progetto ***Life LETSGO Giglio "Less alien species in the Tuscan Archipelago: new actions to protect Giglio Island habitats"***  (LIFE18 NAT/IT/000828) ha previsto delle attività di prelievo finalizzate all'eradicazione del **muflone** (*Ovis aries*) presso l'Isola del Giglio. Il muflone, **specie alloctona** introdotta nell'isola toscana per scopi venatori negli anni '60-'70 del secolo scorso, ha determinato un **sovrasfruttamento degli ecosistemi** di macchia mediterranea, portando a un **degrado della vegetazione**. Complessivamente, in 3 anni di progetto (Febbraio 2021- Marzo 2024), sono stati rimossi 120 mufloni (ulteriori 10 individui sono stati abbattuti nel 2020 in attività di controllo della specie). 
 
-I dati rilevati sui mufloni dell’Isola del Giglio hanno riscontrato una popolazione al **limite della capacità portante**, probabilmente a causa della **scarsità di risorse trofiche** disponibili. Inoltre, è necessario considerare l’**elevata densità** di bovidi riscontrata in alcune zone dell’Isola, vista la tendenza alla filopatria e al comportamento spaziale della specie (*Nicoloso S. et al., 2024*). In particolare, quasi tutti gli individui prelevati sono stati registrati nella zona del **Promontorio del Franco**, corrispondente all'area dove erano stati introdotti per la prima volta (*La Russa L., com. pers*). Pertanto, l'analisi spaziale si concentrerà sulla suddetta area. 
+I dati rilevati sui mufloni dell’Isola del Giglio hanno riscontrato una popolazione al **limite della capacità portante**, probabilmente a causa della **scarsità di risorse trofiche** disponibili. Inoltre, è necessario considerare l’**elevata densità** di bovidi riscontrata in alcune zone dell’Isola, vista la tendenza alla filopatria e al comportamento spaziale della specie (*Nicoloso S. et al., 2024*). In particolare, molti degli individui catturati e traslocati o abbattuti sono stati registrati nella zona del **Promontorio del Franco**, corrispondente all'area dove sono stati introdotti per la prima volta (*La Russa L., com. pers*). Pertanto, a scopo didattico, l'analisi spaziale si concentrerà esclusivamente sulla suddetta area. 
 
 <img width="1600" height="1131" alt="Isola_Giglio_Mufloni" src="https://github.com/user-attachments/assets/ced4c933-6cfd-4f4a-aed6-b19c98b6e720" />
 
-> Isola del Giglio. Nel riquadro arancione è indicata l'area di intervento. Mappa del Dott. Lorenzo La Russa
+> Isola del Giglio. Nel riquadro arancione è indicata l'area di intervento degli operatori del progetto di eradicazione. Mappa gentilmente concessa dal Dott. Lorenzo La Russa
 
 
 ## 2. Obiettivo del progetto in R 🎯
 
 Il presente lavoro ha l'obiettivo di valutare l'impatto degradativo che le specie aliene invasive – nello specifico ungulati introdotti nel contesto insulare – esercitano sulle comunità vegetali autoctone, utilizzando il telerilevamento come strumento di verifica oggettiva. In particolare, il progetto mira a:
 
-- promuovere l'efficacia e la necessità di interventi di *wildlife management* come strumento fondamentale per la biologia della conservazione, la quale insegna che le specie aliene invasive rappresentano una delle maggiori minacce per la diversità biologica;
+- promuovere l'importanza e la necessità di interventi di *wildlife management* come strumento fondamentale per la biologia della conservazione, la quale insegna che le specie aliene invasive rappresentano una delle maggiori minacce per la diversità biologica;
 - osservare all'interno dell'area di studio quale fosse lo stato della vegetazione prima dell'intervento di eradicazione e valutare se il piano di rimozione della specie possa aver contribuito in poco tempo a un miglioramento della biomassa della macchia mediterranea nel sito di presenza.
 
-Pertanto, l'analisi nasce dall'ipotesi basata sull'efficacia dell'intervento di eradicazione del muflone, valutando lo stato della vegetazione attraverso immagini satellitari Sentinel-2 prelevate in tre fasi temporali:
+Pertanto, l'analisi valuta lo stato della vegetazione attraverso immagini satellitari Sentinel-2 prelevate in tre fasi temporali:
 
 - **pre-controllo**, aprile/giugno-2020;
 - **eradicazione**, aprile/giugno-2023;
 - **post-eradicazione**, aprile/giugno-2026.
 
 > [!NOTE]
-> La scelta della date è basata su un intervallo di tempo standardizzato di 3 anni tra un periodo e l'altro. Nel dettaglio, il **2020** rappresenta l'anno prima dell'inizio del piano di eradicazione, mentre il **2023** è l'anno in cui termina la maggior parte delle attività di abbattimento e traslocazione di mufloni dall'Isola (da maggio 2021 a marzo 2023 sono stati abbattuti 38 mufloni e traslocati 52; *Nicoloso S. et al., 2024*). Infine, il **2026**, anno corrente, rappresenta il riferimento per valutare, a due anni dalla conclusione ufficiale delle operazioni di eradicazione, l'eventuale ripresa della vegetazione nel Promontorio del Franco. 
+> La scelta della date è basata su un intervallo di tempo standardizzato di 3 anni tra un periodo e l'altro. Nel dettaglio, il **2020** <sup>[*](#nota1)</sup> rappresenta l'anno prima dell'inizio del piano di eradicazione, mentre il **2023** è l'anno in cui termina la maggior parte delle attività di abbattimento e traslocazione di mufloni dall'Isola (da maggio 2021 a marzo 2023 sono stati abbattuti 38 mufloni e traslocati 52; *Nicoloso S. et al., 2024*). Infine, il **2026**, anno corrente, rappresenta il riferimento per valutare, a due anni dalla conclusione ufficiale delle operazioni di eradicazione, l'eventuale ripresa della vegetazione nel Promontorio del Franco. 
 
+<a name="nota1"></a>\* *Dal 2009 al 2020 sono stati condotti interventi di controllo della specie sull'Isola, effettuati dal PNAT e dalla Polizia Provinciale di Grosseto, determinando un numero complessivo di 97 individui abbattuti (*Nicoloso S. et al., 2021*).*
 
 Gli indici vegetazionali impiegati per le analisi sono:
 
@@ -60,7 +61,7 @@ library(terra)      # Per lavorare con raster e immagini satellitari
 library(imageRy)    # Funzioni di visualizzazione rapide
 library(viridis)    # Palette di colori
 library(ggplot2)    # Pacchetto per la creazione di grafici
-library(patchwork)   # 
+library(patchwork)  # 
 **AGGIUNGERE**
 ````
 
@@ -498,7 +499,17 @@ dev.off()
 
 ## 7. Conclusioni 🐐
 
-Nel complesso, i dati ottenuti indicano una possibile fase di recupero della macchia mediterranea del Promontorio del Franco successiva alla rimozione del muflone, fornendo un’indicazione positiva rispetto all’efficacia dell’intervento. Tuttavia, i risultati devono essere interpretati considerando i limiti dell’approccio utilizzato: gli indici satellitari impiegati descrivono variazioni della risposta vegetazionale, ma non permettono da soli di attribuire esclusivamente all’eradicazione del muflone il cambiamento osservato. Fattori ambientali come disponibilità idrica, condizioni climatiche annuali e dinamiche naturali della vegetazione possono infatti contribuire alla variazione rilevata. Nonostante queste limitazioni, appaiono chiare le differenze nello stato della vegetazione tra la fase antecedente e quella successiva all'intervento di eradicazione, suggerendo spunti e riflessioni al riguardo.  Dunque, l'approccio integrato tra gestione della fauna e telerilevamento può rappresentare uno strumento di monitoraggio degli interventi di biologia della conservazione, permettendo di valutare nel tempo la risposta degli habitat sottoposti a ripristino ecologico. In conclusione, il caso dell’Isola del Giglio evidenzia quindi come la gestione delle specie aliene invasive non rappresenti soltanto un’azione di controllo della fauna, ma un intervento finalizzato alla conservazione della biodiversità e al recupero dei processi ecologici degli ecosistemi. 
+Nel complesso, i dati ottenuti indicano una possibile fase di recupero della macchia mediterranea del Promontorio del Franco successiva alla rimozione del muflone, fornendo un’indicazione positiva rispetto all’efficacia dell’intervento. Tuttavia, i risultati devono essere interpretati considerando i limiti dell’approccio utilizzato: gli indici satellitari impiegati descrivono variazioni della risposta vegetazionale, ma non permettono da soli di attribuire esclusivamente all’eradicazione del muflone il cambiamento osservato. Fattori ambientali come disponibilità idrica, condizioni climatiche annuali e dinamiche naturali della vegetazione possono infatti contribuire alla variazione rilevata. Nonostante queste limitazioni, appaiono chiare le differenze nello stato della vegetazione tra la fase antecedente e quella successiva all'intervento di eradicazione, suggerendo spunti e riflessioni al riguardo.  Dunque, l'approccio integrato tra gestione della fauna e telerilevamento può rappresentare uno strumento di monitoraggio degli interventi di biologia della conservazione, permettendo di valutare nel tempo la risposta degli habitat sottoposti a ripristino ecologico. In conclusione, il caso dell’Isola del Giglio evidenzia come la gestione delle specie aliene invasive non rappresenti soltanto un’azione di controllo della fauna, ma un intervento finalizzato alla conservazione della biodiversità e al recupero dei processi ecologici degli ecosistemi. 
 
 ---
+
+### Bibliografia 📖
+
+- *Nicoloso S. et al*., [Sintesi delle attività di eradicazione del muflone dall'Isola del Giglio, 2024](https://www.lifegogiglio.eu/wp-content/uploads/Life_LetsGoGiglio_Eradicazione_sintesi.pdf)
+- *Nicoloso S. et al.*, [Protocollo operativo per l’eradicazione del 
+muflone (Ovis aries) presso l’Isola del Giglio, 2021](https://www.lifegogiglio.eu/wp-content/uploads/ACTION-A1-LETSGOGIGLIO_Protocollo_Muflone__approvato_.pdf) 
+
+
+### Link utili 💻
+[Life LETSGO Giglio](https://www.lifegogiglio.eu/)
 
