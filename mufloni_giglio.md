@@ -156,6 +156,52 @@ plot(franco_2026[[3]], col = viridis(100), main = "2026 - Red")
 plot(franco_2026[[4]], col = viridis(100), main = "2026 - NIR")
 dev.off() # chiudo il pannello di visualizzazione delle immagini
 ````
+
+library(terra)
+library(viridis)
+
+# BLUE (layer 1)
+blue_all <- c(franco_2020[[1]], franco_2023[[1]], franco_2026[[1]])
+vmin_b <- quantile(values(blue_all), 0.02, na.rm=TRUE)
+vmax_b <- quantile(values(blue_all), 0.98, na.rm=TRUE)
+
+# GREEN (layer 2)
+green_all <- c(franco_2020[[2]], franco_2023[[2]], franco_2026[[2]])
+vmin_g <- quantile(values(green_all), 0.02, na.rm=TRUE)
+vmax_g <- quantile(values(green_all), 0.98, na.rm=TRUE)
+
+# RED (layer 3)
+red_all <- c(franco_2020[[3]], franco_2023[[3]], franco_2026[[3]])
+vmin_r <- quantile(values(red_all), 0.02, na.rm=TRUE)
+vmax_r <- quantile(values(red_all), 0.98, na.rm=TRUE)
+
+# NIR (layer 4)
+nir_all <- c(franco_2020[[4]], franco_2023[[4]], franco_2026[[4]])
+vmin_n <- quantile(values(nir_all), 0.02, na.rm=TRUE)
+vmax_n <- quantile(values(nir_all), 0.98, na.rm=TRUE)
+
+im.multiframe(3, 4)
+
+# 2020
+plot(franco_2020[[1]], col=viridis(100), zlim=c(vmin_b, vmax_b), main="2020 - Blue")
+plot(franco_2020[[2]], col=viridis(100), zlim=c(vmin_g, vmax_g), main="2020 - Green")
+plot(franco_2020[[3]], col=viridis(100), zlim=c(vmin_r, vmax_r), main="2020 - Red")
+plot(franco_2020[[4]], col=viridis(100), zlim=c(vmin_n, vmax_n), main="2020 - NIR")
+
+# 2023
+plot(franco_2023[[1]], col=viridis(100), zlim=c(vmin_b, vmax_b), main="2023 - Blue")
+plot(franco_2023[[2]], col=viridis(100), zlim=c(vmin_g, vmax_g), main="2023 - Green")
+plot(franco_2023[[3]], col=viridis(100), zlim=c(vmin_r, vmax_r), main="2023 - Red")
+plot(franco_2023[[4]], col=viridis(100), zlim=c(vmin_n, vmax_n), main="2023 - NIR")
+
+# 2026
+plot(franco_2026[[1]], col=viridis(100), zlim=c(vmin_b, vmax_b), main="2026 - Blue")
+plot(franco_2026[[2]], col=viridis(100), zlim=c(vmin_g, vmax_g), main="2026 - Green")
+plot(franco_2026[[3]], col=viridis(100), zlim=c(vmin_r, vmax_r), main="2026 - Red")
+plot(franco_2026[[4]], col=viridis(100), zlim=c(vmin_n, vmax_n), main="2026 - NIR")
+
+dev.off()
+
 <img width="1280" height="709" alt="franco_rgb_nir" src="https://github.com/user-attachments/assets/f5061362-a3c6-4b8e-aa9a-94805a41c94f" />
 
 > Confronto tra le 4 bande (colonne) nei diversi anni (righe) presi in analisi
