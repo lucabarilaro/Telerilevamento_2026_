@@ -287,7 +287,7 @@ dev.off()
 > [!IMPORTANT]
 > Il Ridgeline Plot dei singoli NDVI offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la distribuzione riflette la netta separazione tra le aree fotosinteticamente non attive (background marino, suolo roccioso, etc.), con picco stabile poco inferiore allo 0, e la biomassa insulare. Tra il 2020 (pre-eradicazione) e il 2023 le due curve sono quasi sovrapposte, indicando che, a due anni dall'inizio dell'intervento di eradicazione, la vegetazione non mostrava ancora una risposta visibile. Nella curva NDVI del 2026 il picco della vegetazione si sposta visibilmente verso destra (> 0.75), divenendo più alto. Questo shift della densità di frequenza verso valori più alti dell'indice suggerisce l'incremento globale di vigore vegetativo nell'area analizzata.
 
-Inoltre, sempre tramite Ridgeline Plot, procedo con un confronto tra ΔNDVI 2023-2020, ΔNDVI 2026-2023 e ΔNDVI 2026-2020 al fine di osservare eventuali cambiamenti rispetto alla prima fase di eradicazione, alla seconda fase e alla differenza totale tra un anno prima dell'inizio e due anni dopo la fine del progetto di eradicazione. Pertanto, in tal modo, è possibile documentare l'effetto dell'intervento di eradicazione. 
+Inoltre, sempre tramite Ridgeline Plot, procedo con un confronto tra ΔNDVI 2023-2020, ΔNDVI 2026-2023 e ΔNDVI 2026-2020 al fine di osservare eventuali cambiamenti rispetto alla prima fase di eradicazione, alla seconda fase e alla differenza totale tra un anno prima dell'inizio e due anni dopo la fine del progetto.
 
 ````r
 ndvi_diff_fase1 <- ndvi_2023 - ndvi_2020
