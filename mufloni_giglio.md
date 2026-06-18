@@ -223,7 +223,7 @@ dev.off()
 > Confronto dei ΔDVI
 
 > [!NOTE]
-> Il confronto mette in risalto una differenza nel Promontorio del Franco, area N-O dell'Isola a elevata densità della specie (*La Russa L., com. pers.*). Gradualmente, si passa da valori più bassi di DVI, indicanti, in termini assoluti, una più bassa quantità di vegetazione, a valori più alti, i quali suggeriscono un progressivo aumento della vegetazione.
+> Il confronto sembrerebbe mostrare un passaggio da valori più bassi di DVI, indicanti, in termini assoluti, una più bassa quantità di vegetazione, a valori più alti, i quali suggerirebbero un progressivo aumento della vegetazione.
 
 
 ### 4.2. Analisi NDVI (Normalized Difference Vegetation Index)
@@ -269,7 +269,7 @@ dev.off()
 >  Confronto dei ΔNDVI
 
 > [!NOTE]
-> Il confronto mostra differenze graduali e continue, passando da valori prossimi allo 0 a valori più elevati, i quali suggeriscono un incremento strutturale della biomassa fogliare.
+> Il confronto mostra differenze graduali e continue, passando da valori prossimi allo 0 a valori più elevati, i quali indicano un incremento strutturale della biomassa fogliare.
 
 
 ## 5. Visualizzazione dei dati 
