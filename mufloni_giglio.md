@@ -1,5 +1,6 @@
 #### Telerilevamento geo-ecologico in R, 2026
-###### Luca Barilaro, Scienze e Gestione della Natura, Università di Bologna
+###### Luca Barilaro
+###### Scienze e Gestione della Natura, Università di Bologna
 
 
 # La gestione della fauna come strumento di biologia della conservazione: eradicazione del muflone ($`Ovis`$ $`aries`$) e analisi preliminare del recupero della vegetazione nell'Isola del Giglio
