@@ -61,6 +61,7 @@ library(terra)      # Per lavorare con raster e immagini satellitari
 library(imageRy)    # Funzioni di visualizzazione rapide
 library(viridis)    # Palette di colori
 library(ggplot2)    # Pacchetto per la creazione di grafici
+library(ggridges)   # 
 library(patchwork)  # 
 **AGGIUNGERE**
 ````
@@ -415,9 +416,9 @@ print(tabella_franco) # visualizzo tabella
 
 | Classi | 2020 | 2023 | 2026
 |--- |--- |--- |--- |
-|   **1**: suolo / roccia | 7.94% | 8.23%  | 7.49% |  
-|   **2**: macchia rada | 21.75% | 21.70% | 14.57% | 
-|   **3**: macchia densa | 37.01% | 36.76% | 44.64% | 
+|   **1**: suolo / roccia | 11.91% | 12.34%  | 11.23% |  
+|   **2**: macchia rada | 32.60% | 32.54% | 21.85% | 
+|   **3**: macchia densa | 55.49% | 55.12% | 66.92% | 
 
 </div>
 
@@ -465,7 +466,7 @@ p1 + p2 + p3 # affianco i tre grafici in un'unica riga
 dev.off()
 ````
 
-<img width="1280" height="709" alt="franco_barre_ndvi" src="https://github.com/user-attachments/assets/89d4827b-09ca-4e08-846f-9faad5f88b49" />
+<img width="1280" height="709" alt="franco_barre_ndvi" src="https://github.com/user-attachments/assets/fbb2799c-4b96-4ebe-be50-9b1185feb08c" />
 
 > Diagramma a barre delle classi NDVI di copertura del suolo
 
