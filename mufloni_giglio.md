@@ -49,7 +49,7 @@ Gli indici vegetazionali impiegati per le analisi sono:
 
 ### 3.1. Acquisizione immagini
 
-Le immagini satellitari provengono da [**Google Earth Engine**](https://earthengine.google.com/), attraverso cui è stata selezionata l'area di intervento per le fasi e le relative date precedentemente indicate. Al fine di evitare distorsioni nelle analisi spaziali, è stato tendenzialmente rimosso il background marino dalla visualizzazione attraverso un apposito java script consultabile al seguente [link GitHub](https://github.com/lucabarilaro/Telerilevamento_2026_/blob/main/javascript_mufloni_giglio.js)
+Le immagini satellitari provengono da [**Google Earth Engine**](https://earthengine.google.com/), attraverso cui è stata selezionata l'area di intervento per le fasi e le relative date precedentemente indicate. Al fine di evitare distorsioni nelle analisi spaziali, è stato tendenzialmente rimosso il background marino dalla visualizzazione attraverso un apposito JavaScript consultabile al seguente [link GitHub](https://github.com/lucabarilaro/Telerilevamento_2026_/blob/main/javascript_mufloni_giglio.js)
 
 
 ### 3.2. Importazione e visualizzazione immagini
@@ -193,9 +193,9 @@ dvi_2023 <- im.dvi(franco_2023, 4, 3)  # 4 è la banda NIR, 3 è la banda Red
 dvi_2026 <- im.dvi(franco_2026, 4, 3)  
 
 im.multiframe(1, 3)  # configuro pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
-plot(dvi_2020, col = viridis(100), main = "DVI 2020")   # visualizzo DVI prima dell'eradicazione, assegno palette col., nomino
-plot(dvi_2023, col = viridis(100), main = "DVI 2023")   # visualizzo DVI durante eradicazione, assegno palette col., nomino
-plot(dvi_2026, col = viridis(100), main = "DVI 2026")   # visualizzo DVI dopo eradicazione, assegno palette col., nomino
+plot(dvi_2020, col = viridis(100), main = "DVI 2020")   # visualizzo DVI prima dell'eradicazione, assegno palette col., denomino
+plot(dvi_2023, col = viridis(100), main = "DVI 2023")   # visualizzo DVI durante eradicazione, assegno palette col., denomino
+plot(dvi_2026, col = viridis(100), main = "DVI 2026")   # visualizzo DVI dopo eradicazione, assegno palette col., denomino
 dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
 
@@ -240,9 +240,9 @@ ndvi_2023 <- im.ndvi(franco_2023, 4, 3)  # 4 è la banda NIR, 3 è la banda Red
 ndvi_2026 <- im.ndvi(franco_2026, 4, 3)  
 
 im.multiframe(1, 3)  # configuro pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
-plot(ndvi_2020, col = viridis(100), main = "NDVI 2020")  # visualizzo NDVI prima dell'eradicazione, assegno palette col., nomino
-plot(ndvi_2023, col = viridis(100), main = "NDVI 2023")  # visualizzo NDVI durante eradicazione, assegno palette col., nomino
-plot(ndvi_2026, col = viridis(100), main = "NDVI 2026")  # visualizzo NDVI dopo eradicazione, assegno palette col., nomino
+plot(ndvi_2020, col = viridis(100), main = "NDVI 2020")  # visualizzo NDVI prima dell'eradicazione, assegno palette col., denomino
+plot(ndvi_2023, col = viridis(100), main = "NDVI 2023")  # visualizzo NDVI durante eradicazione, assegno palette col., denomino
+plot(ndvi_2026, col = viridis(100), main = "NDVI 2026")  # visualizzo NDVI dopo eradicazione, assegno palette col., denomino
 dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
 
@@ -301,7 +301,7 @@ ndvi_diff_fase2 <- ndvi_2026 - ndvi_2023
 ndvi_diff_totale <- ndvi_2026 - ndvi_2020
 
 delta_ridg <- c(ndvi_diff_fase1, ndvi_diff_fase2, ndvi_diff_totale)  # unisco ΔNDVI dei diversi anni in un unico oggetto multistrato
-names(delta_ridg) <- c("ΔNDVI 2023-2020", "ΔNDVI 2026-2023", "ΔNDVI 2026-2020")  # nomino punti sull'asse verticale
+names(delta_ridg) <- c("ΔNDVI 2023-2020", "ΔNDVI 2026-2023", "ΔNDVI 2026-2020")  # denomino punti sull'asse verticale
 im.ridgeline(delta_ridg, scale = 1.2, palette = "magma")  # creo grafico ridgeline con funzione di imageRy
 dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
@@ -326,12 +326,12 @@ hist(ndvi_2023, main = "Distribuzione NDVI 2023", xlab = "Valori NDVI")
 hist(ndvi_2026, main = "Distribuzione NDVI 2026", xlab = "Valori NDVI")
 
 # istogramma NDVI 2020
-hist(ndvi_2020, 
-     xlim = c(-0.6, 0.9), 
-     ylim = c(0, 8000), 
-     main = "Distribuzione NDVI 2020", 
-     col = "lightgray", 
-     xlab = "Valori NDVI")
+hist(ndvi_2020,            # uso funzione per generare istogramma
+     xlim = c(-0.6, 0.9),  # imposto limiti asse x
+     ylim = c(0, 8000),    # imposto limiti asse y
+     main = "Distribuzione NDVI 2020",  # denomino istogramma 
+     col = "lightgray",                 # imposto colore
+     xlab = "Valori NDVI")              # denomino asse x
 
 # istogramma NDVI 2023
 hist(ndvi_2023, 
@@ -348,7 +348,7 @@ hist(ndvi_2026,
      main = "Distribuzione NDVI 2026", 
      col = "lightgray", 
      xlab = "Valori NDVI")
-dev.off()
+dev.off()  #  # chiudo il pannello di visualizzazione delle immagini
 ````
 <details>
 <summary>Istogrammi (cliccare qui)</summary> 
@@ -357,16 +357,16 @@ dev.off()
 
 </details>
 
-Procedo con la classificazione per classi NDVI di copertura del suolo basata sugli istogrammi precedentemente ottenuti.
+Procedo con la classificazione per **classi NDVI** di copertura del suolo basata sugli istogrammi precedentemente ottenuti.
 
 ````r
-class_matrix <- matrix(c(
-  -Inf,  0.35, 1,   # se NDVI < 0.35: classe 1 (scogliera / roccia / suolo)
-  0.35,  0.65, 2,   # se 0.35 <= NDVI < 0.65: classe 2 (vegetazione rada / macchia degradata)
-  0.65,  Inf, 3     # se NDVI >= 0.65: classe 3 (vegetazione densa / macchia in recupero)
-), ncol = 3, byrow = TRUE)
+class_matrix <- matrix(c(  # creo matrice contenente i valori di classificazione
+  -Inf,  0.35, 1,          # se NDVI < 0.35: classe 1 (scogliera / roccia / suolo)
+  0.35,  0.65, 2,          # se 0.35 <= NDVI < 0.65: classe 2 (vegetazione rada / macchia degradata)
+  0.65,  Inf, 3            # se NDVI >= 0.65: classe 3 (vegetazione densa / macchia in recupero)
+), ncol = 3, byrow = TRUE) # assegno il numero di colonne e imposto il riempimento della matrice riga per riga
 
-class_matrix  # stampa la matrice per controllo grafico
+class_matrix  # stampo la matrice per controllo grafico
 
 # classificazione dei singoli anni con la funzione classify del pacchetto terra
 ndvi_2020_cl <- classify(ndvi_2020, class_matrix)  
