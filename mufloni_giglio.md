@@ -179,7 +179,7 @@ Gli indici vegetazionali impiegati per le analisi sono:
 
 ### 4.1. Analisi DVI (Difference Vegetation Index)
 
-Il DVI è uno dei più semplici indici spettrali utilizzati per valutare la presenza e la vitalità della vegetazione. Si calcola sottraendo la riflettanza nel rosso (Red, B4) da quella nel vicino infrarosso (NIR, B8):
+Il **DVI** è uno dei più semplici indici spettrali utilizzati per valutare la presenza e la vitalità della vegetazione. Si calcola sottraendo la riflettanza nel rosso (Red, B4) da quella nel vicino infrarosso (NIR, B8):
 
 $$
 DVI = NIR - RED
@@ -193,10 +193,10 @@ dvi_2023 <- im.dvi(franco_2023, 4, 3)  # 4 è la banda NIR, 3 è la banda Red
 dvi_2026 <- im.dvi(franco_2026, 4, 3)  
 
 im.multiframe(1, 3)  # configuro pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
-plot(dvi_2020, col = viridis(100), main = "DVI 2020")   # visualizzo DVI prima dell'eradicazione
-plot(dvi_2023, col = viridis(100), main = "DVI 2023")   # visualizzo DVI durante il primo anno di eradicazione
-plot(dvi_2026, col = viridis(100), main = "DVI 2026")   # visualizzo DVI dopo l'eradicazione
-dev.off()
+plot(dvi_2020, col = viridis(100), main = "DVI 2020")   # visualizzo DVI prima dell'eradicazione, assegno palette col., nomino
+plot(dvi_2023, col = viridis(100), main = "DVI 2023")   # visualizzo DVI durante eradicazione, assegno palette col., nomino
+plot(dvi_2026, col = viridis(100), main = "DVI 2026")   # visualizzo DVI dopo eradicazione, assegno palette col., nomino
+dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
 
 <img width="1280" height="709" alt="franco_dvi" src="https://github.com/user-attachments/assets/64ca5a87-0a92-4c62-96e3-e21d77a8d910" />
@@ -207,20 +207,20 @@ dev.off()
 Calcolo la differenza tra il DVI del 2023 e quello del 2020, tra il DVI del 2026 e quello del 2023 e, infine, tra il DVI del 2026 e quello del 2020. 
 
 ````r
-dvi_diff_fase1  <- dvi_2023 - dvi_2020
+dvi_diff_fase1  <- dvi_2023 - dvi_2020  # assegno nome e calcolo differenze DVI
 dvi_diff_fase2  <- dvi_2026 - dvi_2023
 dvi_diff_totale <- dvi_2026 - dvi_2020
 
 im.multiframe(1, 3)  # configuro pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
-plot(dvi_diff_fase1, col = magma(100), main = "ΔDVI (2023 - 2020)")
+plot(dvi_diff_fase1, col = magma(100), main = "ΔDVI (2023 - 2020)")  # visualizzo immagini con risultati differenza DVI
 plot(dvi_diff_fase2, col = magma(100), main = "ΔDVI (2026 - 2023)")
 plot(dvi_diff_totale, col = magma(100), main = "ΔDVI (2026 - 2020)")
-dev.off()
+dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
 
 <img width="1280" height="709" alt="franco_delta_dvi" src="https://github.com/user-attachments/assets/c2197d7d-0eea-454a-8fc4-5531f124aafc" />
 
-> Confronto dei ΔDVI
+> Confronto dei **ΔDVI**
 
 > [!NOTE]
 > Il confronto sembrerebbe mostrare un passaggio da valori più bassi di DVI, indicanti, in termini assoluti, una più bassa quantità di vegetazione, a valori più alti, i quali suggerirebbero un progressivo aumento della vegetazione.
@@ -228,22 +228,22 @@ dev.off()
 
 ### 4.2. Analisi NDVI (Normalized Difference Vegetation Index)
 
-L'NDVI è uno degli indici di vegetazione più diffusi in telerilevamento grazie alla sua capacità di normalizzare le differenze tra immagini acquisite in tempi o condizioni diverse, riducendo gli effetti di disturbo causati dalle ombre e dalla topografia del terreno. Si calcola come il rapporto tra la differenza e la somma delle riflettanze nel vicino infrarosso (NIR) e nel rosso (Red):
+L'**NDVI** è uno degli indici di vegetazione più diffusi in telerilevamento grazie alla sua capacità di normalizzare le differenze tra immagini acquisite in tempi o condizioni diverse, riducendo gli effetti di disturbo causati dalle ombre e dalla topografia del terreno. Si calcola come il rapporto tra la differenza e la somma delle riflettanze nel vicino infrarosso (NIR) e nel rosso (Red):
 
 $$NDVI = \frac{NIR - Red}{NIR + Red}$$
 
 I valori ottenuti variano strettamente tra $-1$ e $+1$: valori vicini a $+1$ indicano vegetazione densa, strutturata e sana, mentre valori prossimi a $0$ o negativi indicano la totale assenza di fotosintesi, identificando suolo nudo, rocce o acqua. L'NDVI è particolarmente utile per monitorare variazioni nella copertura vegetale nel tempo e valutare stress idrici, dinamiche ecologiche o impatti antropici e faunistici, come nel caso del sovrapascolamento.
 
 ````r
-ndvi_2020 <- im.ndvi(franco_2020, 4, 3)  
-ndvi_2023 <- im.ndvi(franco_2023, 4, 3)  
+ndvi_2020 <- im.ndvi(franco_2020, 4, 3)  # utilizzo funzione im.ndvi() del pacchetto imageRy
+ndvi_2023 <- im.ndvi(franco_2023, 4, 3)  # 4 è la banda NIR, 3 è la banda Red
 ndvi_2026 <- im.ndvi(franco_2026, 4, 3)  
 
 im.multiframe(1, 3)  # configuro pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
-plot(ndvi_2020, col = viridis(100), main = "NDVI 2020")  
-plot(ndvi_2023, col = viridis(100), main = "NDVI 2023")
-plot(ndvi_2026, col = viridis(100), main = "NDVI 2026")
-dev.off()
+plot(ndvi_2020, col = viridis(100), main = "NDVI 2020")  # visualizzo NDVI prima dell'eradicazione, assegno palette col., nomino
+plot(ndvi_2023, col = viridis(100), main = "NDVI 2023")  # visualizzo NDVI durante eradicazione, assegno palette col., nomino
+plot(ndvi_2026, col = viridis(100), main = "NDVI 2026")  # visualizzo NDVI dopo eradicazione, assegno palette col., nomino
+dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
 
 <img width="1280" height="709" alt="franco_ndvi" src="https://github.com/user-attachments/assets/065f7a95-1e31-457d-9054-d5740eadfdaf" />
@@ -253,12 +253,12 @@ dev.off()
 Procedo con il calcolo della differenza tra l'NDVI del 2023 e quello del 2020, tra l'NDVI del 2026 e quello del 2023 e, infine, tra l'NDVI del 2026 e quello del 2020.
 
 ````r
-ndvi_diff_fase1  <- ndvi_2023 - ndvi_2020
+ndvi_diff_fase1  <- ndvi_2023 - ndvi_2020  # assegno nome e calcolo differenze NDVI
 ndvi_diff_fase2 <- ndvi_2026 - ndvi_2023
 ndvi_diff_totale <- ndvi_2026 - ndvi_2020
 
 im.multiframe(1, 3)  # configuro pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
-plot(ndvi_diff_fase1, col = magma(100), main = "ΔNDVI (2023 - 2020)")
+plot(ndvi_diff_fase1, col = magma(100), main = "ΔNDVI (2023 - 2020)")  # visualizzo immagini con risultati differenza NDVI
 plot(ndvi_diff_fase2, col = magma(100), main = "ΔNDVI (2026 - 2023)")
 plot(ndvi_diff_totale, col = magma(100), main = "ΔNDVI (2026 - 2020)")
 dev.off()
@@ -266,7 +266,7 @@ dev.off()
 
 <img width="1280" height="709" alt="franco_delta_ndvi" src="https://github.com/user-attachments/assets/abe9a72f-74b0-4e51-a579-b2634cbb62ca" />
 
->  Confronto dei ΔNDVI
+>  Confronto dei **ΔNDVI**
 
 > [!NOTE]
 > Il confronto mostra differenze graduali e continue, passando da valori prossimi allo 0 a valori più elevati, i quali indicano un incremento strutturale della biomassa fogliare.
