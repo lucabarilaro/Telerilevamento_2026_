@@ -261,7 +261,7 @@ im.multiframe(1, 3)  # configuro pannello grafico con 1 riga e 3 colonne usando 
 plot(ndvi_diff_fase1, col = magma(100), main = "ΔNDVI (2023 - 2020)")  # visualizzo immagini con risultati differenza NDVI
 plot(ndvi_diff_fase2, col = magma(100), main = "ΔNDVI (2026 - 2023)")
 plot(ndvi_diff_totale, col = magma(100), main = "ΔNDVI (2026 - 2020)")
-dev.off()
+dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
 
 <img width="1280" height="709" alt="franco_delta_ndvi" src="https://github.com/user-attachments/assets/abe9a72f-74b0-4e51-a579-b2634cbb62ca" />
@@ -279,11 +279,11 @@ dev.off()
 Il Ridgeline Plot dei singoli NDVI consente di confrontare visivamente la distribuzione dell’indice NDVI tra il 2020, il 2023 e il 2026, evidenziando eventuali variazioni nel tempo dei valori assoluti di vegetazione.
 
 ````r
-franco_ridg <- c(ndvi_2020, ndvi_2023, ndvi_2026)  
+franco_ridg <- c(ndvi_2020, ndvi_2023, ndvi_2026)  # unisco raster NDVI dei diversi anni in un unico oggetto multistrato
 # nomino punti sull'asse verticale
 names(franco_ridg) <- c("NDVI 2020 (Pre-eradicazione)", "NDVI 2023 (Eradicazione)", "NDVI 2026 (Post-eradicazione)")
-im.ridgeline(franco_ridg, scale = 1.2, palette = "viridis") # creo grafico ridgeline con funzione di imageRy
-dev.off()
+im.ridgeline(franco_ridg, scale = 1.2, palette = "viridis")  # creo grafico ridgeline con funzione di imageRy
+dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
 
 <img width="1280" height="709" alt="franco_ridge_ndvi" src="https://github.com/user-attachments/assets/d664c03e-9d52-4db8-88c1-c939e3494043" />
@@ -291,19 +291,19 @@ dev.off()
 > Ridgeline Plot per confrontare la distribuzione dell'NDVI nei tre anni presi in analisi
 
 > [!IMPORTANT]
-> Il Ridgeline Plot dei singoli NDVI offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la distribuzione bimodale fortemente asimmetrica riflette la netta separazione tra le aree fotosinteticamente non attive (zone costiere, suolo roccioso, etc.) e a bassa riflettanza, con picco stabile poco superiore allo 0, e la biomassa insulare. Tra il 2020 e il 2023 le due curve sono pressochè sovrapposte, indicando che, a due anni dall'inizio dell'intervento di eradicazione, la vegetazione non mostrava ancora una risposta visibile. Nella curva NDVI del 2026 il picco della vegetazione si sposta verso destra (> 0.75), divenendo più alto e stretto. Questo shift della densità di frequenza verso valori più alti dell'indice suggerisce l'incremento globale di vigore vegetativo nell'area analizzata.
+> Il **Ridgeline Plot** dei singoli **NDVI** offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la distribuzione bimodale fortemente asimmetrica riflette la netta separazione tra le aree fotosinteticamente non attive (zone costiere, suolo roccioso, etc.) e a bassa riflettanza, con picco stabile poco superiore allo 0, e la biomassa insulare. Tra il 2020 e il 2023 le due curve sono pressochè sovrapposte, indicando che, a due anni dall'inizio dell'intervento di eradicazione, la vegetazione non mostrava ancora una risposta visibile. Nella curva NDVI del 2026 il picco della vegetazione si sposta verso destra (> 0.75), divenendo più alto e stretto. Questo shift della densità di frequenza verso valori più alti dell'indice suggerisce l'incremento globale di vigore vegetativo nell'area analizzata.
 
 Inoltre, sempre tramite Ridgeline Plot, procedo con un confronto tra ΔNDVI 2023-2020, ΔNDVI 2026-2023 e ΔNDVI 2026-2020 al fine di osservare eventuali cambiamenti rispetto alla prima fase di eradicazione, alla seconda fase e alla differenza totale tra un anno prima dell'inizio e due anni dopo la fine del progetto LIFE.
 
 ````r
-ndvi_diff_fase1 <- ndvi_2023 - ndvi_2020
+ndvi_diff_fase1 <- ndvi_2023 - ndvi_2020  
 ndvi_diff_fase2 <- ndvi_2026 - ndvi_2023
 ndvi_diff_totale <- ndvi_2026 - ndvi_2020
 
-delta_ridg <- c(ndvi_diff_fase1, ndvi_diff_fase2, ndvi_diff_totale)
-names(delta_ridg) <- c("ΔNDVI 2023-2020", "ΔNDVI 2026-2023", "ΔNDVI 2026-2020")
-im.ridgeline(delta_ridg, scale = 1.2, palette = "magma")
-dev.off()
+delta_ridg <- c(ndvi_diff_fase1, ndvi_diff_fase2, ndvi_diff_totale)  # unisco ΔNDVI dei diversi anni in un unico oggetto multistrato
+names(delta_ridg) <- c("ΔNDVI 2023-2020", "ΔNDVI 2026-2023", "ΔNDVI 2026-2020")  # nomino punti sull'asse verticale
+im.ridgeline(delta_ridg, scale = 1.2, palette = "magma")  # creo grafico ridgeline con funzione di imageRy
+dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
 
 <img width="1280" height="709" alt="franco_ridge_delta_ndvi" src="https://github.com/user-attachments/assets/76a85e39-466e-499a-9a13-b3cc56d4a1b5" />
@@ -311,12 +311,12 @@ dev.off()
 > Ridgeline Plot per confrontare la distribuzione dei ΔNDVI
 
 > [!IMPORTANT]
-> La distribuzione del ΔNDVI 2023–2020 risulta pressochè centrata attorno allo zero, indicando un cambiamento vegetazionale complessivamente limitato durante le prime fasi di eradicazione della specie. La distribuzione del ΔNDVI 2026–2023 mostra un progressivo spostamento verso valori positivi, suggerendo un incremento generalizzato dell'attività vegetativa rispetto alle condizioni iniziali antecedenti. Infine, la curva ΔNDVI 2026–2020, la quale esprime il bilancio complessivo dell'intervento, consolida questo trend mostrando una distribuzione verso valori positivi. Tale grafico suggerisce come il recupero della macchia mediterranea sia aumentato in modo netto solo dopo il completamento dell'eradicazione.
+> Nel **Ridgeline Plot** dei **ΔNDVI** la distribuzione del 2023–2020 risulta pressochè centrata attorno allo zero, indicando un cambiamento vegetazionale complessivamente limitato durante le prime fasi di eradicazione della specie. La distribuzione del ΔNDVI 2026–2023 mostra un progressivo spostamento verso valori positivi, suggerendo un incremento generalizzato dell'attività vegetativa rispetto alle condizioni iniziali antecedenti. Infine, la curva ΔNDVI 2026–2020, la quale esprime il bilancio complessivo dell'intervento, consolida questo trend mostrando una distribuzione verso valori positivi. Tale grafico suggerisce come il recupero della macchia mediterranea sia aumentato in modo netto solo dopo il completamento dell'eradicazione.
 
 
 ### 5.2. Classificazione per classi NDVI di copertura del suolo
 
-Scelgo il range di valori adatto alla classificazione facendo riferimento agli istogrammi della distribuzione dell'NDVI.
+Scelgo il range di valori adatto alla classificazione facendo riferimento agli **istogrammi** della distribuzione dell'**NDVI**.
 
 ````r
 im.multiframe(1, 3)  # configuro il pannello grafico con 1 riga e 3 colonne per gli istogrammi
