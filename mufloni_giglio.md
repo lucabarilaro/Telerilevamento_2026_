@@ -348,7 +348,7 @@ hist(ndvi_2026,
      main = "Distribuzione NDVI 2026", 
      col = "lightgray", 
      xlab = "Valori NDVI")
-dev.off()  #  # chiudo il pannello di visualizzazione delle immagini
+dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
 <details>
 <summary>Istogrammi (cliccare qui)</summary> 
@@ -369,17 +369,17 @@ class_matrix <- matrix(c(  # creo matrice contenente i valori di classificazione
 class_matrix  # stampo la matrice per controllo grafico
 
 # classificazione dei singoli anni con la funzione classify del pacchetto terra
-ndvi_2020_cl <- classify(ndvi_2020, class_matrix)  
+ndvi_2020_cl <- classify(ndvi_2020, class_matrix)  # classifico raster in classi definite tramite la matrice
 ndvi_2023_cl <- classify(ndvi_2023, class_matrix)  
 ndvi_2026_cl <- classify(ndvi_2026, class_matrix)  
 
 
-im.multiframe(1, 3)  # creo un multiframe con 1 riga e 3 colonne per vedere l'evoluzione
+im.multiframe(1, 3)  # creo un multiframe con 1 riga e 3 colonne 
 # visualizzazione delle mappe classificate
 plot(ndvi_2020_cl, col = c("royalblue", "gold", "forestgreen"), main = "NDVI class. 2020", colNA = "white")  
 plot(ndvi_2023_cl, col = c("royalblue", "gold", "forestgreen"), main = "NDVI class. 2023", colNA = "white")   
 plot(ndvi_2026_cl, col = c("royalblue", "gold", "forestgreen"), main = "NDVI class. 2026", colNA = "white")
-dev.off()
+dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
 <img width="1280" height="709" alt="franco_classi_ndvi" src="https://github.com/user-attachments/assets/0827cd3a-c469-4642-b3d6-0da29c6bec87" />
 
@@ -388,27 +388,33 @@ dev.off()
 
 ### 5.3. Calcolo delle frequenze delle classi NDVI di copertura del suolo 
 
-Dalla classificazione precedentemente effettuata ricavo le frequenze delle diverse classi, riportandole in una tabella e, infine, visualizzandole in un diagramma a barre.
+Dalla classificazione precedentemente effettuata ricavo le **frequenze** delle diverse classi, riportandole in una tabella e, infine, visualizzandole in un diagramma a barre.
 
 ````r
+# calcolo frequenza pixel appartenenti a ciascuna classe del raster NDVI classifica
 freq_2020 <- freq(ndvi_2020_cl)
 freq_2023 <- freq(ndvi_2023_cl)
 freq_2026 <- freq(ndvi_2026_cl)
 
-# calcolo percentuali moltiplicando il conteggio dei pixel per 100 diviso il totale dei pixel
-perc_2020 <- freq_2020$count * 100 / ncell(ndvi_2020_cl)
-perc_2023 <- freq_2023$count * 100 / ncell(ndvi_2023_cl)
-perc_2026 <- freq_2026$count * 100 / ncell(ndvi_2026_cl)
+# calcolo totale pixel di terraferma escludendo gli NA per ogni anno
+tot_pix_2020 <- sum(freq_2020$count)  # calcolo totale pixel del raster NDVI classificato
+tot_pix_2023 <- sum(freq_2023$count)  # sum(freq_2023$count) somma tutti i valori delle frequenze pixel per ogni classe
+tot_pix_2026 <- sum(freq_2026$count)
+
+# calcolo percentuali moltiplicando conteggio pixel per 100 diviso totale pixel considerati
+perc_2020 <- freq_2020$count * 100 / tot_pix_2020
+perc_2023 <- freq_2023$count * 100 / tot_pix_2023
+perc_2026 <- freq_2026$count * 100 / tot_pix_2026
 
 # creo dataframe
-tabella_franco <- data.frame(
+tabella_franco <- data.frame(   # funzione per creare tabella
   Classi = c("1: suolo / roccia", "2: macchia rada", "3: macchia densa"),
-  a2020 = round(perc_2020, 2),
+  a2020 = round(perc_2020, 2),  # colonne che contengono percentuali di ciascun anno arrotondate a 2 cifre decimali 
   a2023 = round(perc_2023, 2),
   a2026 = round(perc_2026, 2)
 )
 
-print(tabella_franco) # visualizzo tabella
+print(tabella_franco)  # visualizzo tabella
 ````
 
 <div align="center">
@@ -461,8 +467,8 @@ p3 <- ggplot(tabella_franco, aes(x = Classi, y = a2026, fill = Classi)) +
     legend.position = "right"
   )
 
-p1 + p2 + p3 # affianco i tre grafici in un'unica riga
-dev.off()
+p1 + p2 + p3  # affianco i tre grafici in un'unica riga
+dev.off()  # chiudo il pannello grafico
 ````
 
 <img width="1280" height="709" alt="franco_barre_ndvi" src="https://github.com/user-attachments/assets/fbb2799c-4b96-4ebe-be50-9b1185feb08c" />
@@ -490,7 +496,7 @@ plot(nir_dif_totale, col = magma(100), main = "NIR (2026 - 2020)")
 plot(ndvi_dif_fase1, col = magma(100), main = "NDVI (2023 - 2020)")
 plot(ndvi_dif_fase2, col = magma(100), main = "NDVI (2026 - 2023)")
 plot(ndvi_dif_totale, col = magma(100), main = "NDVI (2026 - 2020)")
-dev.off()
+dev.off()  # chiudo il pannello grafico
 ````
 <img width="1280" height="709" alt="franco_multitemp" src="https://github.com/user-attachments/assets/87df216a-2dd2-4ce8-a278-ef33c0e68e1f" />
 
