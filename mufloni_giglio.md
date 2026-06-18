@@ -57,13 +57,12 @@ Una volta ottenute le immagini satellitari, vengono caricate in **R**.
 Per prima cosa, chiamo i pacchetti necessari:
 
 ````r
-library(terra)      # Per lavorare con raster e immagini satellitari
-library(imageRy)    # Funzioni di visualizzazione rapide
-library(viridis)    # Palette di colori
-library(ggplot2)    # Pacchetto per la creazione di grafici
-library(ggridges)   # 
-library(patchwork)  # 
-**AGGIUNGERE**
+library(terra)      # per analisi spaziali con raster e immagini satellitari
+library(imageRy)    # per visualizzare, classificare e manipolare immagini satellitari
+library(viridis)    # per visualizzare dati con palette di colori viridis
+library(ggplot2)    # per visualizzare dati con la creazione di grafici
+library(ggridges)   # per visualizzare distribuzioni con ridgeline plots
+library(patchwork)  # per combinare e organizzare grafici multiplici
 ````
 
 In seguito, imposto la **working directory**:
