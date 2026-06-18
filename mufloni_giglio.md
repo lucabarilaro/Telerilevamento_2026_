@@ -23,7 +23,7 @@ I dati rilevati sui mufloni dell’Isola del Giglio hanno riscontrato una popola
 
 ## 2. Obiettivo del progetto in R 🎯
 
-Il presente lavoro ha l'obiettivo di valutare l'impatto degradativo che le specie aliene invasive – nello specifico ungulati introdotti nel contesto insulare – esercitano sulle comunità vegetali autoctone, utilizzando il telerilevamento come strumento di verifica oggettiva. In particolare, il progetto mira a:
+Il presente lavoro ha l'obiettivo di valutare l'impatto degradativo che le specie aliene invasive – nello specifico ungulati introdotti nel contesto insulare – esercitano sulle comunità vegetali autoctone, utilizzando il **telerilevamento** come strumento di verifica oggettiva. In particolare, il progetto mira a:
 
 - promuovere l'importanza e la necessità di interventi di *wildlife management* come strumento fondamentale per la biologia della conservazione, la quale insegna che le specie aliene invasive rappresentano una delle maggiori minacce per la diversità biologica;
 - osservare all'interno dell'area di studio quale fosse lo stato della vegetazione prima dell'intervento di eradicazione e valutare se il piano di rimozione della specie possa aver contribuito in poco tempo a un miglioramento della biomassa della macchia mediterranea nel sito di presenza.
@@ -49,11 +49,11 @@ Gli indici vegetazionali impiegati per le analisi sono:
 
 ### 3.1. Acquisizione immagini
 
-Le immagini satellitari provengono da [**Google Earth Engine**](https://earthengine.google.com/), attraverso cui è stata selezionata l'area di intervento per le fasi e le relative date precedentemente indicate. Al fine di evitare distorsioni nelle analisi spaziali, è stato tendenzialmente rimosso il background marino dalla visualizzazione attraverso un apposito java script consultabile nella cartella ... **INSERIRE**
+Le immagini satellitari provengono da [**Google Earth Engine**](https://earthengine.google.com/), attraverso cui è stata selezionata l'area di intervento per le fasi e le relative date precedentemente indicate. Al fine di evitare distorsioni nelle analisi spaziali, è stato tendenzialmente rimosso il background marino dalla visualizzazione attraverso un apposito java script consultabile al seguente [link]()
 
 
 ### 3.2. Importazione e visualizzazione immagini
-Una volta ottenute le immagini satellitari, vengono caricate in R. 
+Una volta ottenute le immagini satellitari, vengono caricate in **R**. 
 Per prima cosa, chiamo i pacchetti necessari:
 
 ````r
@@ -66,13 +66,13 @@ library(patchwork)  #
 **AGGIUNGERE**
 ````
 
-In seguito, imposto la working directory:
+In seguito, imposto la **working directory**:
 
 ````r
 setwd("C:/Users/lucab/Desktop/progetto_giglio/data")
 ````
 
-Ora è possibile importare i raster Sentinel-2 acquisiti:
+Ora è possibile **importare i raster** Sentinel-2 acquisiti:
 
 ````r
 franco_2020 = rast("franco_2020.tif")  # importato e nominato il primo .tif
