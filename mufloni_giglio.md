@@ -285,12 +285,13 @@ names(franco_ridg) <- c("NDVI 2020 (Pre-eradicazione)", "NDVI 2023 (Eradicazione
 im.ridgeline(franco_ridg, scale = 1.2, palette = "viridis") # creo grafico ridgeline con funzione di imageRy
 dev.off()
 ````
-<img width="1280" height="709" alt="franco_ridgeline" src="https://github.com/user-attachments/assets/10bd6325-efb6-4899-b764-3ad1378825e4" />
+
+<img width="1280" height="709" alt="franco_ridge_ndvi" src="https://github.com/user-attachments/assets/d664c03e-9d52-4db8-88c1-c939e3494043" />
 
 > Ridgeline Plot per confrontare la distribuzione dell'NDVI nei tre anni presi in analisi
 
 > [!IMPORTANT]
-> Il Ridgeline Plot dei singoli NDVI offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la **distribuzione bimodale** riflette la netta separazione tra le aree fotosinteticamente non attive (background marino, suolo roccioso, etc.), con picco stabile poco inferiore allo 0, e la biomassa insulare. Tra il 2020 e il 2023 le due curve sono quasi sovrapposte, indicando che, a due anni dall'inizio dell'intervento di eradicazione, la vegetazione non mostrava ancora una risposta visibile. Nella curva NDVI del 2026 il picco della vegetazione si sposta verso destra (> 0.75), divenendo più alto e stretto. Questo shift della densità di frequenza verso valori più alti dell'indice suggerisce l'incremento globale di vigore vegetativo nell'area analizzata.
+> Il Ridgeline Plot dei singoli NDVI offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la distribuzione bimodale fortemente asimmetrica riflette la netta separazione tra le aree fotosinteticamente non attive (zone costiere, suolo roccioso, etc.) e a bassa riflettanza, con picco stabile poco superiore allo 0, e la biomassa insulare. Tra il 2020 e il 2023 le due curve sono pressochè sovrapposte, indicando che, a due anni dall'inizio dell'intervento di eradicazione, la vegetazione non mostrava ancora una risposta visibile. Nella curva NDVI del 2026 il picco della vegetazione si sposta verso destra (> 0.75), divenendo più alto e stretto. Questo shift della densità di frequenza verso valori più alti dell'indice suggerisce l'incremento globale di vigore vegetativo nell'area analizzata.
 
 Inoltre, sempre tramite Ridgeline Plot, procedo con un confronto tra ΔNDVI 2023-2020, ΔNDVI 2026-2023 e ΔNDVI 2026-2020 al fine di osservare eventuali cambiamenti rispetto alla prima fase di eradicazione, alla seconda fase e alla differenza totale tra un anno prima dell'inizio e due anni dopo la fine del progetto LIFE.
 
@@ -305,7 +306,7 @@ im.ridgeline(delta_ridg, scale = 1.2, palette = "magma")
 dev.off()
 ````
 
-<img width="1280" height="709" alt="franco_ridgeline_delta" src="https://github.com/user-attachments/assets/f9070526-ca3c-49cc-af44-ba2f29715a94" />
+<img width="1280" height="709" alt="franco_ridge_delta_ndvi" src="https://github.com/user-attachments/assets/76a85e39-466e-499a-9a13-b3cc56d4a1b5" />
 
 > Ridgeline Plot per confrontare la distribuzione dei ΔNDVI
 
@@ -327,7 +328,7 @@ hist(ndvi_2026, main = "Distribuzione NDVI 2026", xlab = "Valori NDVI")
 # istogramma NDVI 2020
 hist(ndvi_2020, 
      xlim = c(-0.6, 0.9), 
-     ylim = c(0, 12000), 
+     ylim = c(0, 8000), 
      main = "Distribuzione NDVI 2020", 
      col = "lightgray", 
      xlab = "Valori NDVI")
@@ -335,7 +336,7 @@ hist(ndvi_2020,
 # istogramma NDVI 2023
 hist(ndvi_2023, 
      xlim = c(-0.6, 0.9), 
-     ylim = c(0, 12000), 
+     ylim = c(0, 8000), 
      main = "Distribuzione NDVI 2023", 
      col = "lightgray", 
      xlab = "Valori NDVI")
@@ -343,7 +344,7 @@ hist(ndvi_2023,
 # istogramma NDVI 2026
 hist(ndvi_2026, 
      xlim = c(-0.6, 0.9), 
-     ylim = c(0, 12000), 
+     ylim = c(0, 8000), 
      main = "Distribuzione NDVI 2026", 
      col = "lightgray", 
      xlab = "Valori NDVI")
@@ -352,7 +353,7 @@ dev.off()
 <details>
 <summary>Istogrammi (cliccare qui)</summary> 
   
-<img width="1280" height="709" alt="franco_hist" src="https://github.com/user-attachments/assets/cc358c5b-225e-461a-a33d-2c318779603e" />
+<img width="1280" height="709" alt="franco_hist_ndvi" src="https://github.com/user-attachments/assets/bf3ae0db-51ab-4b62-b090-811dd9adb0b5" />
 
 </details>
 
@@ -360,8 +361,8 @@ Procedo con la classificazione per classi NDVI di copertura del suolo basata sug
 
 ````r
 class_matrix <- matrix(c(
-  -Inf,  0.25, 1,   # se NDVI < 0.25: classe 1 (mare / roccia / suolo)
-  0.25,  0.65, 2,   # se 0.25 <= NDVI < 0.65: classe 2 (vegetazione rada / macchia degradata)
+  -Inf,  0.35, 1,   # se NDVI < 0.35: classe 1 (scogliera / roccia / suolo)
+  0.35,  0.65, 2,   # se 0.35 <= NDVI < 0.65: classe 2 (vegetazione rada / macchia degradata)
   0.65,  Inf, 3     # se NDVI >= 0.65: classe 3 (vegetazione densa / macchia in recupero)
 ), ncol = 3, byrow = TRUE)
 
@@ -375,13 +376,12 @@ ndvi_2026_cl <- classify(ndvi_2026, class_matrix)
 
 im.multiframe(1, 3)  # creo un multiframe con 1 riga e 3 colonne per vedere l'evoluzione
 # visualizzazione delle mappe classificate
-plot(ndvi_2020_cl, col = c("darkblue", "gold", "darkgreen"), main = "NDVI class. 2020", colNA = "black")  
-plot(ndvi_2023_cl, col = c("darkblue", "gold", "darkgreen"), main = "NDVI class. 2023", colNA = "black")   
-plot(ndvi_2026_cl, col = c("darkblue", "gold", "darkgreen"), main = "NDVI class. 2026", colNA = "black")
+plot(ndvi_2020_cl, col = c("royalblue", "gold", "forestgreen"), main = "NDVI class. 2020", colNA = "white")  
+plot(ndvi_2023_cl, col = c("royalblue", "gold", "forestgreen"), main = "NDVI class. 2023", colNA = "white")   
+plot(ndvi_2026_cl, col = c("royalblue", "gold", "forestgreen"), main = "NDVI class. 2026", colNA = "white")
 dev.off()
 ````
-
-<img width="1280" height="709" alt="franco_ndvi_class" src="https://github.com/user-attachments/assets/0648181d-28d6-4d3e-9e6f-9f3cdef58622" />
+<img width="1280" height="709" alt="franco_classi_ndvi" src="https://github.com/user-attachments/assets/0827cd3a-c469-4642-b3d6-0da29c6bec87" />
 
 > Classificazione per classi NDVI di copertura del suolo nei tre anni presi in analisi
 
@@ -402,7 +402,7 @@ perc_2026 <- freq_2026$count * 100 / ncell(ndvi_2026_cl)
 
 # creo dataframe
 tabella_franco <- data.frame(
-  Classi = c("1: mare / roccia", "2: macchia rada", "3: macchia densa"),
+  Classi = c("1: suolo / roccia", "2: macchia rada", "3: macchia densa"),
   a2020 = round(perc_2020, 2),
   a2023 = round(perc_2023, 2),
   a2026 = round(perc_2026, 2)
@@ -415,9 +415,9 @@ print(tabella_franco) # visualizzo tabella
 
 | Classi | 2020 | 2023 | 2026
 |--- |--- |--- |--- |
-|   **1**: mare / roccia | 41.08% | 41.29%  | 40.83% |  
-|   **2**: macchia rada | 23.28% | 23.38% | 16.20% | 
-|   **3**: macchia densa | 35.64% | 35.33% | 42.98% | 
+|   **1**: suolo / roccia | 7.94% | 8.23%  | 7.49% |  
+|   **2**: macchia rada | 21.75% | 21.70% | 14.57% | 
+|   **3**: macchia densa | 37.01% | 36.76% | 44.64% | 
 
 </div>
 
@@ -428,7 +428,7 @@ print(tabella_franco) # visualizzo tabella
 # creo grafico percentuali NDVI 2020
 p1 <- ggplot(tabella_franco, aes(x = Classi, y = a2020, fill = Classi)) +    
   geom_bar(stat = "identity") +
-  scale_fill_manual(values = c("darkblue", "gold", "darkgreen")) +
+  scale_fill_manual(values = c("royalblue", "gold", "forestgreen")) +
   ylim(0, 100) +
   labs(title = "Classi NDVI 2020", y = "% Copertura", x = NULL) +
   theme_minimal() +
@@ -440,7 +440,7 @@ p1 <- ggplot(tabella_franco, aes(x = Classi, y = a2020, fill = Classi)) +
 # creo grafico percentuali NDVI 2023
 p2 <- ggplot(tabella_franco, aes(x = Classi, y = a2023, fill = Classi)) +
   geom_bar(stat = "identity") +
-  scale_fill_manual(values = c("darkblue", "gold", "darkgreen")) +
+  scale_fill_manual(values = c("royalblue", "gold", "forestgreen")) +
   ylim(0, 100) +
   labs(title = "Classi NDVI 2023", y = NULL, x = NULL) +  # tolgo asse y per ridondanza
   theme_minimal() +
@@ -452,7 +452,7 @@ p2 <- ggplot(tabella_franco, aes(x = Classi, y = a2023, fill = Classi)) +
 # creo grafico percentuali NDVI 2026
 p3 <- ggplot(tabella_franco, aes(x = Classi, y = a2026, fill = Classi)) +
   geom_bar(stat = "identity") +
-  scale_fill_manual(values = c("darkblue", "gold", "darkgreen")) +
+  scale_fill_manual(values = c("royalblue", "gold", "forestgreen")) +
   ylim(0, 100) +
   labs(title = "Classi NDVI 2026", y = NULL, x = NULL) +
   theme_minimal() +
@@ -464,7 +464,8 @@ p3 <- ggplot(tabella_franco, aes(x = Classi, y = a2026, fill = Classi)) +
 p1 + p2 + p3 # affianco i tre grafici in un'unica riga
 dev.off()
 ````
-<img width="1280" height="709" alt="franco_diag_barre_class" src="https://github.com/user-attachments/assets/f2674c0e-b163-4b7b-8830-b21c269e7a98" />
+
+<img width="1280" height="709" alt="franco_barre_ndvi" src="https://github.com/user-attachments/assets/89d4827b-09ca-4e08-846f-9faad5f88b49" />
 
 > Diagramma a barre delle classi NDVI di copertura del suolo
 
@@ -483,26 +484,25 @@ ndvi_dif_totale <- ndvi_2026 - ndvi_2020  # calcolo differenza NDVI tra inizio e
 
 
 im.multiframe(2, 3)  # preparo pannello grafico con 2 righe e 3 colonne
-plot(nir_dif_fase1, col = magma(100), range = c(-0.25, 0.25), main = "NIR (2023 - 2020)")
-plot(nir_dif_fase2, col = magma(100), range = c(-0.25, 0.25), main = "NIR (2026 - 2023)")
-plot(nir_dif_totale, col = magma(100), range = c(-0.25, 0.25), main = "NIR (2026 - 2020)")
-plot(ndvi_dif_fase1, col = magma(100), range = c(-0.6, 0.6), main = "NDVI (2023 - 2020)")
-plot(ndvi_dif_fase2, col = magma(100), range = c(-0.6, 0.6), main = "NDVI (2026 - 2023)")
-plot(ndvi_dif_totale, col = magma(100), range = c(-0.6, 0.6), main = "NDVI (2026 - 2020)")
+plot(nir_dif_fase1, col = magma(100), main = "NIR (2023 - 2020)")
+plot(nir_dif_fase2, col = magma(100), main = "NIR (2026 - 2023)")
+plot(nir_dif_totale, col = magma(100), main = "NIR (2026 - 2020)")
+plot(ndvi_dif_fase1, col = magma(100), main = "NDVI (2023 - 2020)")
+plot(ndvi_dif_fase2, col = magma(100), main = "NDVI (2026 - 2023)")
+plot(ndvi_dif_totale, col = magma(100), main = "NDVI (2026 - 2020)")
 dev.off()
 ````
-
-<img width="1280" height="709" alt="franco_multitemp" src="https://github.com/user-attachments/assets/11f7c921-36aa-4466-b1f2-294e939c5cbd" />
+<img width="1280" height="709" alt="franco_multitemp" src="https://github.com/user-attachments/assets/87df216a-2dd2-4ce8-a278-ef33c0e68e1f" />
 
 > Confronto NIR e NDVI nei periodi presi in analisi
 
 > [!NOTE]
->Nel periodo 2023–2020, la dinamica del NIR si attesta su valori prossimi allo zero nella maggior parte dell'area, registrando solo locali fluttuazioni spaziali prive di un trend geografico definito. Parallelamente, l'andamento del  ΔNDVI conferma che in questa prima fase non viene rilevato alcun segnale di ripresa vegetazionale generalizzato. Dal punto di vista ecologico, questa iniziale stasi spettrale potrebbe indicare un tempo di latenza biologica: la cessazione di un elevato disturbo di pascolamento non innesca una risposta immediata. Nel periodo 2026–2023, lo scenario osservato indicherebbe l'inversione di tendenza dell'ecosistema insulare. Le mappe della differenza nel NIR e del ΔNDVI abbandonano le tonalità neutre e virano diffusamente verso valori positivi. Dal punto di vista ecologico, questo triennio potrebbe rappresentare la fase di reazione e colonizzazione: una volta completata l'eradicazione e superata la latenza iniziale, la vegetazione risponde con una crescita accelerata. Infine, nel periodo 2026–2020, che esprime il bilancio complessivo del progetto, il trend di recupero sembrerebbe consolidarsi in modo definitivo. La differenza nel NIR evidenzia un incremento marcato e diffuso delle frequenze positive, il quale riflette un cambiamento strutturale profondo della vegetazione, probabilmente legato alla naggior ricrescita di biomassa legnosa e all'aumento della densità fogliare.
+> Nel periodo 2023–2020, la dinamica del NIR si attesta su valori prossimi allo zero nella maggior parte dell'area, registrando solo locali fluttuazioni spaziali prive di un trend geografico definito. Parallelamente, l'andamento del ΔNDVI conferma che in questa prima fase non viene rilevato alcun segnale di ripresa vegetazionale generalizzato. Dal punto di vista ecologico, questa iniziale stasi spettrale potrebbe indicare un tempo di latenza biologica: la cessazione di un elevato disturbo di pascolamento non innesca una risposta immediata. Nel periodo 2026–2023, lo scenario osservato indicherebbe l'inversione di tendenza dell'ecosistema insulare. Le mappe della differenza nel NIR e del ΔNDVI abbandonano le tonalità neutre e virano diffusamente verso valori positivi. Dal punto di vista ecologico, questo triennio potrebbe rappresentare la fase di reazione e colonizzazione: una volta completata l'eradicazione e superata la latenza iniziale, la vegetazione risponde con una crescita accelerata. Infine, nel periodo 2026–2020, che esprime il bilancio complessivo del progetto, il trend di recupero sembrerebbe consolidarsi in modo definitivo. La differenza nel NIR evidenzia un incremento marcato e diffuso delle frequenze positive, il quale riflette un cambiamento strutturale profondo della vegetazione, probabilmente legato alla maggior ricrescita di biomassa legnosa e all'aumento della densità fogliare.
 
 
 ## 7. Conclusioni 🐐
 
-Nel complesso, i dati ottenuti indicano una possibile fase di recupero della macchia mediterranea del Promontorio del Franco successiva alla rimozione del muflone, fornendo un’indicazione positiva rispetto all’efficacia dell’intervento. Tuttavia, i risultati devono essere interpretati considerando i limiti dell’approccio utilizzato: gli indici satellitari impiegati descrivono variazioni della risposta vegetazionale, ma non permettono da soli di attribuire esclusivamente all’eradicazione del muflone il cambiamento osservato. Fattori ambientali come disponibilità idrica, condizioni climatiche annuali e dinamiche naturali della vegetazione possono infatti contribuire alla variazione rilevata. Nonostante queste limitazioni, appaiono chiare le differenze nello stato della vegetazione tra la fase antecedente e quella successiva all'intervento di eradicazione, suggerendo spunti e riflessioni al riguardo.  Dunque, l'approccio integrato tra gestione della fauna e telerilevamento può rappresentare uno strumento di monitoraggio degli interventi di biologia della conservazione, permettendo di valutare nel tempo la risposta degli habitat sottoposti a ripristino ecologico. In conclusione, il caso dell’Isola del Giglio evidenzia come la gestione delle specie aliene invasive non rappresenti soltanto un’azione di controllo della fauna, ma un intervento finalizzato alla conservazione della biodiversità e al recupero dei processi ecologici degli ecosistemi. 
+Nel complesso, i dati ottenuti indicano una possibile fase di recupero della macchia mediterranea del Promontorio del Franco successiva alla rimozione del muflone, fornendo un’indicazione positiva rispetto all’efficacia dell’intervento. Tuttavia, i risultati devono essere interpretati considerando i limiti dell’approccio utilizzato: gli indici satellitari impiegati descrivono variazioni della risposta vegetazionale, ma non permettono da soli di attribuire esclusivamente all’eradicazione del muflone il cambiamento osservato. Fattori ambientali come disponibilità idrica, condizioni climatiche annuali e dinamiche naturali della vegetazione possono infatti contribuire alla variazione rilevata. Nonostante queste limitazioni, appaiono chiare le differenze nello stato della vegetazione tra la fase antecedente e quella successiva all'intervento di eradicazione, suggerendo spunti e riflessioni al riguardo.  Dunque, l'approccio integrato tra gestione della fauna e telerilevamento può rappresentare uno strumento di monitoraggio degli interventi di biologia della conservazione, permettendo di esplorare nel tempo la risposta degli habitat sottoposti a ripristino ecologico. In conclusione, il caso dell’Isola del Giglio evidenzia come la gestione delle specie aliene invasive non rappresenti soltanto un’azione di controllo della fauna, ma un intervento finalizzato alla conservazione della biodiversità e al recupero dei processi ecologici degli ecosistemi. 
 
 ---
 
