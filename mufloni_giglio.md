@@ -68,14 +68,14 @@ library(patchwork)  # per combinare e organizzare grafici multiplici
 In seguito, imposto la **working directory**:
 
 ````r
-setwd("C:/Users/lucab/Desktop/progetto_giglio/data")
+setwd("C:/Users/lucab/Desktop/progetto_giglio/data")  # funzione per impostare working directory
 ````
 
 Ora è possibile **importare i raster** Sentinel-2 acquisiti:
 
 ````r
-franco_2020 = rast("franco_2020.tif")  # importato e nominato il primo .tif
-plot(franco_2020)                      # visualizzato il primo .tif
+franco_2020 = rast("franco_2020.tif")  # importo e nomino il primo .tif
+plot(franco_2020)                      # visualizzo il primo .tif
 dev.off()                              # chiudo il pannello di visualizzazione delle immagini
 ````
 
@@ -84,11 +84,11 @@ dev.off()                              # chiudo il pannello di visualizzazione d
 > Immagine satellitare nelle 4 bande riguardante l'anno precedente all'intervento di eradicazione
 
 > [!NOTE]
-> B2 = Blue; B3 = Green; B4 = Red; B8 = NIR 
+> **B2** = Blue; **B3** = Green; **B4** = Red; **B8** = NIR 
 
 ````r
-franco_2023 = rast("franco_2023.tif")  # importato e nominato il secondo .tif
-plot(franco_2023)                      # visualizzato il secondo .tif
+franco_2023 = rast("franco_2023.tif")  # importo e nomino il secondo .tif
+plot(franco_2023)                      # visualizzo il secondo .tif
 dev.off()                              # chiudo il pannello di visualizzazione delle immagini
 ````
 
@@ -97,8 +97,8 @@ dev.off()                              # chiudo il pannello di visualizzazione d
 > Immagine satellitare nelle 4 bande a due anni dall'inizio dell'intervento di eradicazione
 
 ````r
-franco_2026 = rast("franco_2026.tif")  # importato e nominato il terzo .tif
-plot(franco_2026)                      # visualizzato il terzo .tif
+franco_2026 = rast("franco_2026.tif")  # importo e nomino il terzo .tif
+plot(franco_2026)                      # visualizzo il terzo .tif
 dev.off()                              # chiudo il pannello di visualizzazione delle immagini
 ````
 
@@ -111,25 +111,25 @@ dev.off()                              # chiudo il pannello di visualizzazione d
 
 ````r
 im.multiframe(1, 3)  # preparo pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
-im.plotRGB(franco_2020, r = 3, g = 2, b = 1, title = "Pre-eradicazione")  # visualizzo immagini in RGB con funzione di ImageRy
+im.plotRGB(franco_2020, r = 3, g = 2, b = 1, title = "Pre-eradicazione")  # visualizzo immagini in RGB con funzione di imageRy
 im.plotRGB(franco_2023, r = 3, g = 2, b = 1, title = "Eradicazione") 
 im.plotRGB(franco_2026, r = 3, g = 2, b = 1, title = "Post-eradicazione")
 dev.off() # chiudo il pannello di visualizzazione delle immagini
 ````
 <img width="1280" height="709" alt="franco_rgb" src="https://github.com/user-attachments/assets/796a24c0-f358-4548-94a4-4773be155ee2" />
 
-> Confronto tra le immagini in RGB delle diverse fasi analizzate
+> Confronto tra le immagini in **RGB** delle diverse fasi analizzate
 
 
 ### 3.4. Visualizzazione NIR in Blue
 
 ````r
-im.multiframe(1, 3) # preparo pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
-# r = 3 (Red), g = 2 (Green), b = 4 (NIR) # imposto NIR nel canale blu
-plotRGB(franco_2020, r = 3, g = 2, b = 4, stretch = "lin", main = "Pre-eradicazione (2020)")  # utilizzo funzione pacchetto terra
+im.multiframe(1, 3)  # preparo pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
+# r = 3 (Red), g = 2 (Green), b = 4 (NIR)  # imposto NIR nel canale blu
+plotRGB(franco_2020, r = 3, g = 2, b = 4, stretch = "lin", main = "Pre-eradicazione (2020)")  # visualizzo immagini con funzione terra
 plotRGB(franco_2023, r = 3, g = 2, b = 4, stretch = "lin", main = "Eradicazione (2023)")      
 plotRGB(franco_2026, r = 3, g = 2, b = 4, stretch = "lin", main = "Post-eradicazione (2026)")
-dev.off() # chiudo il pannello di visualizzazione delle immagini
+dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
 
 <img width="1280" height="709" alt="franco_nir_blue" src="https://github.com/user-attachments/assets/f66c5727-1061-45c1-b732-227f58abe1b0" />
@@ -143,9 +143,9 @@ dev.off() # chiudo il pannello di visualizzazione delle immagini
 ### 3.5. Visualizzazione 4 bande separate per le 3 immagini (RGB + NIR)
 
 ````r
-im.multiframe(3, 4) # visualizzo pannello grafico con 3 righe (anni) e 4 colonne (bande)
-plot(franco_2020[[1]], col = viridis(100), main = "2020 - Blue")
-plot(franco_2020[[2]], col = viridis(100), main = "2020 - Green")
+im.multiframe(3, 4)  # preparo pannello grafico con 3 righe e 4 colonne usando la funzione di imageRy
+plot(franco_2020[[1]], col = viridis(100), main = "2020 - Blue")  # visualizzo immagini, assegno palette colore e nomino i file raster
+plot(franco_2020[[2]], col = viridis(100), main = "2020 - Green") # in alternativa, si può usare funzione im.plot() di imageRy
 plot(franco_2020[[3]], col = viridis(100), main = "2020 - Red")
 plot(franco_2020[[4]], col = viridis(100), main = "2020 - NIR")
 
@@ -158,7 +158,7 @@ plot(franco_2026[[1]], col = viridis(100), main = "2026 - Blue")
 plot(franco_2026[[2]], col = viridis(100), main = "2026 - Green")
 plot(franco_2026[[3]], col = viridis(100), main = "2026 - Red")
 plot(franco_2026[[4]], col = viridis(100), main = "2026 - NIR")
-dev.off() # chiudo il pannello di visualizzazione delle immagini
+dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
 
 <img width="1280" height="709" alt="franco_rgb_nir" src="https://github.com/user-attachments/assets/bc73b2d3-3efd-4001-a8b5-de5834752fe5" />
