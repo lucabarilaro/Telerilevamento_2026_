@@ -78,7 +78,8 @@ franco_2020 = rast("franco_2020.tif")  # importato e nominato il primo .tif
 plot(franco_2020)                      # visualizzato il primo .tif
 dev.off()                              # chiudo il pannello di visualizzazione delle immagini
 ````
-<img width="1280" height="709" alt="franco_2020" src="https://github.com/user-attachments/assets/572aa3c3-ae68-4edb-a325-7327ae2b0e2a" />
+
+<img width="1280" height="709" alt="franco_2020_" src="https://github.com/user-attachments/assets/895d5fa4-82ac-4854-8c0f-d83e81f775d0" />
 
 > Immagine satellitare nelle 4 bande riguardante l'anno precedente all'intervento di eradicazione
 
@@ -90,7 +91,8 @@ franco_2023 = rast("franco_2023.tif")  # importato e nominato il secondo .tif
 plot(franco_2023)                      # visualizzato il secondo .tif
 dev.off()                              # chiudo il pannello di visualizzazione delle immagini
 ````
-<img width="1280" height="709" alt="franco_2023" src="https://github.com/user-attachments/assets/128aba5e-d9d5-4841-9f4c-2dfabe2e2a5b" />
+
+<img width="1280" height="709" alt="franco_2023_" src="https://github.com/user-attachments/assets/1c0383a4-d70f-4bcb-a695-f8765012c531" />
 
 > Immagine satellitare nelle 4 bande a due anni dall'inizio dell'intervento di eradicazione
 
@@ -99,7 +101,8 @@ franco_2026 = rast("franco_2026.tif")  # importato e nominato il terzo .tif
 plot(franco_2026)                      # visualizzato il terzo .tif
 dev.off()                              # chiudo il pannello di visualizzazione delle immagini
 ````
-<img width="1280" height="709" alt="franco_2026" src="https://github.com/user-attachments/assets/c489e80f-4093-417e-a66d-1362e0722dc0" />
+
+<img width="1280" height="709" alt="franco_2026_" src="https://github.com/user-attachments/assets/2eaa3816-94fe-4439-aefc-f5416d7ebe29" />
 
 > Immagine satellitare nelle 4 bande a due anni dalla fine dell'intervento di eradicazione
 
@@ -158,7 +161,7 @@ plot(franco_2026[[4]], col = viridis(100), main = "2026 - NIR")
 dev.off() # chiudo il pannello di visualizzazione delle immagini
 ````
 
-<img width="1280" height="709" alt="franco_rgb_nir" src="https://github.com/user-attachments/assets/f5061362-a3c6-4b8e-aa9a-94805a41c94f" />
+<img width="1280" height="709" alt="franco_rgb_nir" src="https://github.com/user-attachments/assets/bc73b2d3-3efd-4001-a8b5-de5834752fe5" />
 
 > Confronto tra le 4 bande (colonne) nei diversi anni (righe) presi in analisi
 
@@ -196,7 +199,7 @@ plot(dvi_2026, col = viridis(100), main = "DVI 2026")   # visualizzo DVI dopo l'
 dev.off()
 ````
 
-<img width="1280" height="709" alt="franco_dvi" src="https://github.com/user-attachments/assets/2d3590a7-26be-4007-80c2-8d7d96136507" />
+<img width="1280" height="709" alt="franco_dvi" src="https://github.com/user-attachments/assets/64ca5a87-0a92-4c62-96e3-e21d77a8d910" />
 
 > DVI dei tre periodi presi in analisi
 
@@ -215,7 +218,7 @@ plot(dvi_diff_totale, col = magma(100), main = "ΔDVI (2026 - 2020)")
 dev.off()
 ````
 
-<img width="1280" height="709" alt="franco_deltaDVI" src="https://github.com/user-attachments/assets/7828af1b-9df2-46c0-9d45-e45821919bc8" />
+<img width="1280" height="709" alt="franco_delta_dvi" src="https://github.com/user-attachments/assets/c2197d7d-0eea-454a-8fc4-5531f124aafc" />
 
 > Confronto dei ΔDVI
 
@@ -243,7 +246,7 @@ plot(ndvi_2026, col = viridis(100), main = "NDVI 2026")
 dev.off()
 ````
 
-<img width="1280" height="709" alt="franco_ndvi" src="https://github.com/user-attachments/assets/ab612930-fabb-45f3-b5d7-e05ac6059b47" />
+<img width="1280" height="709" alt="franco_ndvi" src="https://github.com/user-attachments/assets/065f7a95-1e31-457d-9054-d5740eadfdaf" />
 
 > NDVI dei tre periodi presi in analisi
 
@@ -261,7 +264,7 @@ plot(ndvi_diff_totale, col = magma(100), main = "ΔNDVI (2026 - 2020)")
 dev.off()
 ````
 
-<img width="1280" height="709" alt="franco_deltaNDVI" src="https://github.com/user-attachments/assets/bd7d690c-50a7-4466-a7c0-6fcb8b7b8492" />
+<img width="1280" height="709" alt="franco_delta_ndvi" src="https://github.com/user-attachments/assets/abe9a72f-74b0-4e51-a579-b2634cbb62ca" />
 
 >  Confronto dei ΔNDVI
 
