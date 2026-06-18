@@ -35,9 +35,9 @@ Pertanto, l'analisi valuta lo stato della vegetazione attraverso immagini satell
 - **post-eradicazione**, aprile/giugno-2026.
 
 > [!NOTE]
-> La scelta delle date è basata su un intervallo di tempo di 3 anni tra un periodo e l'altro. Nel dettaglio, il **2020** <sup>[*](#nota1)</sup> rappresenta l'anno prima dell'inizio del piano di eradicazione, mentre il **2023** è l'anno in cui termina la maggior parte delle attività di abbattimento e traslocazione di mufloni dall'Isola (da maggio 2021 a marzo 2023 sono stati abbattuti 38 mufloni e traslocati 52; *Nicoloso S. et al., 2024*). Infine, il **2026**, anno corrente, rappresenta il riferimento per valutare, a due anni dalla conclusione ufficiale delle operazioni di eradicazione, l'eventuale ripresa della vegetazione nel Promontorio del Franco. 
+> La scelta delle date è basata su un intervallo di tempo di 3 anni tra un periodo e l'altro. Nel dettaglio, il **2020** <sup>[*](#nota)</sup> rappresenta l'anno prima dell'inizio del piano di eradicazione, mentre il **2023** è l'anno in cui termina la maggior parte delle attività di abbattimento e traslocazione di mufloni dall'Isola (da maggio 2021 a marzo 2023 sono stati abbattuti 38 mufloni e traslocati 52; *Nicoloso S. et al., 2024*). Infine, il **2026**, anno corrente, rappresenta il riferimento per valutare, a due anni dalla conclusione ufficiale delle operazioni di eradicazione, l'eventuale ripresa della vegetazione nel Promontorio del Franco. 
 
-<a name="nota1"></a>\* *Dal 2009 al 2020 sono stati condotti interventi di controllo della specie sull'Isola, effettuati dal PNAT e dalla Polizia Provinciale di Grosseto, determinando un numero complessivo di 97 individui abbattuti (*Nicoloso S. et al., 2021*).*
+<a name="nota"></a>\* *Dal 2009 al 2020 sono stati condotti interventi di controllo della specie sull'Isola, effettuati dal PNAT e dalla Polizia Provinciale di Grosseto, determinando un numero complessivo di 97 individui abbattuti (*Nicoloso S. et al., 2021*).*
 
 Gli indici vegetazionali impiegati per le analisi sono:
 
