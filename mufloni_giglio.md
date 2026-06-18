@@ -391,14 +391,14 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 Dalla classificazione precedentemente effettuata ricavo le **frequenze** delle diverse classi, riportandole in una tabella e, infine, visualizzandole in un diagramma a barre.
 
 ````r
-# calcolo frequenza pixel appartenenti a ciascuna classe del raster NDVI classifica
+# calcolo frequenza pixel appartenenti a ciascuna classe del raster NDVI classificato
 freq_2020 <- freq(ndvi_2020_cl)
 freq_2023 <- freq(ndvi_2023_cl)
 freq_2026 <- freq(ndvi_2026_cl)
 
-# calcolo totale pixel di terraferma escludendo gli NA per ogni anno
+# calcolo totale pixel di terraferma escludendo NA per ogni anno
 tot_pix_2020 <- sum(freq_2020$count)  # calcolo totale pixel del raster NDVI classificato
-tot_pix_2023 <- sum(freq_2023$count)  # sum(freq_2023$count) somma tutti i valori delle frequenze pixel per ogni classe
+tot_pix_2023 <- sum(freq_2023$count)  # funzione somma totale valori frequenze pixel per ogni classe, contenuti nella colonna count 
 tot_pix_2026 <- sum(freq_2026$count)
 
 # calcolo percentuali moltiplicando conteggio pixel per 100 diviso totale pixel considerati
@@ -468,7 +468,7 @@ p3 <- ggplot(tabella_franco, aes(x = Classi, y = a2026, fill = Classi)) +
   )
 
 p1 + p2 + p3  # affianco i tre grafici in un'unica riga
-dev.off()  # chiudo il pannello grafico
+dev.off()     # chiudo il pannello grafico
 ````
 
 <img width="1280" height="709" alt="franco_barre_ndvi" src="https://github.com/user-attachments/assets/fbb2799c-4b96-4ebe-be50-9b1185feb08c" />
@@ -481,11 +481,11 @@ dev.off()  # chiudo il pannello grafico
 L'analisi multitemporale è stata applicata per valutare l'evoluzione della risposta vegetazionale prima, durante e dopo l'intervento di eradicazione del muflone dall'Isola del Giglio. Il confronto del ΔNDVI consente di quantificare la variazione del vigore vegetativo rispetto alla condizione iniziale (risposta vegetativa quantitativa), mentre l'analisi delle differenze nella banda del vicino infrarosso (NIR), ovvero la variazione della riflettanza legata alla struttura vegetale, fornisce un'ulteriore indicazione della variazione della struttura e della biomassa vegetale. L'integrazione delle informazioni spettrali e spaziali consente quindi di individuare non solo l'entità del cambiamento, ma anche la sua distribuzione all'interno dell'area di studio.
 
 ````r
-nir_dif_fase1 <- franco_2023[[4]] - franco_2020[[4]]  # calcolo differenza NIR durante eradicazione
-nir_dif_fase2 <- franco_2026[[4]] - franco_2023[[4]]  # calcolo differenza NIR dopo eradicazione
+nir_dif_fase1 <- franco_2023[[4]] - franco_2020[[4]]   # calcolo differenza NIR durante eradicazione
+nir_dif_fase2 <- franco_2026[[4]] - franco_2023[[4]]   # calcolo differenza NIR dopo eradicazione
 nir_dif_totale <- franco_2026[[4]] - franco_2020[[4]]  # calcolo differenza NIR tra inizio e fine eradicazione
-ndvi_dif_fase1 <- ndvi_2023 - ndvi_2020  # calcolo differenza NDVI durante eradicazione
-ndvi_dif_fase2 <- ndvi_2026 - ndvi_2023  # calcolo differenza NDVI dopo eradicazione
+ndvi_dif_fase1 <- ndvi_2023 - ndvi_2020   # calcolo differenza NDVI durante eradicazione
+ndvi_dif_fase2 <- ndvi_2026 - ndvi_2023   # calcolo differenza NDVI dopo eradicazione
 ndvi_dif_totale <- ndvi_2026 - ndvi_2020  # calcolo differenza NDVI tra inizio e fine eradicazione
 
 
