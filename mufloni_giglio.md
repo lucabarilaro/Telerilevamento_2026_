@@ -62,7 +62,7 @@ library(imageRy)    # per visualizzare, classificare e manipolare immagini satel
 library(viridis)    # per visualizzare dati con palette di colori viridis
 library(ggplot2)    # per visualizzare dati con la creazione di grafici
 library(ggridges)   # per visualizzare distribuzioni con ridgeline plots
-library(patchwork)  # per combinare e organizzare grafici multiplici
+library(patchwork)  # per combinare e organizzare grafici molteplici
 ````
 
 In seguito, imposto la **working directory**:
@@ -427,20 +427,23 @@ print(tabella_franco)  # visualizzo tabella
 
 </div>
 
+> La tabella mostra valori simili tra il 2020 e il 2023 per le classi di macchia rada e macchia densa. Per quanto riguarda il 2026, rispetto ai precedenti anni presi in analisi, si passa a un 11% circa in meno di macchia rada e a un aumento del 12% circa di macchia densa
+
      
 #### Visualizzazione 
 
 ````r
 # creo grafico percentuali NDVI 2020
-p1 <- ggplot(tabella_franco, aes(x = Classi, y = a2020, fill = Classi)) +    
-  geom_bar(stat = "identity") +
+# uso dataset tabella_franco, personalizzo estetica, fill = Classi per barre di colore diverso in base alla classe NDVI
+p1 <- ggplot(tabella_franco, aes(x = Classi, y = a2020, fill = Classi)) + 
+  geom_bar(stat = "identity") +  # per contare quante osservazioni ci sono attraverso valori colonna y
   scale_fill_manual(values = c("royalblue", "gold", "forestgreen")) +
   ylim(0, 100) +
   labs(title = "Classi NDVI 2020", y = "% Copertura", x = NULL) +
-  theme_minimal() +
+  theme_minimal() +  # applico stile grafico semplice
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold"),
-  legend.position = "none"  # nascondo la legenda per non duplicarla 3 volte
+  legend.position = "none"  # nascondo legenda per non duplicarla 3 volte
   )
 
 # creo grafico percentuali NDVI 2023
@@ -449,10 +452,10 @@ p2 <- ggplot(tabella_franco, aes(x = Classi, y = a2023, fill = Classi)) +
   scale_fill_manual(values = c("royalblue", "gold", "forestgreen")) +
   ylim(0, 100) +
   labs(title = "Classi NDVI 2023", y = NULL, x = NULL) +  # tolgo asse y per ridondanza
-  theme_minimal() +
+  theme_minimal() + 
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold"),
-    legend.position = "none"  # nascondo la legenda per non duplicarla 3 volte
+    legend.position = "none"  # nascondo legenda per non duplicarla 3 volte
   )
 
 # creo grafico percentuali NDVI 2026
@@ -464,7 +467,7 @@ p3 <- ggplot(tabella_franco, aes(x = Classi, y = a2026, fill = Classi)) +
   theme_minimal() +
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold"),
-    legend.position = "right"
+    legend.position = "right"  # attivo legenda
   )
 
 p1 + p2 + p3  # affianco i tre grafici in un'unica riga
@@ -490,10 +493,10 @@ ndvi_dif_totale <- ndvi_2026 - ndvi_2020  # calcolo differenza NDVI tra inizio e
 
 
 im.multiframe(2, 3)  # preparo pannello grafico con 2 righe e 3 colonne
-plot(nir_dif_fase1, col = magma(100), main = "NIR (2023 - 2020)")
+plot(nir_dif_fase1, col = magma(100), main = "NIR (2023 - 2020)")   # visualizzo immagini differenza NIR
 plot(nir_dif_fase2, col = magma(100), main = "NIR (2026 - 2023)")
 plot(nir_dif_totale, col = magma(100), main = "NIR (2026 - 2020)")
-plot(ndvi_dif_fase1, col = magma(100), main = "NDVI (2023 - 2020)")
+plot(ndvi_dif_fase1, col = magma(100), main = "NDVI (2023 - 2020)")  # visualizzo immagini differenza NDVI
 plot(ndvi_dif_fase2, col = magma(100), main = "NDVI (2026 - 2023)")
 plot(ndvi_dif_totale, col = magma(100), main = "NDVI (2026 - 2020)")
 dev.off()  # chiudo il pannello grafico
