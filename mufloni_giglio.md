@@ -311,7 +311,7 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 > Ridgeline Plot per confrontare la distribuzione dei ΔNDVI
 
 > [!IMPORTANT]
-> Nel **Ridgeline Plot** dei **ΔNDVI** la distribuzione del 2023–2020 risulta pressochè centrata attorno allo zero, indicando un cambiamento vegetazionale complessivamente limitato durante le prime fasi di eradicazione della specie. La distribuzione del ΔNDVI 2026–2023 mostra un progressivo spostamento verso valori positivi, suggerendo un incremento generalizzato dell'attività vegetativa rispetto alle condizioni iniziali antecedenti. Infine, la curva ΔNDVI 2026–2020, la quale esprime il bilancio complessivo dell'intervento, consolida questo trend mostrando una distribuzione verso valori positivi. Tale grafico suggerisce come il recupero della macchia mediterranea sia aumentato in modo netto solo dopo il completamento dell'eradicazione.
+> Nel **Ridgeline Plot** dei **ΔNDVI** la distribuzione del 2023–2020 risulta pressoché centrata attorno allo zero, indicando un cambiamento vegetazionale complessivamente limitato durante le prime fasi di eradicazione della specie. La distribuzione del ΔNDVI 2026–2023 mostra un progressivo spostamento verso valori positivi, suggerendo un incremento generalizzato dell'attività vegetativa rispetto alle condizioni iniziali antecedenti. Infine, la curva ΔNDVI 2026–2020, la quale esprime il bilancio complessivo dell'intervento, consolida questo trend mostrando una distribuzione verso valori positivi. Tale grafico suggerisce come il recupero della macchia mediterranea sia aumentato in modo netto solo dopo il completamento dell'eradicazione.
 
 
 ### 5.2. Classificazione per classi NDVI di copertura del suolo
