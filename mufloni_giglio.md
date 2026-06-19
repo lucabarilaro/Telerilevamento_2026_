@@ -12,7 +12,7 @@
 
 ## 1. Introduzione e area di studio 🗺️
 
-Il progetto ***Life LETSGO Giglio "Less alien species in the Tuscan Archipelago: new actions to protect Giglio Island habitats"***  (LIFE18 NAT/IT/000828) ha previsto delle attività di prelievo finalizzate all'eradicazione del **muflone** (*Ovis aries*) presso l'Isola del Giglio. Il muflone, **specie alloctona** introdotta nell'isola toscana per scopi venatori negli anni '60-'70 del secolo scorso, ha determinato un **sovrasfruttamento degli ecosistemi** di macchia mediterranea, portando a un **degrado della vegetazione**. Complessivamente, in 3 anni di progetto (Febbraio 2021- Marzo 2024), sono stati rimossi 120 mufloni (ulteriori 10 individui sono stati abbattuti nel 2020 in attività di controllo della specie). 
+Il progetto ***Life LETSGO Giglio "Less alien species in the Tuscan Archipelago: new actions to protect Giglio Island habitats"***  (LIFE18 NAT/IT/000828) ha previsto delle attività di prelievo finalizzate all'eradicazione del **muflone** (*Ovis aries*) presso l'Isola del Giglio. Il muflone, **specie alloctona** introdotta nell'isola toscana per scopi venatori negli anni '60-'70 del secolo scorso, ha determinato un **sovrasfruttamento degli ecosistemi** di macchia mediterranea, portando a un **degrado della vegetazione**. Complessivamente, in 4 anni di progetto (fase operativa dal 2021 al 2023 e monitoraggio post-intervento nel 2024), sono stati rimossi 120 mufloni (ulteriori 10 individui sono stati abbattuti nel 2020 in attività di controllo della specie). 
 
 I dati rilevati sui mufloni dell’Isola del Giglio hanno riscontrato una popolazione al **limite della capacità portante**, probabilmente a causa della **scarsità di risorse trofiche** disponibili. Inoltre, è necessario considerare l’**elevata densità** di bovidi riscontrata in alcune zone dell’Isola, vista la tendenza alla filopatria e al comportamento spaziale della specie (*Nicoloso S. et al., 2024*). In particolare, molti degli individui catturati e traslocati o abbattuti sono stati registrati nella zona del **Promontorio del Franco**, corrispondente all'area dove sono stati introdotti per la prima volta (*La Russa L., com. pers*). Pertanto, a scopo didattico, l'analisi spaziale si concentrerà esclusivamente sulla suddetta area. 
 
@@ -26,7 +26,7 @@ I dati rilevati sui mufloni dell’Isola del Giglio hanno riscontrato una popola
 Il presente lavoro ha l'obiettivo di valutare l'impatto degradativo che le specie aliene invasive – nello specifico ungulati introdotti nel contesto insulare – esercitano sulle comunità vegetali autoctone, utilizzando il **telerilevamento** come strumento di verifica oggettiva. In particolare, il progetto mira a:
 
 - promuovere l'importanza e la necessità di interventi di *wildlife management* come strumento fondamentale per la biologia della conservazione, la quale insegna che le specie aliene invasive rappresentano una delle maggiori minacce per la diversità biologica;
-- osservare all'interno dell'area di studio quale fosse lo stato della vegetazione prima dell'intervento di eradicazione e valutare se il piano di rimozione della specie possa aver contribuito in poco tempo a un miglioramento della biomassa della macchia mediterranea nel sito di presenza.
+- osservare all'interno dell'area di studio quale fosse lo stato della vegetazione prima dell'intervento di eradicazione e valutare se il piano di rimozione della specie target possa aver contribuito in poco tempo a un miglioramento della biomassa della macchia mediterranea nel sito di presenza.
 
 Pertanto, l'analisi valuta lo stato della vegetazione attraverso immagini satellitari Sentinel-2 prelevate in tre fasi temporali:
 
@@ -42,7 +42,7 @@ Pertanto, l'analisi valuta lo stato della vegetazione attraverso immagini satell
 Gli indici vegetazionali impiegati per le analisi sono:
 
 - **DVI** (*Difference Vegetation Index*), per misurare la quantità assoluta di vegetazione;
-- **NDVI** (*Normalized Difference Vegetation Index*), per misurare lo stato di salute della vegetazione;
+- **NDVI** (*Normalized Difference Vegetation Index*), per misurare lo stato di vigoria della vegetazione;
 
 
 ## 3. Metodologia 🛰️
@@ -104,7 +104,7 @@ dev.off()                              # chiudo il pannello di visualizzazione d
 
 <img width="1280" height="709" alt="franco_2026_" src="https://github.com/user-attachments/assets/2eaa3816-94fe-4439-aefc-f5416d7ebe29" />
 
-> Immagine satellitare nelle 4 bande a due anni dalla fine dell'intervento di eradicazione
+> Immagine satellitare nelle 4 bande a due anni dalla fine del progetto di eradicazione
 
 
 ### 3.3. Visualizzazione immagini in RGB 
@@ -174,7 +174,7 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 Gli indici vegetazionali impiegati per le analisi sono:
 
 - DVI (Difference Vegetation Index), per misurare la quantità assoluta di vegetazione;
-- NDVI (Normalized Difference Vegetation Index), per misurare lo stato di salute della vegetazione;
+- NDVI (Normalized Difference Vegetation Index), per misurare lo stato di vigoria della vegetazione;
 
 
 ### 4.1. Analisi DVI (Difference Vegetation Index)
@@ -291,9 +291,9 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 > Ridgeline Plot per confrontare la distribuzione dell'NDVI nei tre anni presi in analisi
 
 > [!IMPORTANT]
-> Il **Ridgeline Plot** dei singoli **NDVI** offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la distribuzione bimodale fortemente asimmetrica riflette la netta separazione tra le aree fotosinteticamente non attive (zone costiere, suolo roccioso, etc.) e a bassa riflettanza, con picco stabile poco superiore allo 0, e la biomassa insulare. Tra il 2020 e il 2023 le due curve sono pressoché sovrapposte, indicando che, a due anni dall'inizio dell'intervento di eradicazione, la vegetazione non mostrava ancora una risposta visibile. Nella curva NDVI del 2026 il picco della vegetazione si sposta verso destra (> 0.75), divenendo più alto e stretto. Questo shift della densità di frequenza verso valori più alti dell'indice suggerisce l'incremento globale di vigore vegetativo nell'area analizzata.
+> Il **Ridgeline Plot** dei singoli **NDVI** offre una conferma statistica al trend osservato da immagini satellitari. Anzitutto, la distribuzione bimodale fortemente asimmetrica riflette la netta separazione tra le aree fotosinteticamente non attive (zone costiere, suolo roccioso, etc.) e a bassa riflettanza, con picco stabile poco superiore allo 0, e la biomassa insulare. Tra il 2020 e il 2023 le curve relative alla biomassa vegetale sono pressoché sovrapposte, indicando che, a due anni dall'inizio dell'intervento di eradicazione, la vegetazione non mostrava ancora una risposta visibile. Nella curva NDVI del 2026 il picco della vegetazione si sposta verso destra (> 0.75), divenendo più alto e stretto. Questo shift della densità di frequenza verso valori più alti dell'indice suggerisce l'incremento globale di vigore vegetativo nell'area analizzata, mentre la minor larghezza della curva indica un aumento  omogeneo in tutta l'area considerata. 
 
-Inoltre, sempre tramite Ridgeline Plot, procedo con un confronto tra ΔNDVI 2023-2020, ΔNDVI 2026-2023 e ΔNDVI 2026-2020 al fine di osservare eventuali cambiamenti rispetto alla differenza nella prima fase di eradicazione, alla differenza della seconda fase e alla differenza totale tra un anno prima dell'inizio e due anni dopo la fine del progetto Life.
+Inoltre, sempre tramite Ridgeline Plot, procedo con un confronto tra ΔNDVI 2023-2020, ΔNDVI 2026-2023 e ΔNDVI 2026-2020 al fine di osservare eventuali cambiamenti rispetto alla differenza della prima fase di eradicazione, alla differenza della seconda fase e alla differenza totale tra un anno prima dell'inizio e due anni dopo la fine del progetto Life.
 
 ````r
 ndvi_diff_fase1 <- ndvi_2023 - ndvi_2020  
@@ -311,7 +311,7 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 > Ridgeline Plot per confrontare la distribuzione dei ΔNDVI
 
 > [!IMPORTANT]
-> Nel **Ridgeline Plot** dei **ΔNDVI** la distribuzione del 2023–2020 risulta pressoché centrata attorno allo zero, indicando un cambiamento vegetazionale complessivamente limitato durante le prime fasi di eradicazione della specie. La distribuzione del ΔNDVI 2026–2023 mostra un progressivo spostamento verso valori positivi, suggerendo un incremento generalizzato dell'attività vegetativa rispetto alle condizioni iniziali antecedenti. Infine, la curva ΔNDVI 2026–2020, la quale esprime il bilancio complessivo dell'intervento, consolida questo trend mostrando una distribuzione verso valori positivi. Tale grafico, più alto e stretto, suggerisce come il recupero della macchia mediterranea sia aumentato in modo netto e omogeneo in tutta l'area solo dopo il completamento dell'eradicazione.
+> Nel **Ridgeline Plot** dei **ΔNDVI** la distribuzione del 2023–2020 risulta pressoché centrata attorno allo 0, indicando un cambiamento vegetazionale complessivamente limitato durante le prime fasi di eradicazione della specie. La distribuzione del ΔNDVI 2026–2023 mostra un progressivo spostamento verso valori positivi, suggerendo un incremento generalizzato dell'attività vegetativa rispetto alle condizioni iniziali antecedenti. Infine, la curva ΔNDVI 2026–2020, la quale esprime il bilancio complessivo dell'intervento, consolida questo trend mostrando una distribuzione verso valori positivi. Tale grafico, più alto e stretto, suggerisce come il recupero della macchia mediterranea sia aumentato in modo netto e omogeneo in tutta l'area solo dopo il completamento dell'eradicazione.
 
 
 ### 5.2. Classificazione per classi NDVI di copertura del suolo
@@ -506,7 +506,7 @@ dev.off()  # chiudo il pannello grafico
 > Confronto NIR e NDVI nei periodi presi in analisi
 
 > [!NOTE]
-> Nel periodo 2023–2020, la dinamica del NIR si attesta su valori prossimi allo zero nella maggior parte dell'area, registrando solo locali fluttuazioni spaziali prive di un trend geografico definito. Parallelamente, l'andamento del ΔNDVI conferma che in questa prima fase non viene rilevato alcun segnale di ripresa vegetazionale generalizzato. Dal punto di vista ecologico, questa iniziale stasi spettrale potrebbe indicare un tempo di latenza biologica: la cessazione di un elevato disturbo di pascolamento non innesca una risposta immediata. Nel periodo 2026–2023, lo scenario osservato indicherebbe l'inversione di tendenza dell'ecosistema insulare. Le mappe della differenza nel NIR e del ΔNDVI abbandonano le tonalità neutre e virano diffusamente verso valori positivi. Dal punto di vista ecologico, questo triennio potrebbe rappresentare la fase di reazione e colonizzazione: una volta completata l'eradicazione e superata la latenza iniziale, la vegetazione risponde con una crescita accelerata. Infine, nel periodo 2026–2020, che esprime il bilancio complessivo del progetto, il trend di recupero sembrerebbe consolidarsi in modo definitivo. La differenza nel NIR evidenzia un incremento marcato e diffuso delle frequenze positive, il quale riflette un cambiamento strutturale profondo della vegetazione, probabilmente legato alla maggior ricrescita di biomassa legnosa e all'aumento della densità fogliare.
+> Nel periodo 2023–2020, la dinamica del NIR si attesta su valori prossimi allo 0 nella maggior parte dell'area, registrando solo locali fluttuazioni spaziali prive di un trend geografico definito. Parallelamente, l'andamento del ΔNDVI conferma che in questa prima fase non viene rilevato alcun segnale di ripresa vegetazionale generalizzato. Dal punto di vista ecologico, questa iniziale stasi spettrale potrebbe indicare un tempo di latenza biologica: la cessazione di un elevato disturbo di pascolamento non innesca una risposta immediata. Nel periodo 2026–2023, lo scenario osservato indicherebbe l'inversione di tendenza dell'ecosistema insulare. Le mappe della differenza nel NIR e del ΔNDVI abbandonano le tonalità neutre e virano diffusamente verso valori positivi. Dal punto di vista ecologico, questo triennio potrebbe rappresentare la fase di reazione e colonizzazione: una volta completata l'eradicazione della specie target e superata la latenza iniziale, la vegetazione risponde con una crescita accelerata nella successione ecologica secondaria. Infine, nel periodo 2026–2020, che esprime il bilancio complessivo del progetto, il trend di recupero sembrerebbe consolidarsi in modo definitivo. La differenza nel NIR evidenzia un incremento marcato e diffuso delle frequenze positive, il quale riflette un cambiamento strutturale profondo della vegetazione, probabilmente legato alla maggior ricrescita di biomassa legnosa e all'aumento della densità fogliare.
 
 
 ## 7. Conclusioni 🐐
