@@ -272,7 +272,7 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 > Il confronto mostra differenze graduali e continue, passando da valori prossimi allo 0 a valori più elevati, i quali indicano un incremento strutturale della biomassa fogliare.
 
 
-## 5. Visualizzazione dei dati 
+## 5. Visualizzazione dei dati 📊
 
 ### 5.1. Ridgeline Plot
 
