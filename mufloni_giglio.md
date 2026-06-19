@@ -18,7 +18,7 @@ I dati rilevati sui mufloni dell’Isola del Giglio hanno riscontrato una popola
 
 <img width="1600" height="1131" alt="Isola_Giglio_Mufloni" src="https://github.com/user-attachments/assets/ced4c933-6cfd-4f4a-aed6-b19c98b6e720" />
 
-> Isola del Giglio. Nel riquadro arancione è indicata l'area di intervento degli operatori del progetto di eradicazione. Mappa gentilmente concessa dal Dott. Lorenzo La Russa
+> Isola del Giglio. Nel riquadro arancione è indicata l'area di intervento del progetto di eradicazione. Mappa gentilmente concessa dal Dott. Lorenzo La Russa
 
 
 ## 2. Obiettivo del progetto in R 🎯
