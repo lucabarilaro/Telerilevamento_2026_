@@ -427,7 +427,7 @@ print(tabella_franco)  # visualizzo tabella
 
 </div>
 
-> La tabella mostra valori simili tra il 2020 e il 2023 per le classi di macchia rada e macchia densa. Per quanto riguarda il 2026, rispetto ai precedenti anni presi in analisi, si passa a un 11% circa in meno di macchia rada e a un aumento del 12% circa di macchia densa
+> La **tabella** mostra valori simili tra il 2020 e il 2023 per le classi di macchia rada e macchia densa. Per quanto riguarda il 2026, rispetto ai precedenti anni presi in analisi, si passa a un 11% circa in meno di macchia rada e a un aumento del 12% circa di macchia densa
 
      
 #### Visualizzazione 
@@ -476,7 +476,7 @@ dev.off()     # chiudo il pannello grafico
 
 <img width="1280" height="709" alt="franco_barre_ndvi" src="https://github.com/user-attachments/assets/fbb2799c-4b96-4ebe-be50-9b1185feb08c" />
 
-> Diagramma a barre delle classi NDVI di copertura del suolo
+> **Diagramma a barre** delle classi NDVI di copertura del suolo
 
 
 ## 6. Analisi multitemporale 📈
