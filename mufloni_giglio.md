@@ -74,7 +74,7 @@ setwd("C:/Users/lucab/Desktop/progetto_giglio/data")  # funzione per impostare w
 Ora è possibile **importare i raster** Sentinel-2 acquisiti:
 
 ````r
-franco_2020 = rast("franco_2020.tif")  # importo e nomino il primo .tif
+franco_2020 <- rast("franco_2020.tif")  # importo e nomino il primo .tif
 plot(franco_2020)                      # visualizzo il primo .tif
 dev.off()                              # chiudo il pannello di visualizzazione delle immagini
 ````
@@ -87,7 +87,7 @@ dev.off()                              # chiudo il pannello di visualizzazione d
 > **B2** = Blue; **B3** = Green; **B4** = Red; **B8** = NIR 
 
 ````r
-franco_2023 = rast("franco_2023.tif")  # importo e nomino il secondo .tif
+franco_2023 <- rast("franco_2023.tif")  # importo e nomino il secondo .tif
 plot(franco_2023)                      # visualizzo il secondo .tif
 dev.off()                              # chiudo il pannello di visualizzazione delle immagini
 ````
@@ -97,7 +97,7 @@ dev.off()                              # chiudo il pannello di visualizzazione d
 > Immagine satellitare nelle 4 bande a due anni dall'inizio dell'intervento di eradicazione
 
 ````r
-franco_2026 = rast("franco_2026.tif")  # importo e nomino il terzo .tif
+franco_2026 <- rast("franco_2026.tif")  # importo e nomino il terzo .tif
 plot(franco_2026)                      # visualizzo il terzo .tif
 dev.off()                              # chiudo il pannello di visualizzazione delle immagini
 ````
