@@ -150,12 +150,12 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 im.multiframe(3, 4)  # preparo pannello grafico con 3 righe e 4 colonne usando la funzione di imageRy
 plot(franco_2020[[1]], col = viridis(100), main = "2020 - Blue")  # visualizzo immagini, assegno palette colore e nomino i file raster
 plot(franco_2020[[2]], col = viridis(100), main = "2020 - Green") # in alternativa, si può usare funzione im.plot() di imageRy
-plot(franco_2020[[3]], col = viridis(100), main = "2020 - Red")
-plot(franco_2020[[4]], col = viridis(100), main = "2020 - NIR")
+plot(franco_2020[[3]], col = viridis(100), main = "2020 - Red")   # vegetazione assorbe molto nel Red
+plot(franco_2020[[4]], col = viridis(100), main = "2020 - NIR")   # vegetazione riflette molto nel NIR
 
-plot(franco_2023[[1]], col = viridis(100), main = "2023 - Blue")
+plot(franco_2023[[1]], col = viridis(100), main = "2023 - Blue")  
 plot(franco_2023[[2]], col = viridis(100), main = "2023 - Green")
-plot(franco_2023[[3]], col = viridis(100), main = "2023 - Red")
+plot(franco_2023[[3]], col = viridis(100), main = "2023 - Red") 
 plot(franco_2023[[4]], col = viridis(100), main = "2023 - NIR")
 
 plot(franco_2026[[1]], col = viridis(100), main = "2026 - Blue")
@@ -170,8 +170,7 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 > Confronto tra le 4 bande (colonne) nei diversi anni (righe) presi in analisi
 
 > [!TIP]
-> Le bande RGB (B4, B3, B2) mostrano lo spettro visibile, dove i pigmenti fogliari assorbono gran parte della luce. Al contrario, la banda NIR (B8) evidenzia lo stato di salute e la densità della vegetazione strutturale, poiché il mesofillo  delle foglie sane riflette fortemente questa lunghezza d'onda.
-
+> Le bande RGB (B2, B3, B4) corrispondono allo spettro del visibile, nel quale la vegetazione assorbe principalmente la radiazione rossa grazie alla clorofilla. La banda del vicino infrarosso (B8), non percepibile dall’occhio umano, è invece fortemente riflessa dalla struttura interna delle foglie, in particolare dal mesofillo, ed è quindi strettamente correlata alla vigoria e alla densità della copertura vegetale.
 
 ## 4. Calcolo degli indici vegetazionali 🌳
 
