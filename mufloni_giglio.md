@@ -121,24 +121,26 @@ dev.off() # chiudo il pannello di visualizzazione delle immagini
 > Confronto tra le immagini in **RGB** delle diverse fasi analizzate
 
 
-### 3.4. Visualizzazione NIR in Blue
+### 3.4. Visualizzazione NIR in Red
+
+Applico una composizione RGB in falso colore (NIR-R-G), assegnando la banda del vicino infrarosso (B8) al canale rosso, la banda rossa (B4) al canale verde e la banda verde (B3) al canale blu.
 
 ````r
+## NIR in Red
 im.multiframe(1, 3)  # preparo pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
-# r = 3 (Red), g = 2 (Green), b = 4 (NIR)  # imposto NIR nel canale blu
-plotRGB(franco_2020, r = 3, g = 2, b = 4, stretch = "lin", main = "Pre-eradicazione (2020)")  # visualizzo immagini con funzione terra
-plotRGB(franco_2023, r = 3, g = 2, b = 4, stretch = "lin", main = "Eradicazione (2023)")      
-plotRGB(franco_2026, r = 3, g = 2, b = 4, stretch = "lin", main = "Post-eradicazione (2026)")
+# r = 4 (B8, NIR), g = 3 (B4, Red), b = 2 (B3, Green)  # imposto NIR nel canale red
+im.plotRGB(franco_2020, r = 4, g = 3, b = 2, title = "Pre-eradicazione (2020)")  # visualizzo con funzione imageRy
+im.plotRGB(franco_2023, r = 4, g = 3, b = 2, title = "Eradicazione (2023)")      
+im.plotRGB(franco_2026, r = 4, g = 3, b = 2, title = "Post-eradicazione (2026)")
 dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
 
-<img width="1280" height="709" alt="franco_nir_blue" src="https://github.com/user-attachments/assets/f66c5727-1061-45c1-b732-227f58abe1b0" />
+<img width="1280" height="709" alt="franco_nir_red" src="https://github.com/user-attachments/assets/6a8dbe74-13da-45ac-b177-9f64c428290d" />
 
-> Confronto eseguito con il NIR nel canale del blu nei diversi anni presi in analisi
+> Confronto eseguito con il NIR nel canale del rosso nei diversi anni presi in analisi
 
 > [!NOTE]
-> Sostituendo il **NIR** al posto della banda del blu (r=3, g=2, b=4), si evidenziano in **blu** le zone di **vegetazione** (alta riflettanza del NIR) e in giallo tutto ciò che non è vegetazione, come suolo nudo e roccia esposta.
-
+> Sostituendo il **NIR** al posto della banda del rosso si evidenziano in **rosso** le zone di **vegetazione** (alta riflettanza del NIR). In particolare, il rosso brillante, più intenso, indica una vegetazione più rigorosa, mentre il rosso più scuro una vegetazione con riflettanza più bassa nel NIR (potenzialmente meno vigorosa). Colori più tendenti al grigio indicano suolo nudo o aree urbanizzate, mentre il colore azzuro indica acqua o superfici con bassissima risposta nel NIR.
 
 ### 3.5. Visualizzazione 4 bande separate per le 3 immagini (RGB + NIR)
 
