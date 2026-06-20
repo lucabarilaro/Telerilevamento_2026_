@@ -359,7 +359,7 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 
 </details>
 
-Procedo con la classificazione della copertura vegetale mediante **classi NDVI** basata sugli istogrammi precedentemente ottenuti. Creo una matrice di riclassificazione per trasformare i valori originali dell’NDVI in nuove classi.
+Procedo con la classificazione della copertura del suolo mediante **classi NDVI** basata sugli istogrammi precedentemente ottenuti. Creo una matrice di riclassificazione per trasformare i valori originali dell’NDVI in nuove classi.
 
 ````r
 class_matrix <- matrix(c(   # creo matrice di riclassificazione contenente i valori delle nuove classi
