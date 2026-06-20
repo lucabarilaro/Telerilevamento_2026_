@@ -109,7 +109,7 @@ dev.off()                              # chiudo il pannello di visualizzazione d
 
 ### 3.3. Visualizzazione immagini in RGB 
 
-Applico B2-B3-B4 nei rispettivi canali blu, verde e rosso, creando una composizione RGB, simili alla vista umana. 
+Applico B2-B3-B4 nei rispettivi canali blu, verde e rosso, creando una composizione RGB, simile alla vista umana. 
 
 ````r
 im.multiframe(1, 3)  # preparo pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
