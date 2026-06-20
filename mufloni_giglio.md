@@ -359,20 +359,20 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 
 </details>
 
-Procedo con la classificazione della copertura vegetale mediante **classi NDVI** basata sugli istogrammi precedentemente ottenuti.
+Procedo con la classificazione della copertura vegetale mediante **classi NDVI** basata sugli istogrammi precedentemente ottenuti. Creo una matrice di riclassificazione per trasformare i valori originali dell’NDVI in nuove classi.
 
 ````r
-class_matrix <- matrix(c(  # creo matrice contenente i valori di classificazione
-  -Inf,  0.35, 1,          # se NDVI < 0.35: classe 1 (scogliera / roccia / suolo)
-  0.35,  0.65, 2,          # se 0.35 <= NDVI < 0.65: classe 2 (vegetazione rada / macchia degradata)
-  0.65,  Inf, 3            # se NDVI >= 0.65: classe 3 (vegetazione densa / macchia in recupero)
-), ncol = 3, byrow = TRUE) # assegno il numero di colonne e imposto il riempimento della matrice riga per riga
+class_matrix <- matrix(c(   # creo matrice di riclassificazione contenente i valori delle nuove classi
+  -Inf,  0.35, 1,           # se NDVI < 0.35: classe 1 (scogliera / roccia / suolo)
+  0.35,  0.65, 2,           # se 0.35 <= NDVI < 0.65: classe 2 (vegetazione rada / macchia degradata)
+  0.65,  Inf, 3             # se NDVI >= 0.65: classe 3 (vegetazione densa / macchia in recupero)
+), ncol = 3, byrow = TRUE)  # assegno il numero di colonne e imposto il riempimento della matrice riga per riga
 
 class_matrix  # stampo la matrice per controllo grafico
 
 # classificazione dei singoli anni con la funzione classify del pacchetto terra
 ndvi_2020_cl <- classify(ndvi_2020, class_matrix)  # classifico raster in classi definite tramite la matrice
-ndvi_2023_cl <- classify(ndvi_2023, class_matrix)  
+ndvi_2023_cl <- classify(ndvi_2023, class_matrix)  # funzione classify() legge ogni pixel del raster, riclassificandolo
 ndvi_2026_cl <- classify(ndvi_2026, class_matrix)  
 
 
