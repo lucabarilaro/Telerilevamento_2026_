@@ -109,6 +109,8 @@ dev.off()                              # chiudo il pannello di visualizzazione d
 
 ### 3.3. Visualizzazione immagini in RGB 
 
+Applico B2-B3-B4 nei rispettivi canali blu, verde e rosso, creando una composizione RGB, simili alla vista umana. 
+
 ````r
 im.multiframe(1, 3)  # preparo pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
 im.plotRGB(franco_2020, r = 3, g = 2, b = 1, title = "Pre-eradicazione")  # visualizzo immagini in RGB con funzione di imageRy
