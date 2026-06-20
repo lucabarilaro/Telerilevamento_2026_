@@ -109,7 +109,7 @@ dev.off()                              # chiudo il pannello di visualizzazione d
 
 ### 3.3. Visualizzazione immagini in RGB 
 
-Applico B2-B3-B4 nei rispettivi canali blu, verde e rosso, creando una composizione RGB, simile alla vista umana. 
+Applico B2-B3-B4 nei rispettivi canali blu, verde e rosso, creando una composizione **RGB**, simile alla vista umana. 
 
 ````r
 im.multiframe(1, 3)  # preparo pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
@@ -120,12 +120,12 @@ dev.off() # chiudo il pannello di visualizzazione delle immagini
 ````
 <img width="1280" height="709" alt="franco_rgb" src="https://github.com/user-attachments/assets/796a24c0-f358-4548-94a4-4773be155ee2" />
 
-> Confronto tra le immagini in **RGB** delle diverse fasi analizzate
+> Confronto tra le immagini in RGB delle diverse fasi analizzate
 
 
 ### 3.4. Visualizzazione NIR in Red
 
-Applico una composizione RGB in falso colore (NIR-R-G), assegnando la banda del vicino infrarosso (B8) al canale rosso, la banda rossa (B4) al canale verde e la banda verde (B3) al canale blu.
+Applico una composizione **RGB in falso colore** (NIR-R-G), assegnando la banda del vicino infrarosso (B8) al canale rosso, la banda rossa (B4) al canale verde e la banda verde (B3) al canale blu.
 
 ````r
 ## NIR in Red
