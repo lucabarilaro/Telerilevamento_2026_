@@ -325,10 +325,10 @@ im.multiframe(1, 3)  # configuro il pannello grafico con 1 riga e 3 colonne per 
 breaks_ndvi <- seq(-0.6, 0.9, by = 0.05)  # con seq(inizio, fine, passo) creo una sequenza di numeri in cui divido intervallo valori NDVI da -0.6 a 0.9 in intervalli larghi 0.05
 
 # istogramma NDVI 2020
-hist(ndvi_2020,            # uso funzione per generare istogramma
-     breaks = breaks_ndvi,  # barre con stessi intervalli per confronto temporale
-     xlim = c(-0.6, 0.9),  # imposto limiti asse x
-     ylim = c(0, 6000),    # imposto limiti asse y
+hist(ndvi_2020,             # uso funzione per generare istogramma
+     breaks = breaks_ndvi,  # imposto barre istogramma con stessi intervalli per confronto temporale
+     xlim = c(-0.6, 0.9),   # imposto limiti asse x
+     ylim = c(0, 6000),     # imposto limiti asse y
      main = "Distribuzione NDVI 2020",  # denomino istogramma 
      col = "lightgray",                 # imposto colore
      xlab = "Valori NDVI")              # denomino asse x
