@@ -401,7 +401,7 @@ freq_2026 <- freq(ndvi_2026_cl)
 # calcolo totale pixel di terraferma escludendo NA per ogni anno
 tot_pix_2020 <- sum(freq_2020$count)  # calcolo il totale dei pixel del raster NDVI classificato
 tot_pix_2023 <- sum(freq_2023$count)  # funzione sum() somma il totale dei pixel validi per ogni classe, contenuti nella colonna count 
-tot_pix_2026 <- sum(freq_2026$count)
+tot_pix_2026 <- sum(freq_2026$count)  # il simbolo $ serve per accedere a un elemento di un oggetto, in questo caso a una colonna di un data frame
 
 # calcolo percentuali moltiplicando conteggio pixel validi per 100 diviso totale pixel considerati
 perc_2020 <- freq_2020$count * 100 / tot_pix_2020
