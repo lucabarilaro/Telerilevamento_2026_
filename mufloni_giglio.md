@@ -484,21 +484,23 @@ dev.off()     # chiudo il pannello grafico
 
 ## 6. Analisi multitemporale 📈
 
-L'analisi multitemporale è stata applicata per valutare l'evoluzione della risposta vegetazionale prima, durante e dopo l'intervento di eradicazione del muflone dall'Isola del Giglio. Il confronto del ΔNDVI consente di quantificare la variazione del vigore vegetativo rispetto alla condizione iniziale (risposta vegetativa quantitativa), mentre l'analisi delle differenze nella banda del vicino infrarosso (NIR), ovvero la variazione della riflettanza legata alla struttura vegetale, fornisce un'ulteriore indicazione della variazione della struttura e della biomassa vegetale. L'integrazione delle informazioni spettrali e spaziali consente quindi di individuare non solo l'entità del cambiamento, ma anche la sua distribuzione all'interno dell'area di studio.
+L’analisi multitemporale è stata applicata per valutare l’evoluzione della risposta vegetazionale prima, durante e dopo l’intervento di eradicazione del muflone sull’Isola del Giglio. Il confronto del ΔNDVI consente di quantificare le variazioni del vigore vegetativo rispetto alla condizione iniziale. Parallelamente, l’analisi delle differenze nella banda del vicino infrarosso (NIR) permette di osservare le variazioni della riflettanza associate alla struttura della vegetazione e alla biomassa. L’integrazione delle informazioni spettrali e spaziali consente quindi di identificare non solo l’entità del cambiamento, ma anche la sua distribuzione spaziale all’interno dell’area di studio.
 
 ````r
 nir_dif_fase1 <- franco_2023[[4]] - franco_2020[[4]]   # calcolo differenza NIR durante eradicazione
 nir_dif_fase2 <- franco_2026[[4]] - franco_2023[[4]]   # calcolo differenza NIR dopo eradicazione
 nir_dif_totale <- franco_2026[[4]] - franco_2020[[4]]  # calcolo differenza NIR tra inizio e fine eradicazione
+
 ndvi_dif_fase1 <- ndvi_2023 - ndvi_2020   # calcolo differenza NDVI durante eradicazione
 ndvi_dif_fase2 <- ndvi_2026 - ndvi_2023   # calcolo differenza NDVI dopo eradicazione
 ndvi_dif_totale <- ndvi_2026 - ndvi_2020  # calcolo differenza NDVI tra inizio e fine eradicazione
 
-
 im.multiframe(2, 3)  # preparo pannello grafico con 2 righe e 3 colonne
+
 plot(nir_dif_fase1, col = magma(100), main = "NIR (2023 - 2020)")   # visualizzo immagini differenza NIR
 plot(nir_dif_fase2, col = magma(100), main = "NIR (2026 - 2023)")
 plot(nir_dif_totale, col = magma(100), main = "NIR (2026 - 2020)")
+
 plot(ndvi_dif_fase1, col = magma(100), main = "NDVI (2023 - 2020)")  # visualizzo immagini differenza NDVI
 plot(ndvi_dif_fase2, col = magma(100), main = "NDVI (2026 - 2023)")
 plot(ndvi_dif_totale, col = magma(100), main = "NDVI (2026 - 2020)")
