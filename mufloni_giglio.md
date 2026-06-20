@@ -385,7 +385,7 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 ````
 <img width="1280" height="709" alt="franco_classi_ndvi" src="https://github.com/user-attachments/assets/0827cd3a-c469-4642-b3d6-0da29c6bec87" />
 
-> Classificazione della copertura vegetale mediante classi NDVI nei tre anni analizzati
+> Classificazione della copertura del suolo mediante classi NDVI nei tre anni analizzati
 
 
 ### 5.3. Calcolo delle frequenze delle classi NDVI di copertura del suolo 
