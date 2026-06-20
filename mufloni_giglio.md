@@ -299,10 +299,6 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 Inoltre, sempre tramite Ridgeline Plot, procedo con un confronto tra ΔNDVI 2023-2020, ΔNDVI 2026-2023 e ΔNDVI 2026-2020 al fine di osservare eventuali cambiamenti rispetto alla differenza della prima fase di eradicazione, alla differenza della seconda fase e alla differenza totale tra un anno prima dell'inizio e due anni dopo la fine del progetto Life.
 
 ````r
-ndvi_diff_fase1 <- ndvi_2023 - ndvi_2020  
-ndvi_diff_fase2 <- ndvi_2026 - ndvi_2023
-ndvi_diff_totale <- ndvi_2026 - ndvi_2020
-
 delta_ridg <- c(ndvi_diff_fase1, ndvi_diff_fase2, ndvi_diff_totale)  # unisco ΔNDVI dei diversi anni in un unico oggetto multistrato
 names(delta_ridg) <- c("ΔNDVI 2023-2020", "ΔNDVI 2026-2023", "ΔNDVI 2026-2020")  # denomino punti sull'asse verticale
 im.ridgeline(delta_ridg, scale = 1.2, palette = "magma")  # creo grafico ridgeline con funzione di imageRy
