@@ -326,7 +326,7 @@ breaks_ndvi <- seq(-0.6, 0.9, by = 0.05)  # con seq(inizio, fine, passo) creo un
 
 # istogramma NDVI 2020
 hist(ndvi_2020,            # uso funzione per generare istogramma
-     breaks = breaks_ndvi  # barre con stessi intervalli per confronto temporale
+     breaks = breaks_ndvi,  # barre con stessi intervalli per confronto temporale
      xlim = c(-0.6, 0.9),  # imposto limiti asse x
      ylim = c(0, 6000),    # imposto limiti asse y
      main = "Distribuzione NDVI 2020",  # denomino istogramma 
