@@ -321,31 +321,32 @@ Scelgo il range di valori adatto alla classificazione facendo riferimento agli *
 
 ````r
 im.multiframe(1, 3)  # configuro il pannello grafico con 1 riga e 3 colonne per gli istogrammi
-# genero gli istogrammi per i tre anni del progetto
-hist(ndvi_2020, main = "Distribuzione NDVI 2020", xlab = "Valori NDVI")   
-hist(ndvi_2023, main = "Distribuzione NDVI 2023", xlab = "Valori NDVI")
-hist(ndvi_2026, main = "Distribuzione NDVI 2026", xlab = "Valori NDVI")
+
+breaks_ndvi <- seq(-0.6, 0.9, by = 0.05)  # con seq(inizio, fine, passo) creo una sequenza di numeri in cui divido intervallo valori NDVI da -0.6 a 0.9 in intervalli larghi 0.05
 
 # istogramma NDVI 2020
 hist(ndvi_2020,            # uso funzione per generare istogramma
+     breaks = breaks_ndvi  # barre con stessi intervalli per confronto temporale
      xlim = c(-0.6, 0.9),  # imposto limiti asse x
-     ylim = c(0, 8000),    # imposto limiti asse y
+     ylim = c(0, 6000),    # imposto limiti asse y
      main = "Distribuzione NDVI 2020",  # denomino istogramma 
      col = "lightgray",                 # imposto colore
      xlab = "Valori NDVI")              # denomino asse x
 
 # istogramma NDVI 2023
-hist(ndvi_2023, 
+hist(ndvi_2023,
+     breaks = breaks_ndvi,
      xlim = c(-0.6, 0.9), 
-     ylim = c(0, 8000), 
+     ylim = c(0, 6000), 
      main = "Distribuzione NDVI 2023", 
      col = "lightgray", 
      xlab = "Valori NDVI")
 
 # istogramma NDVI 2026
-hist(ndvi_2026, 
+hist(ndvi_2026,
+     breaks = breaks_ndvi,
      xlim = c(-0.6, 0.9), 
-     ylim = c(0, 8000), 
+     ylim = c(0, 6000), 
      main = "Distribuzione NDVI 2026", 
      col = "lightgray", 
      xlab = "Valori NDVI")
@@ -354,7 +355,7 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 <details>
 <summary>Istogrammi (cliccare qui)</summary> 
   
-<img width="1280" height="709" alt="franco_hist_ndvi" src="https://github.com/user-attachments/assets/bf3ae0db-51ab-4b62-b090-811dd9adb0b5" />
+<img width="1280" height="709" alt="franco_hist_ndvi" src="https://github.com/user-attachments/assets/19490c0a-975e-4a69-9d29-fd9dc560ce62" />
 
 </details>
 
