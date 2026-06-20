@@ -142,7 +142,7 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 > Confronto eseguito con il NIR nel canale del rosso nei diversi anni presi in analisi
 
 > [!NOTE]
-> Sostituendo il **NIR** al posto della banda del rosso si evidenziano in **rosso** le zone di **vegetazione** (alta riflettanza del NIR). In particolare, il rosso brillante, più intenso, indicherebbe una vegetazione più rigorosa, mentre il rosso più scuro una vegetazione con riflettanza più bassa nel NIR (potenzialmente meno vigorosa). Colori più tendenti al grigio indicano suolo nudo o aree urbanizzate, mentre il colore azzuro indica acqua o superfici con bassissima risposta nel NIR.
+> Sostituendo il **NIR** al posto della banda del rosso si evidenziano in **rosso** le zone di **vegetazione** (alta riflettanza del NIR). In particolare, il rosso brillante, più intenso, indicherebbe una vegetazione più vigorosa, mentre il rosso più scuro una vegetazione con riflettanza più bassa nel NIR (potenzialmente meno vigorosa). Colori più tendenti al grigio indicano suolo nudo o aree urbanizzate, mentre il colore azzuro indica acqua o superfici con bassissima risposta nel NIR.
 
 ### 3.5. Visualizzazione 4 bande separate per le 3 immagini (RGB + NIR)
 
