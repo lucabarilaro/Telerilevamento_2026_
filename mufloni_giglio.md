@@ -437,7 +437,7 @@ print(tabella_franco)  # visualizzo tabella
 ````r
 # creo grafico percentuali NDVI 2020
 # uso dataset tabella_franco, personalizzo estetica, fill = Classi serve per colorare le barre in base alla classe NDVI
-p1 <- ggplot(tabella_franco, aes(x = Classi, y = a2020, fill = Classi)) + 
+p1 <- ggplot(tabella_franco, aes(x = Classi, y = a2020, fill = Classi)) +   # funzione ggplot() per trasformare dati in grafici
   geom_bar(stat = "identity") +  # stat = "identity" significa che uso i valori già presenti nei dati, ovvero le percentuali già calcolate
   scale_fill_manual(values = c("royalblue", "gold", "forestgreen")) +  # assegno manualmente i colori alle classi
   ylim(0, 100) +  # imposto asse y da 0 a 100 (percentuali)
