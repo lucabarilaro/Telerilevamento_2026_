@@ -130,7 +130,6 @@ dev.off() # chiudo il pannello di visualizzazione delle immagini
 Applico una composizione **RGB in falso colore** (NIR-R-G), assegnando la banda del vicino infrarosso (B8) al canale rosso, la banda rossa (B4) al canale verde e la banda verde (B3) al canale blu.
 
 ````r
-## NIR in Red
 im.multiframe(1, 3)  # preparo pannello grafico con 1 riga e 3 colonne usando la funzione di imageRy
 # r = 4 (B8, NIR), g = 3 (B4, Red), b = 2 (B3, Green)  # imposto NIR nel canale red
 im.plotRGB(franco_2020, r = 4, g = 3, b = 2, title = "Pre-eradicazione (2020)")  # visualizzo con funzione imageRy
