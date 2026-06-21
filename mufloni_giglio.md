@@ -393,7 +393,7 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 
 ### 5.3. Calcolo delle frequenze delle classi NDVI di copertura del suolo 
 
-Dalla classificazione precedentemente effettuata ricavo le **frequenze** delle diverse classi, riportandole in una tabella e, infine, visualizzandole in un diagramma a barre.
+Dalla classificazione precedentemente effettuata ricavo le **frequenze** delle nuove classi, riportandole in una tabella e, infine, visualizzandole in un diagramma a barre.
 
 ````r
 # calcolo frequenza pixel appartenenti a ciascuna classe del raster NDVI classificato
