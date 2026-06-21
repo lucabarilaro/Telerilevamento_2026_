@@ -406,7 +406,7 @@ tot_pix_2020 <- sum(freq_2020$count)  # calcolo il totale dei pixel validi del r
 tot_pix_2023 <- sum(freq_2023$count)  # sum() somma il totale dei pixel validi per ogni classe, contenuti nella colonna count 
 tot_pix_2026 <- sum(freq_2026$count)  # il simbolo $ serve per accedere a un elemento di un oggetto, in questo caso a una colonna di un data frame
 
-# calcolo percentuali moltiplicando conteggio pixel validi per 100 diviso totale pixel considerati
+# calcolo percentuali moltiplicando pixel validi per 100 diviso totale pixel validi
 perc_2020 <- freq_2020$count * 100 / tot_pix_2020
 perc_2023 <- freq_2023$count * 100 / tot_pix_2023
 perc_2026 <- freq_2026$count * 100 / tot_pix_2026
