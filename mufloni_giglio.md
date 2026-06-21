@@ -90,8 +90,8 @@ dev.off()                               # chiudo il pannello di visualizzazione 
 
 ````r
 franco_2023 <- rast("franco_2023.tif")  # importo e nomino il secondo .tif
-plot(franco_2023)                      # visualizzo il secondo .tif
-dev.off()                              # chiudo il pannello di visualizzazione delle immagini
+plot(franco_2023)                       # visualizzo il secondo .tif
+dev.off()                               # chiudo il pannello di visualizzazione delle immagini
 ````
 
 <img width="1280" height="709" alt="franco_2023_" src="https://github.com/user-attachments/assets/1c0383a4-d70f-4bcb-a695-f8765012c531" />
@@ -100,8 +100,8 @@ dev.off()                              # chiudo il pannello di visualizzazione d
 
 ````r
 franco_2026 <- rast("franco_2026.tif")  # importo e nomino il terzo .tif
-plot(franco_2026)                      # visualizzo il terzo .tif
-dev.off()                              # chiudo il pannello di visualizzazione delle immagini
+plot(franco_2026)                       # visualizzo il terzo .tif
+dev.off()                               # chiudo il pannello di visualizzazione delle immagini
 ````
 
 <img width="1280" height="709" alt="franco_2026_" src="https://github.com/user-attachments/assets/2eaa3816-94fe-4439-aefc-f5416d7ebe29" />
