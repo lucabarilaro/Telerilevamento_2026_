@@ -475,7 +475,7 @@ p3 <- ggplot(tabella_franco, aes(x = Classi, y = a2026, fill = Classi)) +
     legend.position = "right"  # attivo legenda
   )
 
-p1 + p2 + p3  # affianco i tre grafici in un'unica riga
+p1 + p2 + p3  # affianco i tre grafici in un'unica riga (patchwork)
 dev.off()     # chiudo il pannello grafico
 ````
 
