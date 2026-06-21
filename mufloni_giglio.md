@@ -70,7 +70,7 @@ In seguito, imposto la **working directory**:
 ````r
 setwd("C:/Users/lucab/Desktop/progetto_giglio/data")  # funzione per impostare working directory
 getwd()  # controllo se è stata impostata la giusta working directory
-list.files()  # osservo l'elenco dei file all'interno di essa
+list.files()  # osservo l'elenco dei files all'interno di essa
 ````
 
 Ora è possibile **importare i raster** Sentinel-2 acquisiti:
