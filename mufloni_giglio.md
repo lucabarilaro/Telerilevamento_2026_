@@ -232,7 +232,7 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 
 ### 4.2. Analisi NDVI (Normalized Difference Vegetation Index)
 
-L'**NDVI** è uno degli indici di vegetazione più diffusi in telerilevamento grazie alla sua capacità di normalizzare le differenze tra immagini acquisite in tempi o condizioni diverse, riducendo gli effetti di disturbo causati dalle ombre e dalla topografia del terreno. Si calcola come il rapporto tra la differenza e la somma delle riflettanze nel vicino infrarosso (NIR) e nel rosso (Red):
+L'**NDVI** è uno degli indici di vegetazione più diffusi in telerilevamento grazie alla sua capacità di normalizzare la quantità totale di energia riflessa, normalizzando, quindi, le differenze tra immagini acquisite in tempi o condizioni diverse e riducendo gli effetti di disturbo causati dalle ombre e dalla topografia del terreno. Dunque, la normalizzazione rende il parametro meno dipendente dalla quantità assoluta di radiazione ricevuta. Si calcola come il rapporto tra la differenza e la somma delle riflettanze nel vicino infrarosso (NIR) e nel rosso (Red):
 
 $$NDVI = \frac{NIR - Red}{NIR + Red}$$
 
