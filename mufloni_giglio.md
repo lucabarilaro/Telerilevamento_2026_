@@ -77,8 +77,8 @@ Ora è possibile **importare i raster** Sentinel-2 acquisiti:
 
 ````r
 franco_2020 <- rast("franco_2020.tif")  # importo e nomino il primo .tif
-plot(franco_2020)                      # visualizzo il primo .tif
-dev.off()                              # chiudo il pannello di visualizzazione delle immagini
+plot(franco_2020)                       # visualizzo il primo .tif
+dev.off()                               # chiudo il pannello di visualizzazione delle immagini
 ````
 
 <img width="1280" height="709" alt="franco_2020_" src="https://github.com/user-attachments/assets/895d5fa4-82ac-4854-8c0f-d83e81f775d0" />
