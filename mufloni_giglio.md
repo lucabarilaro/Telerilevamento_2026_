@@ -49,7 +49,7 @@ Gli indici vegetazionali impiegati per le analisi sono:
 
 ### 3.1. Acquisizione immagini
 
-Le immagini satellitari provengono da [**Google Earth Engine**](https://earthengine.google.com/), attraverso cui è stata selezionata l'area di intervento per le fasi e le relative date precedentemente indicate. Al fine di evitare distorsioni nelle analisi spaziali, è stato tendenzialmente rimosso il background marino dalla visualizzazione attraverso un apposito JavaScript consultabile al seguente [link GitHub](https://github.com/lucabarilaro/Telerilevamento_2026_/blob/main/javascript_mufloni_giglio.js)
+Le immagini satellitari provengono da [**Google Earth Engine**](https://earthengine.google.com/), attraverso cui è stata selezionata l'area di intervento per le fasi e le relative date precedentemente indicate. Al fine di evitare distorsioni nelle analisi spaziali, è stato rimosso il background marino dalla visualizzazione attraverso un apposito JavaScript consultabile al seguente [link GitHub](https://github.com/lucabarilaro/Telerilevamento_2026_/blob/main/javascript_mufloni_giglio.js)
 
 
 ### 3.2. Importazione e visualizzazione immagini
