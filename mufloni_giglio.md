@@ -386,6 +386,10 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 
 > Classificazione della copertura del suolo mediante classi NDVI nei tre anni analizzati
 
+> **LEGENDA**
+> 
+> 1 (blu): zona costiera / roccia / area urbanizzata; 2 (giallo): vegetazione meno densa; 3 (verde): vegetazione più densa. 
+
 
 ### 5.3. Calcolo delle frequenze delle classi NDVI di copertura del suolo 
 
