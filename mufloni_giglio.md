@@ -189,7 +189,7 @@ $$
 DVI = NIR - RED
 $$
 
-Le piante sane riflettono molto nel NIR e poco nel rosso; quindi, valori alti di DVI indicano vegetazione vigorosa, mentre valori vicini allo zero o negativi indicano generalmente suolo nudo o roccia. Sebbene fornisca un'indicazione diretta della biomassa verde, il DVI è un indice non normalizzato. Questo lo rende utile per analisi comparative rapide quando le condizioni di acquisizione sono simili, ma risente degli effetti topografici e delle ombre, motivo per cui spesso gli si preferisce l'NDVI.
+Le piante sane riflettono molto nel NIR e poco nel rosso; quindi, valori alti di DVI indicano una quantità maggiore di vegetazione, mentre valori vicini allo zero o negativi indicano generalmente suolo nudo o roccia. Sebbene fornisca un'indicazione diretta della biomassa verde, il DVI è un indice non normalizzato. Questo lo rende utile per analisi comparative rapide quando le condizioni di acquisizione sono simili, ma risente degli effetti topografici e delle ombre, motivo per cui spesso gli si preferisce l'NDVI.
 
 ````r
 dvi_2020 <- im.dvi(franco_2020, 4, 3)  # utilizzo funzione im.dvi() del pacchetto imageRy 
@@ -280,7 +280,7 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 
 ### 5.1. Ridgeline Plot
 
-Il Ridgeline Plot dei singoli NDVI consente di confrontare visivamente la distribuzione dell’indice NDVI tra il 2020, il 2023 e il 2026, evidenziando eventuali variazioni nel tempo dei valori assoluti di vegetazione.
+Il Ridgeline Plot dei singoli NDVI consente di confrontare visivamente la distribuzione dell’indice NDVI nel 2020, 2023 e 2026, evidenziando eventuali variazioni nel tempo dei valori assoluti di vegetazione.
 
 ````r
 franco_ridg <- c(ndvi_2020, ndvi_2023, ndvi_2026)  # unisco raster NDVI dei diversi anni in un unico oggetto multistrato
