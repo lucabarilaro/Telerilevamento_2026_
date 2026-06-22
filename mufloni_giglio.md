@@ -358,7 +358,7 @@ dev.off()  # chiudo il pannello di visualizzazione delle immagini
 
 </details>
 
-Procedo con la classificazione della copertura del suolo mediante **classi NDVI** basata sugli istogrammi precedentemente ottenuti. Creo una matrice di riclassificazione per trasformare i valori originali dell’NDVI in nuove classi.
+Procedo con la classificazione della copertura del suolo mediante **classi NDVI** basata sugli istogrammi precedentemente ottenuti. Creo una matrice di riclassificazione per trasformare i valori originari dell’NDVI in nuove classi.
 
 ````r
 class_matrix <- matrix(c(   # creo matrice di riclassificazione contenente i valori delle nuove classi
@@ -402,11 +402,11 @@ freq_2023 <- freq(ndvi_2023_cl)
 freq_2026 <- freq(ndvi_2026_cl)
 
 # calcolo totale pixel validi (escludendo NA) per ogni anno
-tot_pix_2020 <- sum(freq_2020$count)  # sommo il conteggio dei pixel validi presenti in tutte le classi NDVI del 2020
-tot_pix_2023 <- sum(freq_2023$count)  # sum() somma il conteggio dei pixel validi per tutte le classi, contenuti nella colonna count 
+tot_pix_2020 <- sum(freq_2020$count)  # sommo il conteggio dei pixel validi appartenenti a ciascuna classe NDVI del 2020
+tot_pix_2023 <- sum(freq_2023$count)  # sum() somma il conteggio dei pixel validi per ogni classe, contenuti nella colonna count 
 tot_pix_2026 <- sum(freq_2026$count)  # il simbolo $ serve per accedere a un elemento di un oggetto, in questo caso a una colonna di un data frame
 
-# calcolo percentuale pixel di ciascuna classe moltiplicando il conteggio dei pixel validi per 100 diviso totale pixel validi
+# calcolo percentuale pixel di ciascuna classe moltiplicando il conteggio dei pixel di ciascuna classe per 100 diviso totale pixel validi 
 perc_2020 <- freq_2020$count * 100 / tot_pix_2020
 perc_2023 <- freq_2023$count * 100 / tot_pix_2023
 perc_2026 <- freq_2026$count * 100 / tot_pix_2026
